@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://c8u8a65r1rt1s"]
 
 [ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_vv7d7"]
-[ext_resource type="Texture2D" uid="uid://br4701g0wyieb" path="res://assets/other/placeholder ahhhh.png" id="2_y8is4"]
+[ext_resource type="Texture2D" uid="uid://dye8xtkx5o28h" path="res://assets/skills/EnseignerIcon.png" id="2_vv7d7"]
 
 [resource]
 script = ExtResource("1_vv7d7")

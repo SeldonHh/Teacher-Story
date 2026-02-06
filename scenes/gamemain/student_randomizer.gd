@@ -61,6 +61,7 @@ func set_student_to_x_random_student(x) -> void:
 		var new_spot = possible_spot.pick_random()
 		possible_spot.erase(new_spot)
 		new_spot.add_child(new_student)
+		new_spot.student =  new_student
 
 func clear_children():
 	var groupdesks = %ClassRoom.get_children()
@@ -69,6 +70,7 @@ func clear_children():
 			if child is Desk:
 				for old_student in child.get_children():
 					old_student.queue_free()
+				child.student = null
 
 
 func _ready() -> void:

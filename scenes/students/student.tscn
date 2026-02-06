@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3n5gg4kaoeld" path="res://scenes/students/student.gd" id="1_4orpo"]
 [ext_resource type="Texture2D" uid="uid://bwi8bwxynmh7u" path="res://assets/students/guy1.png" id="2_txaf7"]
-[ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/students/student_tooltip.tscn" id="3_fahmq"]
+[ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/students/tooltip.tscn" id="3_fahmq"]
 
 [node name="Student" type="Control" unique_id=386882928]
 layout_mode = 3

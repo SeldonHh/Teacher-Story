@@ -1,22 +1,37 @@
 extends Control
 
-var skill : SkillResource = preload("res://resource/Skills/Enseigner.tres")
+@export var resource : SkillResource = preload("res://resource/Skills/Enseigner.tres")
 
+@onready var main_button: TextureButton = $MainButton
 
 func _ready() -> void:
-	%MainButton.texture_normal = skill.sprite
+	Global.skill_list.append(self)
+	$MainButton.texture_normal = resource.sprite
+	$Tooltip.init(resource.name,resource.description,Color.BLACK,Color.BLANCHED_ALMOND,Color.BISQUE)
 
 
 func _on_main_button_pressed() -> void:
-	%MainButton.disabled = true
-	match skill.target:
+	for skill in Global.skill_list:
+		skill.main_button.disabled = true
+	var student_targets = []
+	match resource.target:
 		"Self": pass
 		"Single": pass
 		"Table":
-			print("skill activated")
-			var student_targets = await SkillTargetSelectHandler.select_groupdesk()
-			
+			student_targets = await SkillTargetSelectHandler.select_groupdesk()
+	match resource.name:
+		"Enseigner":
 			for student in student_targets:
-				student.damage(2)
+				if student is Student:
+					student.damage(2)
+	for skill in Global.skill_list:
+		skill.main_button.disabled = false
 
-	%MainButton.disabled = false
+
+func _on_mouse_entered() -> void:
+	print("OHHH")
+	$Tooltip.show()
+
+
+func _on_mouse_exited() -> void:
+	$Tooltip.hide()

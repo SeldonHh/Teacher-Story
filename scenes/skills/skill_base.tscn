@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://djfvxwg61l0a7" path="res://scenes/skills/skill_base.gd" id="1_l28oj"]
 [ext_resource type="Texture2D" uid="uid://dye8xtkx5o28h" path="res://assets/skills/EnseignerIcon.png" id="2_7cx4e"]
+[ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/students/tooltip.tscn" id="3_7cx4e"]
 
 [node name="SkillBase" type="Control" unique_id=1992360077]
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -16,11 +17,23 @@ grow_vertical = 2
 script = ExtResource("1_l28oj")
 
 [node name="MainButton" type="TextureButton" parent="." unique_id=689389863]
-unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 1.25
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_7cx4e")
+stretch_mode = 5
 
+[node name="Tooltip" parent="." unique_id=1432997240 instance=ExtResource("3_7cx4e")]
+layout_mode = 1
+anchor_left = 1.2
+anchor_top = -0.2
+anchor_right = 2.9
+anchor_bottom = 1.2
+
+[connection signal="mouse_entered" from="MainButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainButton" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]

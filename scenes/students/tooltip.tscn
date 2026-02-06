@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://comgbjh65362c"]
 
-[ext_resource type="Script" uid="uid://l8via0tfryjq" path="res://scenes/students/student_tooltip.gd" id="1_fuvat"]
+[ext_resource type="Script" uid="uid://l8via0tfryjq" path="res://scenes/students/tooltip.gd" id="1_rf1mp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuvat"]
 bg_color = Color(1, 1, 1, 1)
@@ -11,7 +11,7 @@ corner_radius_bottom_left = 250
 corner_detail = 20
 shadow_size = 10
 
-[node name="Student_Tooltip" type="Control" unique_id=1432997240]
+[node name="Tooltip" type="Control" unique_id=1432997240]
 z_index = 2
 layout_mode = 3
 anchor_left = 0.9
@@ -19,7 +19,7 @@ anchor_right = 1.7
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fuvat")
+script = ExtResource("1_rf1mp")
 
 [node name="Panel" type="Panel" parent="." unique_id=916249115]
 layout_mode = 1
