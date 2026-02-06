@@ -12,10 +12,11 @@ func _on_main_button_pressed() -> void:
 	match skill.target:
 		"Self": pass
 		"Single": pass
-		"Table": 
-			@warning_ignore("redundant_await")
-			var student_targets = await SkillTargetSelectHandler.select_table()
+		"Table":
+			print("skill activated")
+			var student_targets = await SkillTargetSelectHandler.select_groupdesk()
 			
 			for student in student_targets:
 				student.damage(2)
+
 	%MainButton.disabled = false

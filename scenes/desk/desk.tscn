@@ -1,31 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://hjb8qvrsxsr8"]
+[gd_scene format=3 uid="uid://hjb8qvrsxsr8"]
 
 [ext_resource type="Script" uid="uid://cmkqfythqdmb1" path="res://scenes/desk/desk.gd" id="1_b7gie"]
 [ext_resource type="Texture2D" uid="uid://j88etdoybpch" path="res://assets/other/desk_texture.png" id="2_mkj3i"]
 
-[node name="Desk" type="Control"]
+[node name="Desk" type="TextureButton" unique_id=335661609]
+z_index = -1
 custom_minimum_size = Vector2(128, 128)
-layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -16.0
-offset_top = -16.0
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_b7gie")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_mkj3i")
+mouse_filter = 1
+texture_normal = ExtResource("2_mkj3i")
 stretch_mode = 5
+script = ExtResource("1_b7gie")

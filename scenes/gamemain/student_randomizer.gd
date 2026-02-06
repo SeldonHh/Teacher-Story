@@ -8,11 +8,15 @@ var girl_names = ["Kate","Marie","Alicia","Susie","Rachel"]
 func set_student_to_x_random_student(x) -> void:
 	clear_children()
 	var possible_spot = []
-	for child in %ClassRoom.get_children():
-		if child is Desk:
-			possible_spot.append(child)
+	var max_desk = 0
+	var groupdesks = %ClassRoom.get_children()
+	for groupdesk in groupdesks:
+		for child in groupdesk.get_children():
+			if child is Desk:
+				possible_spot.append(child)
+				max_desk += 1
 	for i in range(x):
-		if i >= len(%ClassRoom.get_children()):
+		if i >= max_desk:
 			return
 		var new_student = student_scene.instantiate()
 		var CaractereType = new_student.CaractereType.duplicate()
@@ -59,10 +63,12 @@ func set_student_to_x_random_student(x) -> void:
 		new_spot.add_child(new_student)
 
 func clear_children():
-	for child in %ClassRoom.get_children():
-		for old_student in child.get_children():
-			if old_student is Student:
-				old_student.queue_free()
+	var groupdesks = %ClassRoom.get_children()
+	for groupdesk in groupdesks:
+		for child in groupdesk.get_children():
+			if child is Desk:
+				for old_student in child.get_children():
+					old_student.queue_free()
 
 
 func _ready() -> void:

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c5arag4jnaelj" path="res://assets/students/stupidité.png" id="1_btk28"]
 
 [node name="life_sprite" type="TextureRect" unique_id=2042559942]
+z_index = 1
 custom_minimum_size = Vector2(16, 16)
 anchors_preset = 8
 anchor_left = 0.5

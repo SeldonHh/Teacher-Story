@@ -12,7 +12,7 @@ corner_detail = 20
 shadow_size = 10
 
 [node name="Student_Tooltip" type="Control" unique_id=1432997240]
-z_index = 1
+z_index = 2
 layout_mode = 3
 anchor_left = 0.9
 anchor_right = 1.7

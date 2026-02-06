@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dil4fb1onwfqg"]
 
-[ext_resource type="PackedScene" uid="uid://hjb8qvrsxsr8" path="res://scenes/desk/desk.tscn" id="1_27kh8"]
 [ext_resource type="Script" uid="uid://527eevp76k6b" path="res://scenes/gamemain/student_randomizer.gd" id="1_b4cvc"]
+[ext_resource type="PackedScene" uid="uid://6nm68j81g586" path="res://scenes/desk/group_desks.tscn" id="3_bvwi8"]
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="3_l3ydj"]
 
 [node name="GameMain" type="Node" unique_id=993646125]
@@ -18,118 +18,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Desk" parent="ClassRoom" unique_id=2059827739 instance=ExtResource("1_27kh8")]
+[node name="GroupDesks" parent="ClassRoom" unique_id=445608929 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
-offset_left = -74.0
-offset_top = -261.0
-offset_right = 54.0
-offset_bottom = -133.0
-group = 1
+offset_left = -116.0
+offset_top = 89.0
+offset_right = 104.0
+offset_bottom = 289.0
 
-[node name="Desk2" parent="ClassRoom" unique_id=370355892 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = 19.0
-offset_top = -215.0
-offset_right = 147.0
-offset_bottom = -87.0
-group = 1
-column = 1
-
-[node name="Desk3" parent="ClassRoom" unique_id=1601613327 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = 169.0
-offset_top = -109.0
-offset_right = 297.0
-offset_bottom = 19.0
-group = 2
-column = 2
-
-[node name="Desk4" parent="ClassRoom" unique_id=961680321 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = 264.0
-offset_top = -63.0
-offset_right = 392.0
-offset_bottom = 65.0
-group = 2
-column = 4
-
-[node name="Desk5" parent="ClassRoom" unique_id=662414079 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = -243.0
-offset_top = -149.0
-offset_right = -115.0
-offset_bottom = -21.0
-group = 3
-row = 1
-
-[node name="Desk6" parent="ClassRoom" unique_id=1010355695 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = -150.0
-offset_top = -104.0
-offset_right = -22.0
-offset_bottom = 24.0
-group = 3
-row = 1
-column = 1
-
-[node name="Desk7" parent="ClassRoom" unique_id=260715519 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = 30.0
-offset_top = 6.0
-offset_right = 158.0
-offset_bottom = 134.0
-group = 4
-row = 1
-column = 3
-
-[node name="Desk8" parent="ClassRoom" unique_id=672059818 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = 123.0
-offset_top = 51.0
-offset_right = 251.0
-offset_bottom = 179.0
-group = 4
-row = 1
-column = 4
-
-[node name="Desk9" parent="ClassRoom" unique_id=1333457737 instance=ExtResource("1_27kh8")]
+[node name="GroupDesks2" parent="ClassRoom" unique_id=1521194866 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
 offset_left = -395.0
-offset_top = -43.0
-offset_right = -267.0
-offset_bottom = 85.0
-group = 5
-row = 2
-
-[node name="Desk10" parent="ClassRoom" unique_id=766614130 instance=ExtResource("1_27kh8")]
-layout_mode = 1
-offset_left = -303.0
-offset_top = 4.0
+offset_top = -65.0
 offset_right = -175.0
-offset_bottom = 132.0
-group = 5
-row = 2
-column = 1
+offset_bottom = 135.0
 
-[node name="Desk11" parent="ClassRoom" unique_id=905552252 instance=ExtResource("1_27kh8")]
+[node name="GroupDesks3" parent="ClassRoom" unique_id=1041504637 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
-offset_left = -128.0
-offset_top = 86.0
-offset_right = 0.0
-offset_bottom = 214.0
-group = 6
-row = 2
-column = 2
+offset_left = -251.0
+offset_top = -164.0
+offset_right = -31.0
+offset_bottom = 36.0
 
-[node name="Desk12" parent="ClassRoom" unique_id=1605624134 instance=ExtResource("1_27kh8")]
+[node name="GroupDesks4" parent="ClassRoom" unique_id=102551852 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
-offset_left = -34.0
-offset_top = 131.0
-offset_right = 94.0
-offset_bottom = 259.0
-group = 6
-row = 2
-column = 3
+offset_left = 29.0
+offset_top = -9.0
+offset_right = 249.0
+offset_bottom = 191.0
+
+[node name="GroupDesks5" parent="ClassRoom" unique_id=1503463705 instance=ExtResource("3_bvwi8")]
+layout_mode = 1
+offset_left = 165.0
+offset_top = -87.0
+offset_right = 385.0
+offset_bottom = 113.0
+
+[node name="GroupDesks6" parent="ClassRoom" unique_id=1534971643 instance=ExtResource("3_bvwi8")]
+layout_mode = 1
+offset_left = -87.0
+offset_top = -229.0
+offset_right = 133.0
+offset_bottom = -29.0
 
 [node name="SkillBase" parent="." unique_id=1992360077 instance=ExtResource("3_l3ydj")]
 anchors_preset = 2

@@ -1,5 +1,7 @@
-extends Control
+extends TextureButton
 class_name Desk
+
+
 
 @export var student : Student
 @export var group : int = 0 ## to target multiple desk at once
