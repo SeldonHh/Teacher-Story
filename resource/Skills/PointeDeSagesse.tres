@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://2bowsbefe021"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_4kjpo"]
+[ext_resource type="Texture2D" uid="uid://c6wnmaiv78ljb" path="res://assets/skills/PointeDeSagesseIcon.png" id="2_4kjpo"]
+
+[resource]
+script = ExtResource("1_4kjpo")
+name = "Pointe de Sagesse"
+sprite = ExtResource("2_4kjpo")
+description = "L'élève ciblé perd 2 pv. Le skill passe au travers l'ennui."
+ennui_breaker = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

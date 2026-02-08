@@ -5,6 +5,8 @@ var students := []
 
 signal groupdesk_pressed(desk)
 
+signal student_pressed(student)
+
 ##Make the player select a table, then Returns an array of students at the selected groupdesk
 func select_groupdesk()-> Array:
 	for student in students:
@@ -38,3 +40,17 @@ func select_groupdesk()-> Array:
 		student.mouse_filter = Control.MOUSE_FILTER_STOP
 		
 	return selected_students
+
+func select_student() -> Array :
+	for student in students:
+		if student.untouchable == false:
+			student.pressed.connect(student_pressed.emit.bind(student))
+			student.modulate = Color(1.0, 1.0, 0.0, 1.0)
+
+	var selected_student = await student_pressed
+	for student in students:
+		if student.untouchable == false:
+			student.pressed.disconnect(student_pressed.emit)
+			student.modulate = Color.WHITE
+	var array_selected_student = [selected_student]
+	return array_selected_student

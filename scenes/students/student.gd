@@ -1,4 +1,4 @@
-extends Control
+extends Button
 class_name Student
 
 enum CaractereType {Reveur,Jovial,Malin,Timide,Clown,Bruyant,Manipulateur,Hyperactif}
@@ -26,15 +26,17 @@ func make_ui() -> void:
 	for child in $HpContainer.get_children():
 		child.queue_free()
 	
-	for i in stupidite:
-		var new_child = LIFE_SPRITE_SCENE.instantiate()
-		new_child.texture = SPRITE_STUPIDITE 
-		$HpContainer.add_child(new_child)
-	
-	for i in ennui:
-		var new_child = LIFE_SPRITE_SCENE.instantiate()
-		new_child.texture = SPRITE_ENNUI 
-		$HpContainer.add_child(new_child)
+	if not untouchable:
+		for i in stupidite:
+			var new_child = LIFE_SPRITE_SCENE.instantiate()
+			new_child.texture = SPRITE_STUPIDITE 
+			$HpContainer.add_child(new_child)
+		
+		for i in ennui:
+			var new_child = LIFE_SPRITE_SCENE.instantiate()
+			new_child.texture = SPRITE_ENNUI 
+			new_child.ennui = true
+			$HpContainer.add_child(new_child)
 
 func _ready() -> void:
 	make_ui()
@@ -42,28 +44,28 @@ func _ready() -> void:
 	$Student_Tooltip.init(student_name,"Caractère: %s"%CaractereType.keys()[caractere],Color("#211f26"),Color("3098edff"),Color("959595ff"))
 	$TextureRect.texture = sprite
 
-func damage(amount: int):
+func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false):
 	if !untouchable:
-		if ennui > 0:
+		if ennui > 0 and !ennui_breaker:
 			var reste = amount - ennui
 			ennui -= amount
-			if reste > 0:
+			if reste > 0 and !ennui_only:
 				stupidite -= reste
 		else:
 			stupidite -= amount
 		if stupidite <= 0:
 			die()
 			
-		var children = $HpContainer.get_children()
-		for i in amount:
-			var reverse_i = len(children)-i-1
-			children[reverse_i].queue_free()
+		make_ui()
 
 
 func die():
 	untouchable = true
 	note += 1 * current_rank + bonus_note_on_death
 	modulate = Color("5f5f5f")
+	for child in $HpContainer.get_children():
+		if child is TextureRect:
+			child.queue_free()
 
 func reset():
 	stupidite = stupidite_de_base
@@ -82,9 +84,9 @@ func _process(_delta: float) -> void:
 
 func _on_mouse_entered() -> void:
 	for child in $HpContainer.get_children():
-		if child.texture == SPRITE_STUPIDITE:
+		if child.ennui == false:
 			child.texture = SPRITE_HOVER_STUPIDITE
-		elif child.texture == SPRITE_ENNUI:
+		elif child.ennui == true:
 			child.texture = SPRITE_HOVER_ENNUI
 		else:
 			print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
@@ -93,9 +95,9 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	for child in $HpContainer.get_children():
-		if child.texture == SPRITE_HOVER_STUPIDITE:
+		if child.ennui == false:
 			child.texture = SPRITE_STUPIDITE
-		elif child.texture == SPRITE_HOVER_ENNUI:
+		elif child.ennui == true:
 			child.texture = SPRITE_ENNUI
 		else:
 			print("The texture of the hp of a student was FUCKING WRONG SOMEHOW")

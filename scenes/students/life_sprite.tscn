@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dtlcn2mtrw7ax"]
 
 [ext_resource type="Texture2D" uid="uid://c5arag4jnaelj" path="res://assets/students/stupidité.png" id="1_btk28"]
+[ext_resource type="Script" uid="uid://bdyae2br42j78" path="res://scenes/students/life_sprite.gd" id="2_6ojg6"]
 
 [node name="life_sprite" type="TextureRect" unique_id=2042559942]
 z_index = 1
@@ -20,3 +21,4 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 texture = ExtResource("1_btk28")
 stretch_mode = 5
+script = ExtResource("2_6ojg6")

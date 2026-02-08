@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://527eevp76k6b" path="res://scenes/gamemain/student_randomizer.gd" id="1_b4cvc"]
 [ext_resource type="PackedScene" uid="uid://6nm68j81g586" path="res://scenes/desk/group_desks.tscn" id="3_bvwi8"]
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="3_l3ydj"]
+[ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/PointeDeSagesse.tres" id="4_bvwi8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3ydj"]
 bg_color = Color(0, 0, 0, 1)
@@ -98,6 +99,7 @@ grow_vertical = 2
 [node name="SkillBase" parent="Panel/HBoxContainer" unique_id=1992360077 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
+resource = ExtResource("4_bvwi8")
 
 [node name="SkillBase2" parent="Panel/HBoxContainer" unique_id=1429961247 instance=ExtResource("3_l3ydj")]
 layout_mode = 2

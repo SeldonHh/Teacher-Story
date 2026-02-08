@@ -16,7 +16,7 @@ func _on_main_button_pressed() -> void:
 	var student_targets = []
 	match resource.target:
 		"Self": pass
-		"Single": pass
+		"Single": student_targets = await SkillTargetSelectHandler.select_student()
 		"Table":
 			student_targets = await SkillTargetSelectHandler.select_groupdesk()
 	match resource.name:
@@ -24,12 +24,15 @@ func _on_main_button_pressed() -> void:
 			for student in student_targets:
 				if student is Student:
 					student.damage(2)
+		"Pointe de Sagesse":
+			for student in student_targets:
+				if student is Student:
+					student.damage(2,resource.ennui_breaker)
 	for skill in Global.skill_list:
 		skill.main_button.disabled = false
 
 
 func _on_mouse_entered() -> void:
-	print("OHHH")
 	$Tooltip.show()
 
 
