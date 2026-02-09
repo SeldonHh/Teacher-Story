@@ -7,7 +7,7 @@
 script = ExtResource("1_4degt")
 name = "Concentration"
 sprite = ExtResource("2_4degt")
-description = "Retire 5 ennui à chaque élève d'une table. Si un seul des élèves ciblés est affecté par la perte d'ennui ,il devient Attentif"
+description = "Retire 5 ennui aux élèves d'une table. Si un seul des élèves est affecté par la perte d'ennui ,il devient Attentif"
 damage_modifier = 5
 target = "Table"
 ennui_only = true

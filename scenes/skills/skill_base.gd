@@ -16,6 +16,7 @@ func _on_main_button_pressed() -> void:
 	var student_targets = []
 	match resource.target:
 		"Self": pass
+		"Column" : student_targets = await SkillTargetSelectHandler.select_column()
 		"Single": student_targets = await SkillTargetSelectHandler.select_student()
 		"Table":
 			student_targets = await SkillTargetSelectHandler.select_groupdesk()

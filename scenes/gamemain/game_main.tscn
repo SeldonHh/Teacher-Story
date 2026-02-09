@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="5_kmx0x"]
 [ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/Interroger.tres" id="6_wortu"]
 [ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/RappelAl'Ordre.tres" id="7_bcit8"]
+[ext_resource type="Resource" uid="uid://3mw2n4es48sm" path="res://resource/Skills/HurlerLeCours.tres" id="8_46t7q"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3ydj"]
 bg_color = Color(0, 0, 0, 1)
@@ -42,6 +43,13 @@ offset_top = -229.0
 offset_right = 133.0
 offset_bottom = -29.0
 
+[node name="Desk" parent="ClassRoom/GroupDesks6" index="0" unique_id=335661609]
+row = 2
+
+[node name="Desk2" parent="ClassRoom/GroupDesks6" index="1" unique_id=1456143697]
+row = 2
+column = 1
+
 [node name="GroupDesks5" parent="ClassRoom" unique_id=1503463705 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
 offset_left = 165.0
@@ -49,12 +57,15 @@ offset_top = -87.0
 offset_right = 385.0
 offset_bottom = 113.0
 
-[node name="GroupDesks4" parent="ClassRoom" unique_id=102551852 instance=ExtResource("3_bvwi8")]
-layout_mode = 1
-offset_left = 29.0
-offset_top = -9.0
-offset_right = 249.0
-offset_bottom = 191.0
+[node name="Desk" parent="ClassRoom/GroupDesks5" index="0" unique_id=335661609]
+group = 1
+row = 2
+column = 2
+
+[node name="Desk2" parent="ClassRoom/GroupDesks5" index="1" unique_id=1456143697]
+group = 1
+row = 2
+column = 3
 
 [node name="GroupDesks3" parent="ClassRoom" unique_id=1041504637 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
@@ -63,6 +74,32 @@ offset_top = -164.0
 offset_right = -31.0
 offset_bottom = 36.0
 
+[node name="Desk" parent="ClassRoom/GroupDesks3" index="0" unique_id=335661609]
+group = 3
+row = 1
+
+[node name="Desk2" parent="ClassRoom/GroupDesks3" index="1" unique_id=1456143697]
+group = 3
+row = 1
+column = 1
+
+[node name="GroupDesks4" parent="ClassRoom" unique_id=102551852 instance=ExtResource("3_bvwi8")]
+layout_mode = 1
+offset_left = 29.0
+offset_top = -9.0
+offset_right = 249.0
+offset_bottom = 191.0
+
+[node name="Desk" parent="ClassRoom/GroupDesks4" index="0" unique_id=335661609]
+group = 4
+row = 1
+column = 2
+
+[node name="Desk2" parent="ClassRoom/GroupDesks4" index="1" unique_id=1456143697]
+group = 4
+row = 1
+column = 3
+
 [node name="GroupDesks2" parent="ClassRoom" unique_id=1521194866 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
 offset_left = -395.0
@@ -70,12 +107,27 @@ offset_top = -65.0
 offset_right = -175.0
 offset_bottom = 135.0
 
+[node name="Desk" parent="ClassRoom/GroupDesks2" index="0" unique_id=335661609]
+group = 5
+
+[node name="Desk2" parent="ClassRoom/GroupDesks2" index="1" unique_id=1456143697]
+group = 5
+column = 1
+
 [node name="GroupDesks" parent="ClassRoom" unique_id=445608929 instance=ExtResource("3_bvwi8")]
 layout_mode = 1
 offset_left = -116.0
 offset_top = 89.0
 offset_right = 104.0
 offset_bottom = 289.0
+
+[node name="Desk" parent="ClassRoom/GroupDesks" index="0" unique_id=335661609]
+group = 6
+column = 2
+
+[node name="Desk2" parent="ClassRoom/GroupDesks" index="1" unique_id=1456143697]
+group = 6
+column = 3
 
 [node name="Panel" type="Panel" parent="." unique_id=1878056105]
 anchors_preset = -1
@@ -122,3 +174,16 @@ resource = ExtResource("6_wortu")
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("7_bcit8")
+
+[node name="SkillBase6" parent="Panel/HBoxContainer" unique_id=289783335 instance=ExtResource("3_l3ydj")]
+layout_mode = 2
+size_flags_horizontal = 3
+resource = ExtResource("8_46t7q")
+
+[editable path="ClassRoom/GroupDesks6"]
+[editable path="ClassRoom/GroupDesks5"]
+[editable path="ClassRoom/GroupDesks3"]
+[editable path="ClassRoom/GroupDesks4"]
+[editable path="ClassRoom/GroupDesks2"]
+[editable path="ClassRoom/GroupDesks2/Desk"]
+[editable path="ClassRoom/GroupDesks"]

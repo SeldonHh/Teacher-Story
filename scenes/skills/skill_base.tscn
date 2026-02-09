@@ -30,9 +30,9 @@ stretch_mode = 5
 [node name="Tooltip" parent="." unique_id=1432997240 instance=ExtResource("3_7cx4e")]
 layout_mode = 1
 anchor_left = 1.2
-anchor_top = -0.2
-anchor_right = 2.9
-anchor_bottom = 1.2
+anchor_top = -0.4
+anchor_right = 4.0
+anchor_bottom = 1.4
 
 [connection signal="mouse_entered" from="MainButton" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainButton" to="." method="_on_mouse_exited"]

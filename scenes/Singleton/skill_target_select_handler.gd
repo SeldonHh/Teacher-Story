@@ -54,3 +54,31 @@ func select_student() -> Array :
 			student.modulate = Color.WHITE
 	var array_selected_student = [selected_student]
 	return array_selected_student
+
+
+func select_column() -> Array:
+	for student in students:
+		if student.untouchable == false:
+			student.pressed.connect(student_pressed.emit.bind(student))
+			student.modulate = Color(1.0, 1.0, 0.0, 1.0)
+
+	var selected_student = await student_pressed
+	for student in students:
+		if student.untouchable == false:
+			student.pressed.disconnect(student_pressed.emit)
+			student.modulate = Color.WHITE
+	
+	var selected_desk : Desk
+	var selected_students = []
+	for groupdesk in groupdesks:
+		for desk in groupdesk.get_children():
+			if desk is Desk:
+				if desk.student == selected_student:
+					selected_desk = desk
+	var column = selected_desk.column
+	for groupdesk in groupdesks:
+		for desk in groupdesk.get_children():
+			if desk is Desk:
+				if desk.column == column:
+					selected_students.append(desk.student)
+	return selected_students

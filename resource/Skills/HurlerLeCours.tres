@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://3mw2n4es48sm"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_nrfsv"]
+[ext_resource type="Texture2D" uid="uid://cu3hirujuishd" path="res://assets/skills/HurlerLeCoursIcon.png" id="2_nrfsv"]
+
+[resource]
+script = ExtResource("1_nrfsv")
+name = "Hurler le cours"
+sprite = ExtResource("2_nrfsv")
+description = "Les élèves dans la colonne sélectionnée perdent 2 pv."
+target = "Column"
+metadata/_custom_type_script = "uid://cibimso3crkbb"
