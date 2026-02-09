@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://6nm68j81g586" path="res://scenes/desk/group_desks.tscn" id="3_bvwi8"]
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="3_l3ydj"]
 [ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/PointeDeSagesse.tres" id="4_bvwi8"]
+[ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="5_kmx0x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3ydj"]
 bg_color = Color(0, 0, 0, 1)
@@ -108,6 +109,7 @@ size_flags_horizontal = 3
 [node name="SkillBase3" parent="Panel/HBoxContainer" unique_id=710136843 instance=ExtResource("3_l3ydj")]
 layout_mode = 2
 size_flags_horizontal = 3
+resource = ExtResource("5_kmx0x")
 
 [node name="SkillBase4" parent="Panel/HBoxContainer" unique_id=1316799459 instance=ExtResource("3_l3ydj")]
 layout_mode = 2

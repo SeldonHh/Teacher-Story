@@ -51,7 +51,7 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 			ennui -= amount
 			if reste > 0 and !ennui_only:
 				stupidite -= reste
-		else:
+		elif !ennui_only:
 			stupidite -= amount
 		if stupidite <= 0:
 			die()

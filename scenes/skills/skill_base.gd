@@ -19,15 +19,12 @@ func _on_main_button_pressed() -> void:
 		"Single": student_targets = await SkillTargetSelectHandler.select_student()
 		"Table":
 			student_targets = await SkillTargetSelectHandler.select_groupdesk()
-	match resource.name:
-		"Enseigner":
-			for student in student_targets:
-				if student is Student:
-					student.damage(2)
-		"Pointe de Sagesse":
-			for student in student_targets:
-				if student is Student:
-					student.damage(2,resource.ennui_breaker)
+	for student in student_targets:
+		if student is Student:
+			student.damage(resource.damage_modifier,resource.ennui_breaker,resource.ennui_only)
+	
+	#TODO: Add effect on specfic cases
+	
 	for skill in Global.skill_list:
 		skill.main_button.disabled = false
 
