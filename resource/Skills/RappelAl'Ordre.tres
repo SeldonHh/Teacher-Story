@@ -7,7 +7,7 @@
 script = ExtResource("1_ywp54")
 name = "Rappel à l'ordre"
 sprite = ExtResource("2_ex5c4")
-description = "L'élève ciblé perd 2 pv. Le skill passe au travers l'ennui."
+description = "L'élève perd un état négatif (sauf état critique) et un ennui "
 damage_modifier = 1
 ennui_only = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

@@ -9,6 +9,7 @@ signal student_pressed(student)
 
 ##Make the player select a table, then Returns an array of students at the selected groupdesk
 func select_groupdesk()-> Array:
+	students = ManagerList.student_manager.students
 	for student in students:
 		student.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
@@ -42,11 +43,16 @@ func select_groupdesk()-> Array:
 	return selected_students
 
 func select_student() -> Array :
+	students = ManagerList.student_manager.students
+	var selectable = len(students)
 	for student in students:
 		if student.untouchable == false:
 			student.pressed.connect(student_pressed.emit.bind(student))
 			student.modulate = Color(1.0, 1.0, 0.0, 1.0)
-
+		else:
+			selectable -= 1
+	if selectable <= 0:
+		return []
 	var selected_student = await student_pressed
 	for student in students:
 		if student.untouchable == false:
@@ -57,11 +63,16 @@ func select_student() -> Array :
 
 
 func select_column() -> Array:
+	students = ManagerList.student_manager.students
+	var selectable = len(students)
 	for student in students:
 		if student.untouchable == false:
 			student.pressed.connect(student_pressed.emit.bind(student))
 			student.modulate = Color(1.0, 1.0, 0.0, 1.0)
-
+		else:
+			selectable -= 1
+	if selectable <= 0:
+		return []
 	var selected_student = await student_pressed
 	for student in students:
 		if student.untouchable == false:

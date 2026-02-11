@@ -9,6 +9,7 @@ class_name Desk
 @export var column : int = 0 ## 0 for leftmost column
 
 func _ready() -> void:
+	ManagerList.desk_manager.desks.append(self)
 	if student != null:
 		student.current_rank = row
 

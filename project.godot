@@ -24,6 +24,7 @@ config/icon="uid://bh146mefn4s2r"
 
 Global="*res://scenes/Singleton/global.gd"
 SkillTargetSelectHandler="*uid://dvg73eaj0mexf"
+ManagerList="*uid://cyo7ygscfoevd"
 
 [display]
 

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cn375f22cgess"]
+
+[ext_resource type="Script" uid="uid://cyo7ygscfoevd" path="res://scenes/Singleton/manager_list.gd" id="1_ifjfm"]
+
+[node name="ManagerList" type="Node" unique_id=1577729480]
+script = ExtResource("1_ifjfm")

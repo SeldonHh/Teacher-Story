@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dil4fb1onwfqg"]
 
-[ext_resource type="Script" uid="uid://527eevp76k6b" path="res://scenes/gamemain/student_randomizer.gd" id="1_b4cvc"]
+[ext_resource type="Script" uid="uid://527eevp76k6b" path="res://scenes/gamemain/student_manager.gd" id="1_b4cvc"]
+[ext_resource type="Script" uid="uid://8tejnxwtsvrs" path="res://scenes/gamemain/timer_manager.gd" id="2_km7ex"]
 [ext_resource type="PackedScene" uid="uid://6nm68j81g586" path="res://scenes/desk/group_desks.tscn" id="3_bvwi8"]
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="3_l3ydj"]
+[ext_resource type="Script" uid="uid://b2hk0iwa6w8sw" path="res://scenes/gamemain/desk_manager.gd" id="3_t6wvf"]
 [ext_resource type="Resource" uid="uid://du8fw0pvf2ns2" path="res://resource/Skills/PointeDeSagesse.tres" id="4_bvwi8"]
 [ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="5_kmx0x"]
 [ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/Interroger.tres" id="6_wortu"]
@@ -24,8 +26,17 @@ corner_radius_bottom_left = 16
 
 [node name="GameMain" type="Node" unique_id=993646125]
 
-[node name="StudentRandomizer" type="Node" parent="." unique_id=896814977]
+[node name="TimerManager" type="Node" parent="." unique_id=1935789655]
+unique_name_in_owner = true
+script = ExtResource("2_km7ex")
+
+[node name="StudentManager" type="Node" parent="." unique_id=896814977]
+unique_name_in_owner = true
 script = ExtResource("1_b4cvc")
+
+[node name="DeskManager" type="Node" parent="." unique_id=97142044]
+unique_name_in_owner = true
+script = ExtResource("3_t6wvf")
 
 [node name="ClassRoom" type="Control" parent="." unique_id=300094550]
 unique_name_in_owner = true
@@ -179,6 +190,19 @@ resource = ExtResource("7_bcit8")
 layout_mode = 2
 size_flags_horizontal = 3
 resource = ExtResource("8_46t7q")
+
+[node name="RemainingTimeLabel" type="Label" parent="." unique_id=1916491119]
+anchors_preset = -1
+anchor_left = 0.91
+anchor_top = 0.85
+anchor_right = 0.91
+anchor_bottom = 0.85
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [editable path="ClassRoom/GroupDesks6"]
 [editable path="ClassRoom/GroupDesks5"]

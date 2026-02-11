@@ -40,7 +40,6 @@ func make_ui() -> void:
 
 func _ready() -> void:
 	make_ui()
-	SkillTargetSelectHandler.students.append(self)
 	$Student_Tooltip.init(student_name,"Caractère: %s"%CaractereType.keys()[caractere],Color("#211f26"),Color("3098edff"),Color("959595ff"))
 	$TextureRect.texture = sprite
 
