@@ -8,15 +8,15 @@ var gender = ["boy","girl"]
 var boy_names = [
 	"Kévin", "Maxime", "Mathéo", "Hugo", "Victor", "Julien",
 	"Théo", "Sébastien", "Thomas", "Nicolas", "Hervé", "Alexis",
-	"Rémi", "David", "Titeuf", "Stephen", "Benjamin", "Frédéric",
+	"Rémi", "David", "Stephen", "Benjamin", "Frédéric",
 	"Jérôme", "Johnnatan", "Antoine", "Anthony", "Jean-Marc",
-	"Chen", "Cédric", "Dylan", "Morgan", "Abdel-Hakim", "Abdallah",
-	"Abel", "Adelin", "Christophe", "Yoann", "Steve"]
+	"Chen", "Cédric", "Dylan", "Abdel-Hakim", "Abdallah",
+	"Abel", "Christophe", "Yoann", "Steve"]
 var girl_names = [
 	"Lola", "Léa", "Margaret", "Ebène", "Julie", "Marie", "Claire",
 	"Mélanie", "Céline", "Annabelle", "Fanny", "Morganne",
 	"Adeline", "Rachida", "Roxanne", "Richarde", "Audrey",
-	"Nadège", "Najette", "Caroline", "Colette"]
+	"Nadège", "Caroline", "Colette"]
 
 
 func generate_x_random_student(x) -> void:
