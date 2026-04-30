@@ -7,9 +7,6 @@
 [ext_resource type="Script" uid="uid://bawcq6jcir684" path="res://scenes/gamemain/main_game_screen.gd" id="5_5l4wo"]
 [ext_resource type="Script" uid="uid://bgsdl5e7anhpm" path="res://scenes/gamemain/sub_viewport_container.gd" id="6_mnqld"]
 [ext_resource type="PackedScene" uid="uid://cqijj5mokpqyk" path="res://scenes/game_space/game_space.tscn" id="6_nvwvu"]
-[ext_resource type="PackedScene" uid="uid://c4j32prrogray" path="res://scenes/students/student.tscn" id="8_yprj1"]
-[ext_resource type="Script" uid="uid://bjkhlt38irmfr" path="res://resource/scripts/StudentBase.gd" id="9_quxqi"]
-[ext_resource type="Texture2D" uid="uid://bwi8bwxynmh7u" path="res://assets/students/guy1.png" id="10_wry3n"]
 [ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/outside_stuff/right_border.png" id="13_1scvx"]
 [ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/outside_stuff/bottom_border.png" id="13_ebuvp"]
 [ext_resource type="Texture2D" uid="uid://df7t1i674uynl" path="res://assets/ui/outside_stuff/paper_texture.png" id="13_q0l7d"]
@@ -36,10 +33,6 @@ expand_margin_right = 8.0
 expand_margin_bottom = 8.0
 shadow_color = Color(0.84705883, 0.77254903, 0.6431373, 1)
 shadow_size = 3
-
-[sub_resource type="Resource" id="Resource_1042o"]
-script = ExtResource("9_quxqi")
-metadata/_custom_type_script = "uid://bjkhlt38irmfr"
 
 [node name="main" type="Node" unique_id=993646125]
 
@@ -104,21 +97,7 @@ size = Vector2i(599, 384)
 render_target_update_mode = 4
 
 [node name="GameSpace" parent="MainGameScreen/ClassRoom/SubViewportContainer/SubViewport" unique_id=562061812 instance=ExtResource("6_nvwvu")]
-
-[node name="ColorRect" type="ColorRect" parent="MainGameScreen/ClassRoom/SubViewportContainer/SubViewport" unique_id=474154499]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-color = Color(0.57, 0.57, 0.57, 1)
-metadata/_edit_lock_ = true
-
-[node name="Student" parent="MainGameScreen/ClassRoom/SubViewportContainer/SubViewport" unique_id=2089833837 instance=ExtResource("8_yprj1")]
-z_index = 1
-position = Vector2(83.32001, 117.804794)
-resource = SubResource("Resource_1042o")
+unique_name_in_owner = true
 
 [node name="InfoPanel" type="Control" parent="MainGameScreen" unique_id=1504059880]
 z_index = 1
@@ -329,5 +308,3 @@ texture = ExtResource("13_ebuvp")
 expand_mode = 2
 
 [connection signal="mouse_entered" from="MainGameScreen/ClassRoom" to="MainGameScreen" method="_on_class_room_mouse_entered"]
-[connection signal="mouse_entered" from="MainGameScreen/ClassRoom/SubViewportContainer/SubViewport/ColorRect" to="MainGameScreen" method="_on_color_rect_mouse_entered"]
-[connection signal="mouse_shape_entered" from="MainGameScreen/ClassRoom/SubViewportContainer/SubViewport/Student" to="MainGameScreen" method="_on_student_mouse_shape_entered"]

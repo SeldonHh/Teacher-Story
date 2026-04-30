@@ -40,6 +40,11 @@ func mission_selected(resource,name_labels,note_labels,caractere_labels):
 	%MainGameScreen.show()
 	%MissionSelectionScreen.hide()
 	update_mainscreen_ui()
+	match resource.matiere:
+		"Histoire-Géo": %GameSpace.set_camera_offset(Global.HISTORY_CLASS_CAMERA_OFFSET)
+		"Maths": %GameSpace.set_camera_offset(Global.MATH_CLASS_CAMERA_OFFSET)
+		"Sciences": %GameSpace.set_camera_offset(Global.SCIENCE_CLASS_CAMERA_OFFSET)
+
 
 func reparent_labels(labels,new_parent):
 	for label in labels:
@@ -50,7 +55,7 @@ func make_new_random_mission():
 	var difficulty = POSSIBLE_DIFFICULTIES[rng.rand_weighted(DIFFICULTIES_WEIGHTS)]
 	var all_students = [0,1].pick_random()
 	new_resource.classname = ["Sixième","Cinquième","Quatrième","Troisième","Seconde","Première","Terminale"].pick_random()+" " +["A","B","C","D","E","F","G","H","I","J","K"].pick_random()
-	new_resource.matiere = ["Maths","Histoire-Géo","SVT","Physique","Français","Anglais","Musique"].pick_random()
+	new_resource.matiere = ["Maths","Histoire-Géo","Science"].pick_random()
 	match difficulty:
 		0: 
 			if all_students:

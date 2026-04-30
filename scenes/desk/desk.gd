@@ -7,6 +7,7 @@ class_name Desk
 @export var group : int = 0 ## to target multiple desk at once
 @export var row : int = 0 ##0 for back row, 1 for middle row, 2 for first row
 @export var column : int = 0 ## 0 for leftmost column
+@export var matiere : String = "Histoire-Géo" ##Histoire-Géo, Maths or Science
 
 func _ready() -> void:
 	ManagerList.desk_manager.desks.append(self)

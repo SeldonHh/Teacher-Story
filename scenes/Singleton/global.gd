@@ -2,6 +2,10 @@ extends Node
 
 @onready var IS_DEBUG = "debug" in OS.get_cmdline_args()
 
+const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
+const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
+const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-435,227)
+
 var DEBUG_SKIP_MISSION_SELECTION = false
 
 var skill_list :Array[Control]= []

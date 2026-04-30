@@ -121,9 +121,12 @@ func set_label_settings(label_to_change):
 	label_to_change.custom_minimum_size = Vector2(18,20)
 
 func assign_students_to_random_desk():
+	var mission = ManagerList.mission_manager.current_mission_resource
+	if mission == null:
+		print("ERROR: NO MISSION SELECTED WHILE PUTTING STUDENTS IN DESK")
 	var possible_spot := []
 	for desk in %DeskManager.desks:
-		if !desk.student:
+		if !desk.student and desk.matiere == mission.matiere:
 			possible_spot.append(desk)
 	for student_resource in students_resources:
 		var new_spot = possible_spot.pick_random()
