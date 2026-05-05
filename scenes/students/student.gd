@@ -15,6 +15,7 @@ const LIFE_SPRITE_SCENE = preload("uid://dtlcn2mtrw7ax")
 var untouchable: bool = false
 var current_rank: int = 2 ##valeur entre 0 et 2, 0 c'est le dernier rang, 2 celui de devant
 var bonus_note_on_death: int = 0
+@onready var mouse_detector: Area2D = %"Mouse detector"
 
 func make_ui() -> void:
 	$TextureRect.texture = resource.sprite

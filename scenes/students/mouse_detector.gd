@@ -3,6 +3,7 @@ extends Area2D
 var is_hovered := false
 signal custom_mouse_enter
 signal custome_mouse_exit
+signal custom_pressed
 
 func _process(_delta):
 	var space_state = get_world_2d().direct_space_state
@@ -27,3 +28,6 @@ func _process(_delta):
 	elif not hovered_now and is_hovered:
 		is_hovered = false
 		emit_signal("custome_mouse_exit")
+	
+	if is_hovered and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		emit_signal("custom_pressed")

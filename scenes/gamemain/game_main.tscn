@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://b2hk0iwa6w8sw" path="res://scenes/gamemain/desk_manager.gd" id="3_t6wvf"]
 [ext_resource type="Script" uid="uid://ykafhat80w64" path="res://scenes/gamemain/mission_manager.gd" id="4_nvwvu"]
 [ext_resource type="Script" uid="uid://bawcq6jcir684" path="res://scenes/gamemain/main_game_screen.gd" id="5_5l4wo"]
-[ext_resource type="Script" uid="uid://bgsdl5e7anhpm" path="res://scenes/gamemain/sub_viewport_container.gd" id="6_mnqld"]
 [ext_resource type="PackedScene" uid="uid://cqijj5mokpqyk" path="res://scenes/game_space/game_space.tscn" id="6_nvwvu"]
 [ext_resource type="PackedScene" uid="uid://b70jo7xp1ebb1" path="res://scenes/UI/bottompanel.tscn" id="8_q4ntq"]
 [ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/outside_stuff/right_border.png" id="13_1scvx"]
@@ -89,7 +88,6 @@ offset_right = -0.039916992
 offset_bottom = -0.13446045
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_mnqld")
 
 [node name="SubViewport" type="SubViewport" parent="MainGameScreen/ClassRoom/SubViewportContainer" unique_id=1071974969]
 handle_input_locally = false
@@ -101,9 +99,9 @@ render_target_update_mode = 4
 [node name="GameSpace" parent="MainGameScreen/ClassRoom/SubViewportContainer/SubViewport" unique_id=562061812 instance=ExtResource("6_nvwvu")]
 unique_name_in_owner = true
 
-[node name="bottompanel" parent="MainGameScreen/ClassRoom" unique_id=1742692976 instance=ExtResource("8_q4ntq")]
-z_index = 100
-layout_mode = 1
+[node name="bottompanel" parent="MainGameScreen/ClassRoom/SubViewportContainer" unique_id=1742692976 instance=ExtResource("8_q4ntq")]
+z_index = 13
+layout_mode = 2
 
 [node name="InfoPanel" type="Control" parent="MainGameScreen" unique_id=1504059880]
 z_index = 1
@@ -113,6 +111,7 @@ anchor_top = 0.05
 anchor_right = 0.25
 anchor_bottom = 0.95
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="MissionInfoContainer" parent="MainGameScreen/InfoPanel" unique_id=265468243 instance=ExtResource("14_yprj1")]
 unique_name_in_owner = true

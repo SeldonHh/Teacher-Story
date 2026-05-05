@@ -43,7 +43,7 @@ func mission_selected(resource,name_labels,note_labels,caractere_labels):
 	match resource.matiere:
 		"Histoire-Géo": %GameSpace.set_camera_offset(Global.HISTORY_CLASS_CAMERA_OFFSET)
 		"Maths": %GameSpace.set_camera_offset(Global.MATH_CLASS_CAMERA_OFFSET)
-		"Sciences": %GameSpace.set_camera_offset(Global.SCIENCE_CLASS_CAMERA_OFFSET)
+		"Science":%GameSpace.set_camera_offset(Global.SCIENCE_CLASS_CAMERA_OFFSET)
 
 
 func reparent_labels(labels,new_parent):

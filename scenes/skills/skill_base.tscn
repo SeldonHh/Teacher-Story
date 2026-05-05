@@ -4,18 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://dye8xtkx5o28h" path="res://assets/skills/EnseignerIcon.png" id="2_7cx4e"]
 [ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/students/tooltip.tscn" id="3_7cx4e"]
 
-[node name="SkillBase" type="Control" unique_id=1992360077]
+[node name="SkillBase" type="Control" unique_id=344824664]
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 28.0
-offset_bottom = 28.0
+anchor_left = 0.49300003
+anchor_top = 0.48800004
+anchor_right = 0.52400005
+anchor_bottom = 0.54300004
+offset_left = 0.063964844
+offset_top = -0.22402954
+offset_right = 0.3519287
+offset_bottom = 0.13598633
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
@@ -39,6 +38,7 @@ anchor_left = 1.2
 anchor_top = -2.0
 anchor_right = 7.0
 anchor_bottom = 3.0
+mouse_filter = 2
 
 [connection signal="mouse_entered" from="MainButton" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MainButton" to="." method="_on_mouse_exited"]

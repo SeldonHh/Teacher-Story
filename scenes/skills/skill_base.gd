@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func _on_main_button_pressed() -> void:
-	print("shalawa")
+
 	for skill in Global.skill_list:
 		skill.main_button.disabled = true
 	var student_targets = []
