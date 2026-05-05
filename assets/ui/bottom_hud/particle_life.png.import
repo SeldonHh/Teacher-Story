@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn8wf48ajeqic"
-path="res://.godot/imported/timerandhealthBorder.png-fdb648ca7f795df40be834c522dac1cc.ctex"
+uid="uid://c4utytgfupsbb"
+path="res://.godot/imported/particle_life.png-db4493fb54f01b67d861e3fc3a72e62d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/timerandhealthBorder.png"
-dest_files=["res://.godot/imported/timerandhealthBorder.png-fdb648ca7f795df40be834c522dac1cc.ctex"]
+source_file="res://assets/ui/bottom_hud/particle_life.png"
+dest_files=["res://.godot/imported/particle_life.png-db4493fb54f01b67d861e3fc3a72e62d.ctex"]
 
 [params]
 

@@ -3,8 +3,6 @@ extends Node
 var groupdesks := []
 var students := []
 
-signal groupdesk_pressed(desk)
-
 signal student_pressed(student)
 
 ##Make the player select a table, then Returns an array of students at the selected groupdesk

@@ -32,6 +32,7 @@ func _on_main_button_pressed() -> void:
 	for skill in Global.skill_list:
 		skill.main_button.disabled = false
 	ManagerList.timer_manager.update_time(-1)
+	ManagerList.teacher_manager.teacher_life -= randi_range(0,3)
 
 func _on_mouse_entered() -> void:
 	$Tooltip.show()

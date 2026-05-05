@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b2hk0iwa6w8sw" path="res://scenes/gamemain/desk_manager.gd" id="3_t6wvf"]
 [ext_resource type="Script" uid="uid://ykafhat80w64" path="res://scenes/gamemain/mission_manager.gd" id="4_nvwvu"]
 [ext_resource type="Script" uid="uid://bawcq6jcir684" path="res://scenes/gamemain/main_game_screen.gd" id="5_5l4wo"]
+[ext_resource type="Script" uid="uid://co05m2vnhv261" path="res://scenes/gamemain/teacher_manager.gd" id="5_q4ntq"]
 [ext_resource type="PackedScene" uid="uid://cqijj5mokpqyk" path="res://scenes/game_space/game_space.tscn" id="6_nvwvu"]
 [ext_resource type="PackedScene" uid="uid://b70jo7xp1ebb1" path="res://scenes/UI/bottompanel.tscn" id="8_q4ntq"]
 [ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/outside_stuff/right_border.png" id="13_1scvx"]
@@ -51,6 +52,10 @@ script = ExtResource("3_t6wvf")
 [node name="MissionManager" type="Node" parent="." unique_id=778562826]
 unique_name_in_owner = true
 script = ExtResource("4_nvwvu")
+
+[node name="TeacherManager" type="Node" parent="." unique_id=1149574052]
+unique_name_in_owner = true
+script = ExtResource("5_q4ntq")
 
 [node name="MainGameScreen" type="Control" parent="." unique_id=1800385284]
 unique_name_in_owner = true
