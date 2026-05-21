@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://bv4m11lil1tpo"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_fi3bn"]
+[ext_resource type="Texture2D" uid="uid://f4to1a7hm6a4" path="res://assets/skills/club.png" id="2_fi3bn"]
+
+[resource]
+script = ExtResource("1_fi3bn")
+name = "Gourdin"
+sprite = ExtResource("2_fi3bn")
+description = "L'élève ciblé reçoit l'état 'Mal au crâne'."
+damage_modifier = 0
+cooldown = 3
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

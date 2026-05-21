@@ -1,6 +1,7 @@
 extends Node
 
 @onready var IS_DEBUG = "debug" in OS.get_cmdline_args()
+enum CaractereType {GrosDormeur,Insolent,CassePied,Intello,Musqué,Nul,OeuilDeLynx,SansGene,Timide,TresBavard}
 
 const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
 const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
@@ -13,7 +14,6 @@ var DEBUG_SKIP_MISSION_SELECTION = false
 var skill_list :Array[Control]= []
 
 var skill_resource_list: Array[SkillResource] = [
-	preload("uid://c0ap80fbge1w2"),
 	preload('uid://ceubcahowtp87'),
 	preload('uid://c8u8a65r1rt1s'),
 	preload('uid://3mw2n4es48sm'),
@@ -23,10 +23,10 @@ var skill_resource_list: Array[SkillResource] = [
 ]
 
 var boy_student_sprites = [
-	[preload("res://assets/students/guy1.png"),preload("res://assets/students/guy1_standing.png")],
+	[preload("uid://bwi8bwxynmh7u"),preload("uid://bem8j4deoqc66")],
 	]
 var girl_student_sprites = [
-	[preload("res://assets/students/girl1.png"),preload("res://assets/students/girl1_standing.png")],
+	[preload("uid://cjc7we37vb0w0"),preload("uid://b45tk8ot7j4tc")],
 ]
 
 

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://pa2p2muslkui"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_304do"]
+[ext_resource type="Texture2D" uid="uid://bm5kyb0oune8q" path="res://assets/skills/ironwill.png" id="2_304do"]
+
+[resource]
+script = ExtResource("1_304do")
+name = "Volonté de Fer"
+sprite = ExtResource("2_304do")
+description = "L'élève ciblé reçoit l'état 'Inoffensif'."
+damage_modifier = 0
+target = "Self"
+cooldown = 3
+fast_skill = true
+heal_modifier = 1
+metadata/_custom_type_script = "uid://cibimso3crkbb"

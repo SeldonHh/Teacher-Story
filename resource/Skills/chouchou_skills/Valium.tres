@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://1sxv8dg0brj0"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_05lgc"]
+[ext_resource type="Texture2D" uid="uid://csi37nwfc62h7" path="res://assets/skills/valium.png" id="2_05lgc"]
+
+[resource]
+script = ExtResource("1_05lgc")
+name = "Valium"
+sprite = ExtResource("2_05lgc")
+description = "L'élève ciblé reçoit l'état 'Inoffensif'."
+damage_modifier = 0
+cooldown = 4
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

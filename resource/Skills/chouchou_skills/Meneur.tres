@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://dmw45mwkuto08"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_x21c4"]
+[ext_resource type="Texture2D" uid="uid://ct2j3a84k3ho2" path="res://assets/skills/comeon.png" id="2_x21c4"]
+
+[resource]
+script = ExtResource("1_x21c4")
+name = "Meneur"
+sprite = ExtResource("2_x21c4")
+description = "Les élèves se déplacent jusqu'à occuper toutes les places vides devant."
+damage_modifier = 0
+target = "All"
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

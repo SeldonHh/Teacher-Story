@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://xgcfr2shtvk3"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_cslmc"]
+[ext_resource type="Texture2D" uid="uid://dma2ppugfs7dh" path="res://assets/skills/explication.png" id="2_cslmc"]
+
+[resource]
+script = ExtResource("1_cslmc")
+name = "Explications"
+sprite = ExtResource("2_cslmc")
+description = "L'élève ciblé prend un dégât."
+damage_modifier = 1
+cooldown = 4
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

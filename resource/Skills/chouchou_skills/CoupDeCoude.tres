@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://dfrelqlpwkj1o"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_8tdqr"]
+[ext_resource type="Texture2D" uid="uid://cjkfip6nvc7cu" path="res://assets/skills/elbowhit.png" id="2_8tdqr"]
+
+[resource]
+script = ExtResource("1_8tdqr")
+name = "Coup De Coude"
+sprite = ExtResource("2_8tdqr")
+description = "L'élève ciblé perd 1 Shield."
+damage_modifier = 1
+ennui_only = true
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

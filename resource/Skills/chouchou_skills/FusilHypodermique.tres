@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://btnb6x8nfuw7c"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_afncm"]
+[ext_resource type="Texture2D" uid="uid://oxtxybplc4sy" path="res://assets/skills/sleep.png" id="2_afncm"]
+
+[resource]
+script = ExtResource("1_afncm")
+name = "Fusil Hypodermique"
+sprite = ExtResource("2_afncm")
+description = "L'élève ciblé reçoit l'état 'Ramollo'."
+damage_modifier = 0
+cooldown = 4
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

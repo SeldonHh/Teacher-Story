@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://cyxmb24neumti"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_8tvhs"]
+[ext_resource type="Texture2D" uid="uid://cx12up6p5yv1x" path="res://assets/skills/ChoosePet.png" id="2_8tvhs"]
+
+[resource]
+script = ExtResource("1_8tvhs")
+name = "Chouchou"
+sprite = ExtResource("2_8tvhs")
+description = "Sélectionne un élève et le nomme chouchou"
+damage_modifier = 0
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

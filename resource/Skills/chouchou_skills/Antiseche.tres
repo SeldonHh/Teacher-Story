@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://g5xl02df7pyq"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_d7can"]
+[ext_resource type="Texture2D" uid="uid://c0ko2y4sudx58" path="res://assets/skills/cheater.png" id="2_d7can"]
+
+[resource]
+script = ExtResource("1_d7can")
+name = "Antiseche"
+sprite = ExtResource("2_d7can")
+description = "L'élève ciblé obtiendra +1 à sa note quand il sera battu."
+damage_modifier = 0
+cooldown = 5
+bonus_note = 1
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

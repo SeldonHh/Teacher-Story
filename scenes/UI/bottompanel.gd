@@ -8,12 +8,14 @@ extends Control
 @onready var health_bar_highlight: TextureProgressBar = %HealthBar_Highlight
 @onready var health_particle: CPUParticles2D = %HealthParticle
 @onready var time_particle: CPUParticles2D = %TimeParticle
+@onready var skill_container: HBoxContainer = $SkillContainer
 
 var max_time = 10
 var last_time := -1.0
 var last_life := -1.0
 
 func _ready() -> void:
+	ManagerList.timer_manager.updated_time.connect(randomize_skills)
 	health_bar.max_value = ManagerList.teacher_manager.max_teacher_life
 	health_bar_highlight.max_value = ManagerList.teacher_manager.max_teacher_life
 	health_bar.value = health_bar.max_value
@@ -26,6 +28,18 @@ func _ready() -> void:
 	
 	last_life = ManagerList.teacher_manager.max_teacher_life
 	last_time = max_time
+
+func randomize_skills():
+	var possible_skills = Global.skill_resource_list.duplicate()
+	for skill in possible_skills:
+		if skill.current_cooldown != 0:
+			possible_skills.erase(skill)
+	for child in skill_container.get_children():
+		if possible_skills == []:
+			print("ERROR THERE WERE NOT ENOUGH POSSIBLE SKILLS")
+		var skill = possible_skills.pick_random()
+		child.resource = skill
+		possible_skills.erase(skill)
 
 func _process(_delta: float) -> void:
 	var time = ManagerList.timer_manager.remaining_time

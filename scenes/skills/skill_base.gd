@@ -1,12 +1,15 @@
 extends Control
 
-@export var resource : SkillResource = preload("res://resource/Skills/Enseigner.tres")
+@export var resource : SkillResource = preload("uid://c8u8a65r1rt1s")
 
 @onready var main_button: TextureButton = $MainButton
 var disabled := false
 
 func _ready() -> void:
 	Global.skill_list.append(self)
+	update()
+
+func update():
 	$MainButton.texture_normal = resource.sprite
 	$Tooltip.init(resource.name,resource.description,Color.BLACK,Color.BLANCHED_ALMOND,Color.BISQUE)
 
@@ -50,6 +53,7 @@ func _on_main_button_pressed() -> void:
 		ManagerList.teacher_manager.teacher_life -= randi_range(0,3)
 
 func _process(_delta: float) -> void:
+	update()
 	disabled = resource.current_cooldown > 0
 	if disabled:
 		modulate = Color(0.53, 0.53, 0.53, 1.0)

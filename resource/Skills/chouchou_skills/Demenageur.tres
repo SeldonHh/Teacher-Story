@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://bdum1fxo3q3bk"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_gj4xk"]
+[ext_resource type="Texture2D" uid="uid://b3170qbgjp6uk" path="res://assets/skills/muscled.png" id="2_gj4xk"]
+
+[resource]
+script = ExtResource("1_gj4xk")
+name = "Demenageur"
+sprite = ExtResource("2_gj4xk")
+description = "La table ciblée est avancée d'un cran s'il y a une place libre."
+damage_modifier = 0
+target = "Table"
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

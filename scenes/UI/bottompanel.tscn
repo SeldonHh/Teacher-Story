@@ -2,11 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://f3y4pef7vvfd" path="res://scenes/skills/skill_base.tscn" id="1_mpf03"]
 [ext_resource type="Script" uid="uid://ygut8mmii4ma" path="res://scenes/UI/bottompanel.gd" id="1_pa2km"]
-[ext_resource type="Resource" uid="uid://du8fw0pvf2ns2" path="res://resource/Skills/PointeDeSagesse.tres" id="2_pa2km"]
-[ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/Concentration1.tres" id="3_apmfv"]
-[ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/Interroger.tres" id="4_sips2"]
-[ext_resource type="Resource" uid="uid://2bowsbefe021" path="res://resource/Skills/RappelAl'Ordre.tres" id="5_p4myq"]
-[ext_resource type="Resource" uid="uid://3mw2n4es48sm" path="res://resource/Skills/HurlerLeCours.tres" id="6_l1hup"]
+[ext_resource type="Resource" uid="uid://du8fw0pvf2ns2" path="res://resource/Skills/base_skills/PointeDeSagesse.tres" id="2_pa2km"]
+[ext_resource type="Resource" uid="uid://ceubcahowtp87" path="res://resource/Skills/base_skills/Concentration1.tres" id="3_apmfv"]
+[ext_resource type="Resource" uid="uid://cu1vdts2y2rv7" path="res://resource/Skills/base_skills/Interroger.tres" id="4_sips2"]
 [ext_resource type="Texture2D" uid="uid://c65yeitrb0sdt" path="res://assets/ui/outside_stuff/bottom_panel.png" id="7_firqj"]
 [ext_resource type="Texture2D" uid="uid://dn8wf48ajeqic" path="res://assets/ui/bottom_hud/timerandhealthBorder.png" id="9_apmfv"]
 [ext_resource type="Texture2D" uid="uid://0adohiwlvyba" path="res://assets/ui/bottom_hud/hudLife_highlight.png" id="10_firqj"]
@@ -16,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b4fcwa2nl4x28" path="res://scenes/UI/cpu_particles_2d.gd" id="12_pn1pb"]
 [ext_resource type="Script" uid="uid://dvkbkuqbcktf1" path="res://scenes/UI/time_particle.gd" id="15_aivnj"]
 [ext_resource type="Resource" uid="uid://c0ap80fbge1w2" path="res://resource/Skills/ChangementDePlace.tres" id="16_5ysb0"]
+[ext_resource type="Resource" uid="uid://cyxmb24neumti" path="res://resource/Skills/Chouchou.tres" id="17_blxx3"]
 
 [node name="bottompanel" type="Control" unique_id=1742692976]
 layout_mode = 3
@@ -29,7 +28,7 @@ grow_vertical = 0
 mouse_filter = 1
 script = ExtResource("1_pa2km")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1201046639]
+[node name="SkillContainer" type="HBoxContainer" parent="." unique_id=1201046639]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -42,36 +41,23 @@ offset_right = 123.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 16
+alignment = 1
 
-[node name="SkillBase" parent="HBoxContainer" unique_id=1992360077 instance=ExtResource("1_mpf03")]
+[node name="SkillBase" parent="SkillContainer" unique_id=1992360077 instance=ExtResource("1_mpf03")]
 layout_mode = 2
-size_flags_horizontal = 3
 resource = ExtResource("2_pa2km")
 
-[node name="SkillBase2" parent="HBoxContainer" unique_id=208171830 instance=ExtResource("1_mpf03")]
+[node name="SkillBase2" parent="SkillContainer" unique_id=208171830 instance=ExtResource("1_mpf03")]
 layout_mode = 2
-size_flags_horizontal = 3
 
-[node name="SkillBase3" parent="HBoxContainer" unique_id=1250204901 instance=ExtResource("1_mpf03")]
+[node name="SkillBase3" parent="SkillContainer" unique_id=1250204901 instance=ExtResource("1_mpf03")]
 layout_mode = 2
-size_flags_horizontal = 3
 resource = ExtResource("3_apmfv")
 
-[node name="SkillBase4" parent="HBoxContainer" unique_id=1013668626 instance=ExtResource("1_mpf03")]
+[node name="SkillBase4" parent="SkillContainer" unique_id=1013668626 instance=ExtResource("1_mpf03")]
 layout_mode = 2
-size_flags_horizontal = 3
 resource = ExtResource("4_sips2")
-
-[node name="SkillBase5" parent="HBoxContainer" unique_id=1063032274 instance=ExtResource("1_mpf03")]
-layout_mode = 2
-size_flags_horizontal = 3
-resource = ExtResource("5_p4myq")
-
-[node name="SkillBase6" parent="HBoxContainer" unique_id=1120261190 instance=ExtResource("1_mpf03")]
-layout_mode = 2
-size_flags_horizontal = 3
-resource = ExtResource("6_l1hup")
 
 [node name="BottomTextureStuff" type="TextureRect" parent="." unique_id=1504810811]
 z_index = -1
@@ -246,9 +232,25 @@ script = ExtResource("15_aivnj")
 
 [node name="SkillBase7" parent="." unique_id=344824664 instance=ExtResource("1_mpf03")]
 layout_mode = 1
-anchor_left = 0.563
+anchor_left = 0.5951181
 anchor_top = 0.82500005
-anchor_right = 0.563
+anchor_right = 0.5951181
+anchor_bottom = 0.82500005
+offset_left = -9.57605
+offset_top = -9.980011
+offset_right = 10.42395
+offset_bottom = 10.019989
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 3
+resource = ExtResource("17_blxx3")
+metadata/_edit_use_anchors_ = true
+
+[node name="SkillBase8" parent="." unique_id=456338296 instance=ExtResource("1_mpf03")]
+layout_mode = 1
+anchor_left = 0.53175
+anchor_top = 0.82500005
+anchor_right = 0.53175
 anchor_bottom = 0.82500005
 offset_left = -9.57605
 offset_top = -9.980011
@@ -258,3 +260,4 @@ grow_horizontal = 1
 grow_vertical = 1
 size_flags_horizontal = 3
 resource = ExtResource("16_5ysb0")
+metadata/_edit_use_anchors_ = true

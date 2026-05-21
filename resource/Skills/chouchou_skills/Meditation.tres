@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://4m8ll6cf5ovk"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_flwoc"]
+[ext_resource type="Texture2D" uid="uid://rnah5gpxwitt" path="res://assets/skills/meditate.png" id="2_flwoc"]
+
+[resource]
+script = ExtResource("1_flwoc")
+name = "Méditation"
+sprite = ExtResource("2_flwoc")
+description = "L'élève ciblé reçoit un  , vous gagnez 2 points de self-control."
+damage_modifier = 0
+cooldown = 3
+fast_skill = true
+heal_modifier = 2
+shield_modifier = 1
+metadata/_custom_type_script = "uid://cibimso3crkbb"

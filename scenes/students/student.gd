@@ -1,7 +1,6 @@
 extends CharacterBody2D
 class_name Student
 
-enum CaractereType {Reveur,Jovial,Malin,Timide,Clown,Bruyant,Manipulateur,Hyperactif}
 const SPRITE_ENNUI = preload("uid://1qgo66qnt5ib")
 const SPRITE_HOVER_ENNUI = preload("res://assets/students/hover_ennui.png")
 const SPRITE_STUPIDITE = preload("uid://c5arag4jnaelj")
@@ -93,8 +92,17 @@ func _on_mouse_detector_mouse_entered() -> void:
 			child.texture = SPRITE_HOVER_ENNUI
 		else:
 			print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
-	ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,CaractereType.keys()[resource.caractere])
+	ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,get_caractere_text())
 	showing_tooltip = true
+
+func get_caractere_text():
+	var text = Global.CaractereType.keys()[resource.caractere]
+	var new_text = ""
+	for carac in text:
+		if carac == carac.to_upper():
+			new_text += " "
+		new_text += carac
+	return new_text
 
 func _on_mouse_detector_mouse_exited() -> void:
 	for child in $HpContainer.get_children():

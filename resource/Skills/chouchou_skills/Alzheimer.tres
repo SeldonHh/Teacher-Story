@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://ddcxsr1x4xldm"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_l0e4m"]
+[ext_resource type="Texture2D" uid="uid://dbn7k4wfqdck1" path="res://assets/skills/alzheimer.png" id="2_l0e4m"]
+
+[resource]
+script = ExtResource("1_l0e4m")
+name = "Alzheimer"
+sprite = ExtResource("2_l0e4m")
+description = "Nouveau tirage des actions."
+damage_modifier = 0
+cooldown = 3
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

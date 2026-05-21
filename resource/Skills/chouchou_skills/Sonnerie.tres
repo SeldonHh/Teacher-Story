@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://dhddmgbolb51h"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_r14mc"]
+[ext_resource type="Texture2D" uid="uid://dcolujxh11xh4" path="res://assets/skills/dring.png" id="2_r14mc"]
+
+[resource]
+script = ExtResource("1_r14mc")
+name = "Sonnerie"
+sprite = ExtResource("2_r14mc")
+description = "Réveille tous les élèves 'endormis' et les rend 'attentifs'."
+damage_modifier = 0
+target = "All"
+cooldown = 3
+fast_skill = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"
