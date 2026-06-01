@@ -4,6 +4,7 @@ extends Control
 
 @onready var main_button: TextureButton = $MainButton
 var disabled := false
+var no_cc_update := false
 
 func _ready() -> void:
 	Global.skill_list.append(self)
@@ -44,10 +45,25 @@ func _on_main_button_pressed() -> void:
 		"Changement de place": 
 			if student_targets != []:
 				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[0],secondary_targets)
+		"Chouchou":
+			if Global.IS_DEBUG and Global.DEBUG_CHOUCHOU_SKILL != null:
+				self.resource = Global.DEBUG_CHOUCHOU_SKILL
+			else:
+				self.resource = student_targets[0].resource.chouchou_skill
+			no_cc_update  = true
+		"Alzheimer":
+			Global.bottom_panel.randomize_skills()
+		"Antiseche":
+			student_targets[0].bonus_note_on_death += 1
+		"Chatouilles": pass #TODO: Add negative effect "Enervé"
 	
-	resource.current_cooldown = resource.cooldown
+	if !no_cc_update:
+		resource.current_cooldown = resource.cooldown
+	else:
+		no_cc_update  = false
 	for skill in Global.skill_list:
 		skill.main_button.disabled = false
+
 	if !resource.fast_skill:
 		ManagerList.timer_manager.update_time(-1)
 		ManagerList.teacher_manager.teacher_life -= randi_range(0,3)

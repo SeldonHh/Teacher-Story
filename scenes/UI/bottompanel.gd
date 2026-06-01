@@ -15,6 +15,7 @@ var last_time := -1.0
 var last_life := -1.0
 
 func _ready() -> void:
+	Global.bottom_panel = self
 	ManagerList.timer_manager.updated_time.connect(randomize_skills)
 	health_bar.max_value = ManagerList.teacher_manager.max_teacher_life
 	health_bar_highlight.max_value = ManagerList.teacher_manager.max_teacher_life
@@ -42,6 +43,7 @@ func randomize_skills():
 		possible_skills.erase(skill)
 
 func _process(_delta: float) -> void:
+	
 	var time = ManagerList.timer_manager.remaining_time
 	var life = ManagerList.teacher_manager.teacher_life
 	

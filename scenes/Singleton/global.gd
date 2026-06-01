@@ -6,12 +6,19 @@ enum CaractereType {GrosDormeur,Insolent,CassePied,Intello,Musqué,Nul,OeuilDeLy
 const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
 const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
 const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-400,235)
-
+const DEBUG_CHOUCHOU_SKILL: SkillResource = preload("res://resource/Skills/chouchou_skills/CoupDeCoude.tres")
 const BAG_SPRITES = [preload("uid://cxd8ggqp0omqk"),preload("uid://u78sx6xejio6"),preload("uid://cc75phnlu02nq"),preload("uid://88w24qm8hg25")]
 
 var DEBUG_SKIP_MISSION_SELECTION = false
 
+var bottom_panel : Control
+
 var skill_list :Array[Control]= []
+
+var special_skill_list : Array[SkillResource] = [
+	preload("uid://c0ap80fbge1w2"),
+	preload("uid://cyxmb24neumti")
+]
 
 var skill_resource_list: Array[SkillResource] = [
 	preload('uid://ceubcahowtp87'),
@@ -21,7 +28,35 @@ var skill_resource_list: Array[SkillResource] = [
 	preload("uid://du8fw0pvf2ns2"),
 	preload("uid://2bowsbefe021"),
 ]
+var chouchou_resource_list : Array[SkillResource] = [
+	preload("uid://pa2p2muslkui"),
+	preload("uid://db0v660vlwixt"),
+	preload("uid://dmw45mwkuto08"),
+	preload("uid://xgcfr2shtvk3"),
+	preload("uid://2tgfrebk2var"),
+	preload("uid://bdum1fxo3q3bk"),
+	preload("uid://g5xl02df7pyq"),
+	preload("uid://dhddmgbolb51h"),
+	preload("uid://1sxv8dg0brj0"),
+	preload("uid://ddcxsr1x4xldm"),
+	preload("uid://btnb6x8nfuw7c"),
+	preload("uid://bv4m11lil1tpo"),
+	preload("uid://4m8ll6cf5ovk"),
+	preload("uid://dfrelqlpwkj1o"),
+]
 
+var chouchou_skills : Dictionary = {
+	CaractereType.GrosDormeur : [chouchou_resource_list[0]],
+	CaractereType.Insolent : [chouchou_resource_list[1]],
+	CaractereType.CassePied : [chouchou_resource_list[2]],
+	CaractereType.Intello : [chouchou_resource_list[3]],
+	CaractereType.Musqué : [chouchou_resource_list[4],chouchou_resource_list[5]],
+	CaractereType.Nul : [chouchou_resource_list[6],chouchou_resource_list[7],chouchou_resource_list[8]],
+	CaractereType.OeuilDeLynx : [chouchou_resource_list[9],chouchou_resource_list[10],chouchou_resource_list[11]],
+	CaractereType.SansGene : [chouchou_resource_list[7]],
+	CaractereType.Timide : [chouchou_resource_list[12]],
+	CaractereType.TresBavard : [chouchou_resource_list[13]],
+}
 var boy_student_sprites = [
 	[preload("uid://bwi8bwxynmh7u"),preload("uid://bem8j4deoqc66")],
 	]

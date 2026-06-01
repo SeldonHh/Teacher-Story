@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://f3y4pef7vvfd"]
+
+[ext_resource type="Script" uid="uid://djfvxwg61l0a7" path="res://scenes/skills/skill_base.gd" id="1_l28oj"]
+[ext_resource type="Texture2D" uid="uid://dye8xtkx5o28h" path="res://assets/skills/EnseignerIcon.png" id="2_7cx4e"]
+[ext_resource type="PackedScene" uid="uid://comgbjh65362c" path="res://scenes/UI/tooltip.tscn" id="3_7cx4e"]
+
+[node name="SkillBase" type="Control" unique_id=344824664]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchor_left = 0.49300003
+anchor_top = 0.48800004
+anchor_right = 0.51000005
+anchor_bottom = 0.51900005
+offset_right = 0.4159546
+offset_bottom = -0.088012695
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_l28oj")
+
+[node name="MainButton" type="TextureButton" parent="." unique_id=689389863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.85, 0.85)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_7cx4e")
+stretch_mode = 5
+
+[node name="Tooltip" parent="." unique_id=1432997240 instance=ExtResource("3_7cx4e")]
+visible = false
+layout_mode = 1
+anchor_left = 1.2
+anchor_top = -2.0
+anchor_right = 7.0
+anchor_bottom = 3.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="MainButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MainButton" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]

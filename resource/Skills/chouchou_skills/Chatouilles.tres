@@ -7,8 +7,9 @@
 script = ExtResource("1_hetlb")
 name = "Chatouilles"
 sprite = ExtResource("2_hetlb")
-description = "L'élève ciblé perd tous ses Shields. Il reçoit l'état 'Enervé'."
-damage_modifier = 0
+description = "L'élève ciblé perd tous son ennui. Il reçoit l'état 'Enervé'."
+damage_modifier = 999
 cooldown = 3
+ennui_only = true
 fast_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

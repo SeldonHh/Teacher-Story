@@ -9,6 +9,7 @@ name = "Alzheimer"
 sprite = ExtResource("2_l0e4m")
 description = "Nouveau tirage des actions."
 damage_modifier = 0
+target = "Self"
 cooldown = 3
 fast_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

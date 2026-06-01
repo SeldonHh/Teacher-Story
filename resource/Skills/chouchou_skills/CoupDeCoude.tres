@@ -7,7 +7,7 @@
 script = ExtResource("1_8tdqr")
 name = "Coup De Coude"
 sprite = ExtResource("2_8tdqr")
-description = "L'élève ciblé perd 1 Shield."
+description = "L'élève ciblé perd 1 ennui."
 damage_modifier = 1
 ennui_only = true
 fast_skill = true

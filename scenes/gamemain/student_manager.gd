@@ -8,13 +8,13 @@ var caractere_info_labels : Array[RichTextLabel] = []
 var student_scene = preload("res://scenes/students/student.tscn")
 var gender = ["boy","girl"]
 var boy_names = [
-"Alexandre","Alexis","Andress","Antoine","Arthur","Athanase","Aurélien",
+"Aylan","Alexandre","Alexis","Andress","Antoine","Arthur","Athanase","Aurélien",
 "Barnabé","Benjamin","Caïn","Camille","Charles","Edouard","Clément","David","Diego",
 "Eliott","Enzo","Esteban","Félix","François","Gaetan","Henri","Hugo","Jean",
 "Jean-Baptiste","Joachim","Jonathan","Joseph","Joshua","Judas","Justin","Kevin",
 "Imane","Lenny","Léon","Loïc","Louis","Lucas","Marius","Mathieu","Maxime","Mehdi",
 "Mohamed","Nathan","Nicolas","Oscar","Paul","Pierre","Raoul","Raphaël","Rémi",
-"Robin","Romeo","Samuel","Sébastien","Théo","Thomas","Tom","Valentin",
+"Robin","Romeo","Paul","Samuel","Sébastien","Théo","Thomas","Tom","Valentin",
 "Vincent","Yann","Yassine","Zlatan","Seldon","Demurgos","Patate","Nassimou"
 ]
 var girl_names = [
@@ -23,7 +23,7 @@ var girl_names = [
 "Claire","Clara","Constance","Domitille","Eglantine","Eleonore","Enora","Elise",
 "Elsa","Emilie","Emma","Fanchon","Fanny","Félicie","Georgette",
 "Inaya","Inès","Jeanne","Julie","Kenza","Kimberley","Lili","Lou","Louise",
-"Louna","Maélys","Margot","Marie","Marie-Lou","Marine","Mathilde","Maya",
+"Louna","Maélys","Margot","Meredith","Marie","Marie-Lou","Marine","Mathilde","Maya",
 "Melinda","Mélissa","Mia","Myriam","Naomie","Pauline","Philippine","Rose",
 "Sofia","Stella","Suzette","Tess","Valentine","Victoria","Violette",
 "Yasmine","Zoé","Biosha","Tommy","Mawie"
@@ -42,6 +42,7 @@ func generate_x_random_student(x):
 		var random_key = CaractereType.keys().pick_random()
 		new_student_resource.bag_sprite = Global.BAG_SPRITES.pick_random()
 		new_student_resource.caractere = CaractereType[random_key]
+		new_student_resource.chouchou_skill = Global.chouchou_skills[CaractereType[random_key]].pick_random()
 		match new_student_resource.caractere: #TODO: should change depending on difficulty
 			CaractereType.GrosDormeur: 
 				new_student_resource.ennui_de_base = randi_range(2,6)

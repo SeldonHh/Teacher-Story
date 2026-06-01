@@ -7,7 +7,7 @@
 script = ExtResource("1_flwoc")
 name = "Méditation"
 sprite = ExtResource("2_flwoc")
-description = "L'élève ciblé reçoit un  , vous gagnez 2 points de self-control."
+description = "L'élève ciblé reçoit un  Shield , vous gagnez 2 points de self-control."
 damage_modifier = 0
 cooldown = 3
 fast_skill = true

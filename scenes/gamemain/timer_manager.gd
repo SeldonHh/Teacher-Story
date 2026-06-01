@@ -6,7 +6,7 @@ signal updated_time
 
 func update_time(amount):
 	if amount < 0:
-		for skill_resource in Global.skill_resource_list:
+		for skill_resource in Global.skill_resource_list + Global.chouchou_resource_list + Global.special_skill_list:
 			skill_resource.current_cooldown = max(0,skill_resource.current_cooldown+amount)
 	remaining_time += amount
 	if remaining_time <= 0:
