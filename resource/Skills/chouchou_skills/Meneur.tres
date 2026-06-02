@@ -7,7 +7,7 @@
 script = ExtResource("1_x21c4")
 name = "Meneur"
 sprite = ExtResource("2_x21c4")
-description = "Les élèves se déplacent jusqu'à occuper toutes les places vides devant."
+description = "90% de chance que les élèves se déplacent jusqu'à occuper toutes les places vides devant. 10% de chances qu'ils se déplacent pour occuper toutes les places à l'arrière"
 damage_modifier = 0
 target = "All"
 fast_skill = true
