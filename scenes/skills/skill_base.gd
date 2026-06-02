@@ -62,7 +62,19 @@ func _on_main_button_pressed() -> void:
 		"Exclusion": pass #TODO: remove student
 		"Fusil Hypodermique":pass #TODO: add effect "Ramollo"
 		"Gourdin":pass #TODO: add effect "Mal au crâne"
-		"Meneur": pass #TODO: ALL STUDENTS COME TO THE FRONT
+		"Meneur": 
+			var room_desk = ManagerList.desk_manager.get_room_desk_list()
+			room_desk.sort_custom(func(a,b): 
+				if a.row > b.row:
+					return true
+				if a.row == b.row:
+					if a.column > b.column:
+						return false
+					else:
+						return true)
+			for i in range(len(student_targets)):
+				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[i],room_desk[i])
+					
 		"Sonnerie": pass #TODO: remove effect "endormi", add effect "attentifs" to those who were "endormi"
 		"Valium":pass #TODO: add effect "Inoffensif"
 

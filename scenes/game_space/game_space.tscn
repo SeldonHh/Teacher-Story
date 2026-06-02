@@ -102,6 +102,29 @@ column = 2
 matiere = "Science"
 metadata/_edit_lock_ = true
 
+[node name="Desk8" parent="School" unique_id=1555710403 instance=ExtResource("2_updkw")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-277, 298)
+texture = ExtResource("3_4l5mt")
+group = 5
+row = 1
+matiere = "Science"
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Desk9" parent="School" unique_id=393647404 instance=ExtResource("2_updkw")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-260, 306)
+texture = ExtResource("3_4l5mt")
+group = 5
+row = 1
+column = 1
+matiere = "Science"
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
 [node name="Desk3" parent="School" unique_id=408450251 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
@@ -147,66 +170,41 @@ column = 3
 matiere = "Science"
 metadata/_edit_lock_ = true
 
-[node name="Desk8" parent="School" unique_id=1555710403 instance=ExtResource("2_updkw")]
+[node name="Desk18" parent="School" unique_id=163456179 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(-277, 298)
-texture = ExtResource("3_4l5mt")
-group = 5
-row = 1
-matiere = "Science"
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="Desk9" parent="School" unique_id=393647404 instance=ExtResource("2_updkw")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(-260, 306)
-texture = ExtResource("3_4l5mt")
-group = 5
-row = 1
-column = 1
-matiere = "Science"
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="Desk10" parent="School" unique_id=805452951 instance=ExtResource("2_updkw")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(102, 107)
+position = Vector2(157, 77)
 texture = ExtResource("3_771so")
-row = 2
+group = 4
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk11" parent="School" unique_id=1433603558 instance=ExtResource("2_updkw")]
+[node name="Desk19" parent="School" unique_id=154833482 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(119, 115)
+position = Vector2(174, 85)
 texture = ExtResource("3_771so")
-row = 2
+group = 4
 column = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk12" parent="School" unique_id=1627369781 instance=ExtResource("2_updkw")]
+[node name="Desk20" parent="School" unique_id=707401754 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(147, 132)
+position = Vector2(197, 100)
 texture = ExtResource("3_771so")
-group = 1
-row = 2
+group = 5
 column = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk13" parent="School" unique_id=480192330 instance=ExtResource("2_updkw")]
+[node name="Desk21" parent="School" unique_id=1155414224 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(164, 140)
+position = Vector2(214, 108)
 texture = ExtResource("3_771so")
-group = 1
-row = 2
+group = 5
 column = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -254,41 +252,43 @@ column = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk18" parent="School" unique_id=163456179 instance=ExtResource("2_updkw")]
+[node name="Desk10" parent="School" unique_id=805452951 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(157, 77)
+position = Vector2(102, 107)
 texture = ExtResource("3_771so")
-group = 4
+row = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk19" parent="School" unique_id=154833482 instance=ExtResource("2_updkw")]
+[node name="Desk11" parent="School" unique_id=1433603558 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(174, 85)
+position = Vector2(119, 115)
 texture = ExtResource("3_771so")
-group = 4
+row = 2
 column = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk20" parent="School" unique_id=707401754 instance=ExtResource("2_updkw")]
+[node name="Desk12" parent="School" unique_id=1627369781 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(197, 100)
+position = Vector2(147, 132)
 texture = ExtResource("3_771so")
-group = 5
+group = 1
+row = 2
 column = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Desk21" parent="School" unique_id=1155414224 instance=ExtResource("2_updkw")]
+[node name="Desk13" parent="School" unique_id=480192330 instance=ExtResource("2_updkw")]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(214, 108)
+position = Vector2(164, 140)
 texture = ExtResource("3_771so")
-group = 5
+group = 1
+row = 2
 column = 3
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -308,6 +308,17 @@ y_sort_enabled = true
 position = Vector2(-65, 209)
 texture = ExtResource("4_5wttn")
 column = 1
+matiere = "Maths"
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Desk29" parent="School" unique_id=461063692 instance=ExtResource("2_updkw")]
+z_index = 2
+y_sort_enabled = true
+position = Vector2(-38, 225)
+texture = ExtResource("4_5wttn")
+group = 4
+column = 2
 matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -365,17 +376,6 @@ position = Vector2(-91, 257)
 texture = ExtResource("4_5wttn")
 group = 3
 row = 2
-column = 2
-matiere = "Maths"
-metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
-
-[node name="Desk29" parent="School" unique_id=461063692 instance=ExtResource("2_updkw")]
-z_index = 2
-y_sort_enabled = true
-position = Vector2(-38, 225)
-texture = ExtResource("4_5wttn")
-group = 4
 column = 2
 matiere = "Maths"
 metadata/_edit_group_ = true
