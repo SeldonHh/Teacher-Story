@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://xtisa3irft78"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_0umgv"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_reb1y"]
+
+[resource]
+script = ExtResource("2_reb1y")
+name = "Curieux"
+unique = 1
+hostility = 2
+desc = "Aime poser des questions"
+possible_chouchou_skills = Array[ExtResource("1_0umgv")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

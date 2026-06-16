@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://bqgtt6bbe87mq"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_yfugh"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_kgjho"]
+
+[resource]
+script = ExtResource("2_kgjho")
+name = "Très Bavard"
+unique = 2
+rare = 1
+hostility = 4
+modKnow = 1
+desc = "Bavarde tout le temps"
+possible_chouchou_skills = Array[ExtResource("1_yfugh")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

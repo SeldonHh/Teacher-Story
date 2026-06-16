@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://bnjtfqcavh38a"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_5rwwk"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_8xm6j"]
+
+[resource]
+script = ExtResource("2_8xm6j")
+name = "Intéréssé"
+unique = 1
+rare = -1
+hostility = 3
+desc = "Elève sérieux, la plupart du temps"
+possible_chouchou_skills = Array[ExtResource("1_5rwwk")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

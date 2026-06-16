@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://bsjopdkygckf8"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_gab6q"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_m1aur"]
+
+[resource]
+script = ExtResource("2_m1aur")
+name = "Musqué"
+unique = 1
+rare = 4
+hostility = 3
+desc = "Cet élève sent parfois bizarre"
+possible_chouchou_skills = Array[ExtResource("1_gab6q")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

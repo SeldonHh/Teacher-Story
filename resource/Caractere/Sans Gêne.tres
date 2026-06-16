@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://biv3nlxdtc1vk"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_khuf2"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_xwmsn"]
+
+[resource]
+script = ExtResource("2_xwmsn")
+name = "Sans Gêne"
+unique = 2
+rare = 3
+hostility = 3
+desc = "Aucune considération pour les autres"
+possible_chouchou_skills = Array[ExtResource("1_khuf2")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

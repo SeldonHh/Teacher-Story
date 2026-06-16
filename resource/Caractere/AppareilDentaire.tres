@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://tbb8i1wv7hlj"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_louie"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_c4vtb"]
+
+[resource]
+script = ExtResource("2_c4vtb")
+name = "Jovial"
+unique = 1
+rare = -1
+hostility = 1
+desc = "Content d'être là"
+possible_chouchou_skills = Array[ExtResource("1_louie")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

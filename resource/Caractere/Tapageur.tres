@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://c80km1tj8jk55"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_fjbu5"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_mldyt"]
+
+[resource]
+script = ExtResource("2_mldyt")
+name = "Tapageur"
+unique = 1
+rare = 1
+hostility = 2
+desc = "Aime mettre le bazar"
+possible_chouchou_skills = Array[ExtResource("1_fjbu5")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

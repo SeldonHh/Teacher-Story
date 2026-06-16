@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://bdt240pmfjvxm"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_wuhjb"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_4vxo3"]
+
+[resource]
+script = ExtResource("2_4vxo3")
+name = "Casse Pied"
+unique = 1
+hostility = 2
+desc = "Fait du bruit"
+possible_chouchou_skills = Array[ExtResource("1_wuhjb")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

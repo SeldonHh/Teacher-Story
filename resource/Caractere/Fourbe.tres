@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://dufl8j3hjhotd"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_r48tp"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_wp65e"]
+
+[resource]
+script = ExtResource("2_wp65e")
+name = "Fourbe"
+unique = 1
+rare = -1
+hostility = 3
+desc = "Elève retors"
+possible_chouchou_skills = Array[ExtResource("1_r48tp")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

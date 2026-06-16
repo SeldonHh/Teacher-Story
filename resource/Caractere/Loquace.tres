@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://c1m7uw770uur1"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_j737q"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_decfm"]
+
+[resource]
+script = ExtResource("2_decfm")
+name = "Loquace"
+unique = 1
+rare = -1
+hostility = 1
+modKnow = -1
+desc = "Sérieux dans l'ensemble, se dissipe vite"
+possible_chouchou_skills = Array[ExtResource("1_j737q")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

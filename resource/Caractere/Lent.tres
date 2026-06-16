@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://b82xgrnwimfhd"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_i2e8h"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_wiupm"]
+
+[resource]
+script = ExtResource("2_wiupm")
+name = "Lent"
+unique = 1
+rare = -1
+hostility = 2
+desc = "Apprend trèèès lentement"
+possible_chouchou_skills = Array[ExtResource("1_i2e8h")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"

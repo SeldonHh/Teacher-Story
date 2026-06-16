@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CaractereResource" format=3 uid="uid://ds1eyk740pywd"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_1jd3w"]
+[ext_resource type="Script" uid="uid://cmnqh03p15qh1" path="res://resource/scripts/Caractere.gd" id="2_8rs6c"]
+
+[resource]
+script = ExtResource("2_8rs6c")
+name = "Gros Dormeur"
+unique = 2
+rare = 2
+hostility = 2
+desc = "Dort tout le temps"
+possible_chouchou_skills = Array[ExtResource("1_1jd3w")]([null])
+metadata/_custom_type_script = "uid://cmnqh03p15qh1"
