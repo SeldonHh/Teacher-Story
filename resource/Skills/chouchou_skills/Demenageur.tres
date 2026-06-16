@@ -9,6 +9,6 @@ name = "Demenageur"
 sprite = ExtResource("2_gj4xk")
 description = "La table ciblée est avancée d'un cran s'il y a une place libre."
 damage_modifier = 0
-target = "Table"
+target = "Single Desk"
 fast_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

@@ -31,11 +31,13 @@ func _on_main_button_pressed() -> void:
 		"Two Students": 
 			student_targets = await SkillTargetSelectHandler.select_student()
 			student_targets.append( await SkillTargetSelectHandler.select_student())
-		"Student and Table":
+		"Student and Desk":
 			student_targets = await  SkillTargetSelectHandler.select_student()
 			if student_targets != []:
 				await get_tree().create_timer(.1).timeout
 				secondary_targets = await SkillTargetSelectHandler.select_desk()
+		"Single Desk":
+			student_targets = [await SkillTargetSelectHandler.select_desk()]
 	for student in student_targets:
 		if student is Student:
 			student.damage(resource.damage_modifier,resource.ennui_breaker,resource.ennui_only)
@@ -58,7 +60,16 @@ func _on_main_button_pressed() -> void:
 		"Antiseche":
 			student_targets[0].bonus_note_on_death += 1
 		"Chatouilles": pass #TODO: Add negative effect "Enervé"
-		"Demenageur": pass#TODO: Move desk
+		"Demenageur": 
+			var current_desk = student_targets[0]
+			var active := true
+			if current_desk.row > 2:
+				active = false
+			for desk in ManagerList.desk_manager.get_room_desk_list():
+				if desk.column == current_desk.column and desk.row == current_desk.row +1:
+					active = false
+			if active:
+				current_desk.move_front()
 		"Exclusion": pass #TODO: remove student
 		"Fusil Hypodermique":pass #TODO: add effect "Ramollo"
 		"Gourdin":pass #TODO: add effect "Mal au crâne"

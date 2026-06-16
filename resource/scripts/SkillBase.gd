@@ -9,7 +9,7 @@ class_name SkillResource
 @export_category("effect")
 @export var damage_modifier := 2
 @export var secondary_damage_modifier := 0
-@export_enum("Single","Table","Column","All","Self","Two Students","Student and Table") var target = "Single"
+@export_enum("Single","Table","Column","All","Self","Two Students","Student and Desk","Single Desk") var target = "Single"
 @export var cooldown := 2
 @export var bonus_note := 0 
 @export var ennui_only := false
