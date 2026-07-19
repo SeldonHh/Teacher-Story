@@ -119,7 +119,7 @@ func assign_students_to_random_desk():
 func clear_students():
 	for student in students:
 		student.queue_free()
-		students.erase(student)
+	students = []
 
 func clear_students_resources():
 	students_resources.clear()
@@ -136,7 +136,7 @@ func reset_class():
 	ManagerList.desk_manager.clear_student_from_desk()
 	clear_students()
 	assign_students_to_random_desk()
-	reset_all_students()
+	#reset_all_students()
 
 func _ready() -> void:
 	ManagerList.student_manager = self
