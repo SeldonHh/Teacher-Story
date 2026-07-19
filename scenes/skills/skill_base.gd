@@ -60,6 +60,7 @@ func _on_main_button_pressed() -> void:
 		"Antiseche":
 			student_targets[0].bonus_note_on_death += 1
 		"Chatouilles": pass #TODO: Add negative effect "Enervé"
+		"Chut":pass #TODO: Remove two negative effects
 		"Demenageur": 
 			var current_desk = student_targets[0]
 			var active := true
@@ -70,9 +71,16 @@ func _on_main_button_pressed() -> void:
 					active = false
 			if active:
 				current_desk.move_front()
-		"Exclusion": pass #TODO: remove student
+		"ElectroChoc":pass#TODO: Remove all critical effects
+		"Exclusion": 
+			for desk in ManagerList.desk_manager.get_room_desk_list():
+				if desk.student == student_targets[0]:
+					desk.play_pouf()
+			ManagerList.student_manager.exclude(student_targets[0])
 		"Fusil Hypodermique":pass #TODO: add effect "Ramollo"
 		"Gourdin":pass #TODO: add effect "Mal au crâne"
+		"Gros Cerveau":pass #TODO: add effect "Très attentif"
+		"Même pas drôle":pass #TODO: remove effect "Mort de Rire"
 		"Meneur": 
 			var room_desk = ManagerList.desk_manager.get_room_desk_list()
 			if randf() < .90:
@@ -86,8 +94,26 @@ func _on_main_button_pressed() -> void:
 							return true)
 			for i in range(len(student_targets)):
 				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[i],room_desk[i])
-					
+		"Réconfort": ManagerList.timer_manager.healing_time.append(3)
 		"Sonnerie": pass #TODO: remove effect "endormi", add effect "attentifs" to those who were "endormi"
+		"Synergie":
+			for student in student_targets:
+				if student is Student:
+					if student.beaten:
+						print("+1 XP")
+						#TODO: add +1 XP
+		"Transfert": 
+			for student in student_targets:
+				if student is Student:
+					var transfert_temp = student.ennui
+					var transfert_desk : Desk
+					student.damage(transfert_temp,false,true)
+					for desk in ManagerList.desk_manager.desks:
+						if desk.student == student:
+							transfert_desk = desk
+					for desk in ManagerList.desk_manager.get_room_desk_list():
+						if desk.group == transfert_desk.group and desk != transfert_desk:
+							desk.student.add_shield(ceil(transfert_temp/2))
 		"Valium":pass #TODO: add effect "Inoffensif"
 
 	if !no_cc_update:

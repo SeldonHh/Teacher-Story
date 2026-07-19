@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="Teacher Story"
 config/version="Indev 0.1"
 run/main_scene="uid://dil4fb1onwfqg"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://bh146mefn4s2r"
 
 [autoload]

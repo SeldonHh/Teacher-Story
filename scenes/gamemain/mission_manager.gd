@@ -22,10 +22,15 @@ func update_mainscreen_ui():
 func generate_mission_selection():
 	%MainGameScreen.hide()
 	%MissionSelectionScreen.show()
+	var debug_child
 	for child in %MissionSelectionInstanceContainer.get_children():
 		if child is MissionSelectionInstance:
 			var new_mission = make_new_random_mission()
 			child.update_ui(new_mission)
+			debug_child = child
+	if Global.IS_DEBUG and Global.DEBUG_SKIP_MISSION_SELECTION:
+		debug_child.unhide_all_labels()
+		ManagerList.mission_manager.mission_selected(debug_child.current_mission_resource,debug_child.name_labels,debug_child.note_labels,debug_child.caractere_labels)
 
 
 func mission_selected(resource,name_labels,note_labels,caractere_labels):

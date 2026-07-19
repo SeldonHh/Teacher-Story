@@ -22,3 +22,7 @@ func get_room_desk_list():
 		if desk.matiere == ManagerList.mission_manager.current_mission_resource.matiere:
 			room_desk.append(desk)
 	return room_desk
+
+func clear_student_from_desk():
+	for desk in desks:
+		desk.student = null

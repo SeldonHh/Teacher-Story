@@ -59,8 +59,6 @@ func generate_x_random_student(x):
 		new_student_resource.note = POSSIBLE_NOTES[rng.rand_weighted(notes_weights)]
 		if randf() < .3:
 			new_student_resource.note += 0.5
-
-		students_resources.append(new_student_resource)
 		resources.append(new_student_resource)
 	return resources
 
@@ -121,6 +119,7 @@ func assign_students_to_random_desk():
 func clear_students():
 	for student in students:
 		student.queue_free()
+		students.erase(student)
 
 func clear_students_resources():
 	students_resources.clear()
@@ -133,6 +132,23 @@ func reset_all_students():
 	for student in students:
 		student.reset()
 
+func reset_class():
+	ManagerList.desk_manager.clear_student_from_desk()
+	clear_students()
+	assign_students_to_random_desk()
+	reset_all_students()
+
 func _ready() -> void:
 	ManagerList.student_manager = self
 	await get_tree().process_frame
+
+func _process(_delta: float) -> void:
+	if Global.IS_DEBUG and Input.is_action_just_pressed("debug2"):
+		reset_class()
+
+func exclude(student):
+	for desk in ManagerList.desk_manager.get_room_desk_list():
+		if desk.student == student:
+			desk.student = null
+			students.erase(student)
+			student.queue_free()

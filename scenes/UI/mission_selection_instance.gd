@@ -28,10 +28,6 @@ func update_ui(mission_resource):
 			hidden_labels.append([label,label.text])
 			label.text = "[center][color=326e7d]Inconnu"
 			caractere_labels.append(label)
-	if Global.IS_DEBUG and Global.DEBUG_SKIP_MISSION_SELECTION == false:
-		unhide_all_labels()
-		Global.DEBUG_SKIP_MISSION_SELECTION = true
-		ManagerList.mission_manager.mission_selected(current_mission_resource,name_labels,note_labels,caractere_labels)
 
 
 

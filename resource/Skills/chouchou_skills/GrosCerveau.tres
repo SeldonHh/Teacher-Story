@@ -7,7 +7,7 @@
 script = ExtResource("1_5d4yw")
 name = "Gros Cerveau"
 sprite = ExtResource("2_5d4yw")
-description = "L'élève ciblé reçoit l'état 'Mal au crâne'."
+description = "L'élève ciblé reçoit l'état 'Très Attentif'."
 damage_modifier = 0
 cooldown = 4
 fast_skill = true

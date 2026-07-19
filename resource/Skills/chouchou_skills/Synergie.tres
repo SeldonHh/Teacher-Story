@@ -9,6 +9,5 @@ name = "Synergie"
 sprite = ExtResource("2_lbskm")
 description = "L'élève ciblée perd 2 pv . S'il est battu, vous recevez 1 point d'xp supplémentaire"
 cooldown = 4
-bonus_note = 1
 fast_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

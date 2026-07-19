@@ -16,6 +16,7 @@ var current_rank: int = 2 ##valeur entre 0 et 2, 0 c'est le dernier rang, 2 celu
 var bonus_note_on_death: int = 0
 @onready var mouse_detector: Area2D = %"Mouse detector"
 var showing_tooltip := false
+var beaten := false
 
 func make_ui() -> void:
 	$TextureRect.texture = resource.sprite
@@ -64,6 +65,7 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 
 func die():
 	untouchable = true
+	beaten = true
 	resource.note += 1 * current_rank + bonus_note_on_death
 	if resource.note >20:
 		resource.note = 20
@@ -79,6 +81,7 @@ func reset():
 	stupidite = resource.stupidite_de_base
 	ennui = resource.ennui_de_base
 	untouchable = false
+	beaten = false
 	modulate = Color("ffffff")
 	make_ui()
 
@@ -86,8 +89,6 @@ func _process(_delta: float) -> void:
 	if Global.IS_DEBUG:
 		if Input.is_action_just_pressed("debug"):
 			damage(1)
-		if Input.is_action_just_pressed("debug2"):
-			reset()
 	if showing_tooltip:
 		ManagerList.student_manager.student_tooltip.show()
 
