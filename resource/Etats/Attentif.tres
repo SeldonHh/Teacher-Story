@@ -8,4 +8,5 @@ name = "Attentif"
 cleanable = 1
 desc = "+1 au prochain gain de savoir de cet élève"
 negative = false
+received_damage_reduction = -1
 metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

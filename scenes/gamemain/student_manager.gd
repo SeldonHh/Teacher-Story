@@ -118,6 +118,9 @@ func assign_students_to_random_desk():
 
 func clear_students():
 	for student in students:
+		for etat in student.resource.etats:
+			if etat.cleanable != -1:
+				student.resource.etats.erase(etat)
 		student.queue_free()
 	students = []
 

@@ -1,9 +1,11 @@
-[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://beouo6nxothj7"]
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://bxeunpqmyn8ng"]
 
-[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_vpkkt"]
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_du8x2"]
 
 [resource]
-script = ExtResource("1_vpkkt")
-name = "Largué"
-desc = "Ne comprends rien, les dégâts reçus sont inversés"
+script = ExtResource("1_du8x2")
+name = "Chouchou"
+cleanable = 1
+desc = "Votre chouchou vous fait profiter de son action spéciale tant qu'il est actif"
+negative = false
 metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

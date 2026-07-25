@@ -62,6 +62,9 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 		if amount > 0:
 			ManagerList.teacher_manager.damage_teacher(max(0,self_control_thorn-dealt_damage_reduction))
 			amount = max(0,amount-received_damage_reduction)
+			resource.etats.erase(preload("uid://dsokypwo646yt"))
+			resource.etats.erase(preload("uid://uiof0vmwkw0"))
+			resource.etats.erase(preload("uid://qmbprjkljdg4"))
 		if ennui > 0 and !ennui_breaker:
 			var reste = amount - ennui
 			ennui -= amount
@@ -127,6 +130,8 @@ func _process(_delta: float) -> void:
 				bonus_note_on_death -= etat.bonus_note_on_death
 				gain_ennui_par_tour -= etat.gain_ennui_par_tour
 				self_damage_dot -= etat.self_damage_dot
+				match etat.name:
+					"Chouchou": Global.bottom_panel.reset_chouchou()
 				
 	
 		if previous_etats.size() <= resource.etats.size():
@@ -174,3 +179,21 @@ func time_passed():
 	ManagerList.teacher_manager.damage_teacher(max(0,self_control_dot-dealt_damage_reduction))
 	damage(-gain_ennui_par_tour)
 	damage(self_damage_dot)
+	for etat in resource.etats:
+		match etat.name:
+			"Accélération":pass ##wait for student attacks
+			"Bombe":pass
+			"Clone":pass ##wait for student attacks
+			"Copiage":pass ##wait for student attacks
+			"Discute":pass
+			"Démotivant":pass
+			"Endormi":pass #CRITIQUE KO
+			"Enervé":pass ##wait for student attacks
+			"Enragé":pass ##wait for student attacks
+			"Illumination":pass
+			"Invisible":pass
+			"KO":pass #CRITIQUE KO
+			"Largué":pass
+			"Mal au crâne":pass ##wait for student attacks
+			"Transfert vital": pass
+			"Tétanisé":pass #CRITIQUE KO

@@ -55,6 +55,7 @@ func _on_main_button_pressed() -> void:
 				self.resource = Global.DEBUG_CHOUCHOU_SKILL
 			else:
 				self.resource = student_targets[0].resource.chouchou_skill
+			student_targets[0].resource.etats.append(preload("uid://bxeunpqmyn8ng"))
 			no_cc_update  = true
 		"Alzheimer":
 			Global.bottom_panel.randomize_skills()

@@ -4,7 +4,7 @@ extends Node
 const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
 const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
 const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-400,235)
-const DEBUG_CHOUCHOU_SKILL: SkillResource = preload("res://resource/Skills/chouchou_skills/Exclusion.tres")
+const DEBUG_CHOUCHOU_SKILL: SkillResource = null
 const BAG_SPRITES = [preload("uid://cxd8ggqp0omqk"),preload("uid://u78sx6xejio6"),preload("uid://cc75phnlu02nq"),preload("uid://88w24qm8hg25")]
 
 @export var DEBUG_SKIP_MISSION_SELECTION = true

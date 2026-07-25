@@ -22,8 +22,7 @@ func update_time(amount):
 	updated_time.emit()
 
 func stop_class():
-	%StudentManager.reset_all_students()
-	%TeacherManager.reset_life()
+	ManagerList.student_manager.reset_class()
 	remaining_time = max_time
 	Global.bottom_panel.reset_chouchou()
 	
