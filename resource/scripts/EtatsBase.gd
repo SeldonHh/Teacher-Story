@@ -13,7 +13,8 @@ class_name EtatsResource
 @export_category("effect")
 @export var self_control_dot := 0
 @export var self_control_thorn := 0
-@export var damage_reduction := 0
+@export var received_damage_reduction := 0
+@export var dealt_damage_reduction := 0
 @export var bonus_note_on_death := 0
 @export var gain_ennui_par_tour := 0
 @export var self_damage_dot := 0

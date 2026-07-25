@@ -128,3 +128,10 @@ func get_text_for_mission_objective(resource:MissionBase):
 		else: text = "Note minimum:[color=%s][b] %s/20[/b][/color]"%[get_color_for_note(note),note]
 	else: text = "Note minimum:[color=%s][b] %s/20[/b][/color]"%[get_color_for_note(note),note]
 	return text
+
+func array_difference(arr1, arr2):
+	var only_in_arr1 = []
+	for v in arr1:
+		if not (v in arr2):
+			only_in_arr1.append(v)
+	return only_in_arr1

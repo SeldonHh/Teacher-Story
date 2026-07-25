@@ -43,7 +43,7 @@ func _on_main_button_pressed() -> void:
 		if student is Student:
 			student.damage(resource.damage_modifier,resource.ennui_breaker,resource.ennui_only)
 			student.add_shield(resource.shield_modifier)
-	ManagerList.teacher_manager.teacher_life += resource.heal_modifier
+	ManagerList.teacher_manager.damage_teacher(-resource.heal_modifier)
 	match resource.name:
 		"Rappel à l'ordre": pass #TODO: Remove negative effect
 		"Concentration": pass #TODO: Add positive effect 
@@ -126,7 +126,6 @@ func _on_main_button_pressed() -> void:
 
 	if !resource.fast_skill:
 		ManagerList.timer_manager.update_time(-1)
-		ManagerList.teacher_manager.teacher_life -= randi_range(0,3)
 
 func _process(_delta: float) -> void:
 	update()

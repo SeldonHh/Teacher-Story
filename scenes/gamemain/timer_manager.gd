@@ -13,7 +13,9 @@ func update_time(amount):
 			timer -= 1
 			if timer <= 0:
 				healing_time.erase(timer)
-			ManagerList.teacher_manager.teacher_life += 1
+			ManagerList.teacher_manager.damage_teacher(-1) #heals by 1
+	for student in ManagerList.student_manager.students:
+		student.time_passed()
 	remaining_time += amount
 	if remaining_time <= 0:
 		stop_class()

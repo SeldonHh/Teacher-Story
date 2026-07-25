@@ -10,4 +10,5 @@ desc = "Les dégâts de l'élève sont réduits à 0"
 negative = false
 duration_min = 4
 duration_max = 4
+dealt_damage_reduction = 999
 metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

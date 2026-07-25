@@ -17,5 +17,8 @@ func _process(_delta: float) -> void:
 		teacher_life= max_teacher_life
 		
 
+func damage_teacher(amount):
+	teacher_life -= amount
+
 func crashout():
 	print("crashing out")

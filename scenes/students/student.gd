@@ -17,6 +17,15 @@ var bonus_note_on_death: int = 0
 @onready var mouse_detector: Area2D = %"Mouse detector"
 var showing_tooltip := false
 var beaten := false
+var cant_act := false
+
+##etats modifiers:
+var self_control_dot := 0
+var self_control_thorn := 0
+var dealt_damage_reduction := 0
+var received_damage_reduction := 0
+var gain_ennui_par_tour := 0
+var self_damage_dot := 0
 
 func make_ui() -> void:
 	$TextureRect.texture = resource.sprite
@@ -50,6 +59,9 @@ func add_shield(amount):
 
 func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false):
 	if !untouchable:
+		if amount > 0:
+			ManagerList.teacher_manager.damage_teacher(max(0,self_control_thorn-dealt_damage_reduction))
+			amount = max(0,amount-received_damage_reduction)
 		if ennui > 0 and !ennui_breaker:
 			var reste = amount - ennui
 			ennui -= amount
@@ -73,6 +85,9 @@ func die():
 		resource.note = 0
 	ManagerList.student_manager.update_info_labels()
 	modulate = Color("5f5f5f")
+	for etat in resource.etats:
+		if etat.duration_min != -1:
+			resource.etats.erase(etat)
 	for child in $HpContainer.get_children():
 		if child is TextureRect:
 			child.queue_free()
@@ -85,12 +100,49 @@ func reset():
 	modulate = Color("ffffff")
 	make_ui()
 
+
+var previous_etats := []
 func _process(_delta: float) -> void:
 	if Global.IS_DEBUG:
 		if Input.is_action_just_pressed("debug"):
 			damage(1)
+			resource.etats.append(preload("uid://ckt4vj7fdvosn"))
+		if Input.is_action_just_pressed("debug2"):
+			resource.etats.pop_front()
+
 	if showing_tooltip:
 		ManagerList.student_manager.student_tooltip.show()
+	
+	if resource.etats == previous_etats:
+		return
+	else:
+		if previous_etats.size() >= resource.etats.size():
+			##DOES NOT ACCOUNT FOR DUPLICATE (if there's the same effect twice)
+			var cleansed_etats = Global.array_difference(previous_etats,resource.etats)
+			for etat in cleansed_etats:
+				self_control_dot -= etat.self_control_dot
+				self_control_thorn -= etat.self_control_thorn
+				dealt_damage_reduction -= etat.dealt_damage_reduction
+				received_damage_reduction -= etat.received_damage_reduction
+				bonus_note_on_death -= etat.bonus_note_on_death
+				gain_ennui_par_tour -= etat.gain_ennui_par_tour
+				self_damage_dot -= etat.self_damage_dot
+				
+	
+		if previous_etats.size() <= resource.etats.size():
+			##DOES NOT ACCOUNT FOR DUPLICATE (if there's the same effect twice)
+			var applied_etats = Global.array_difference(resource.etats,previous_etats)
+			for etat in applied_etats:
+				self_control_dot += etat.self_control_dot
+				self_control_thorn += etat.self_control_thorn
+				dealt_damage_reduction += etat.dealt_damage_reduction
+				received_damage_reduction += etat.received_damage_reduction
+				bonus_note_on_death += etat.bonus_note_on_death
+				gain_ennui_par_tour += etat.gain_ennui_par_tour
+				self_damage_dot += etat.self_damage_dot
+				
+		previous_etats = resource.etats.duplicate()
+
 
 
 func _on_mouse_detector_mouse_entered() -> void:
@@ -115,3 +167,10 @@ func _on_mouse_detector_mouse_exited() -> void:
 			print("The texture of the hp of a student was FUCKING WRONG SOMEHOW")
 	showing_tooltip = false
 	ManagerList.student_manager.student_tooltip.hide()
+
+func time_passed():
+	if cant_act or beaten:
+		return
+	ManagerList.teacher_manager.damage_teacher(max(0,self_control_dot-dealt_damage_reduction))
+	damage(-gain_ennui_par_tour)
+	damage(self_damage_dot)
