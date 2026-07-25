@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://bkoijng2bp55d"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_i5y8q"]
+
+[resource]
+script = ExtResource("1_i5y8q")
+name = "Copiage"
+desc = "L'élève prend le même caractère qu'un autre élève, il peut agir comme lui."
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

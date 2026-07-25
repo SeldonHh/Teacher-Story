@@ -47,6 +47,7 @@ alignment = 1
 [node name="SkillBase" parent="SkillContainer" unique_id=1992360077 instance=ExtResource("1_mpf03")]
 layout_mode = 2
 resource = ExtResource("2_pa2km")
+no_button = true
 
 [node name="SkillBase2" parent="SkillContainer" unique_id=208171830 instance=ExtResource("1_mpf03")]
 layout_mode = 2
@@ -58,6 +59,7 @@ resource = ExtResource("3_apmfv")
 [node name="SkillBase4" parent="SkillContainer" unique_id=1013668626 instance=ExtResource("1_mpf03")]
 layout_mode = 2
 resource = ExtResource("4_sips2")
+no_button = true
 
 [node name="BottomTextureStuff" type="TextureRect" parent="." unique_id=1504810811]
 z_index = -1

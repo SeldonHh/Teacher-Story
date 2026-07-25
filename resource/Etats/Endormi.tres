@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://bculko8oypeh"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_xfvvv"]
+
+[resource]
+script = ExtResource("1_xfvvv")
+name = "Endormi"
+desc = "Insensible à tout. On ne peut pas intéragir avec cet élève"
+critical = true
+duration_min = 4
+duration_max = 8
+untargetable = true
+insensible = true
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

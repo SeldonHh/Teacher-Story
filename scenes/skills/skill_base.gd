@@ -5,6 +5,7 @@ extends Control
 @onready var main_button: TextureButton = $MainButton
 var disabled := false
 var no_cc_update := false
+@export var no_button :=false
 
 func _ready() -> void:
 	Global.skill_list.append(self)
@@ -130,7 +131,7 @@ func _on_main_button_pressed() -> void:
 func _process(_delta: float) -> void:
 	update()
 	disabled = resource.current_cooldown > 0
-	if disabled:
+	if disabled or no_button:
 		modulate = Color(0.53, 0.53, 0.53, 1.0)
 		main_button.disabled = true
 	else:

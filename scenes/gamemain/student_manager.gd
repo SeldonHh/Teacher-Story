@@ -136,7 +136,6 @@ func reset_class():
 	ManagerList.desk_manager.clear_student_from_desk()
 	clear_students()
 	assign_students_to_random_desk()
-	#reset_all_students()
 
 func _ready() -> void:
 	ManagerList.student_manager = self
@@ -145,6 +144,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Global.IS_DEBUG and Input.is_action_just_pressed("debug2"):
 		reset_class()
+		
 
 func exclude(student):
 	for desk in ManagerList.desk_manager.get_room_desk_list():

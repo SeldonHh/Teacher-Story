@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://bqvolo4tyljr7"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_ano2g"]
+
+[resource]
+script = ExtResource("1_ano2g")
+name = "Supplice Vaudou"
+desc = "Une poupée pleine d'aiguilles !? Vous perdez 2 points de self control par tour. Aïe!"
+duration_min = 2
+duration_max = 4
+self_control_dot = 2
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

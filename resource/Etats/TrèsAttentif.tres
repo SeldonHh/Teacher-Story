@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://dsokypwo646yt"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_bja0f"]
+
+[resource]
+script = ExtResource("1_bja0f")
+name = "Très Attentif"
+cleanable = 1
+desc = "+2 au prochain gain de savoir de cet élève"
+negative = false
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

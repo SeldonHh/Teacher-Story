@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://bf68b805s7rkp"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_nobab"]
+
+[resource]
+script = ExtResource("1_nobab")
+name = "Enragé"
+desc = "Va vous agresser violemment au prochain tour"
+duration_min = 1
+duration_max = 1
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

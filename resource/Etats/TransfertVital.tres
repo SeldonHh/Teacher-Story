@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://b0mlg7ju7e5xm"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_5rk5t"]
+
+[resource]
+script = ExtResource("1_5rk5t")
+name = "Transfert vital"
+cleanable = 1
+desc = "A chaque tour, cet élève vous fait gagner un point de self control par élève actif autour de lui"
+negative = false
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

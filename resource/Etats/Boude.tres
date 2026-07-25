@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://crumyskabegj8"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_jkocd"]
+
+[resource]
+script = ExtResource("1_jkocd")
+name = "Boude"
+desc = "+1 ennui à chaque tour"
+gain_ennui_par_tour = 1
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

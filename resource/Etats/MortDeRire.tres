@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://blrbmdarl8oie"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_foe0n"]
+
+[resource]
+script = ExtResource("1_foe0n")
+name = "Mort de rire"
+desc = "Tant qu'il rigole vous perdez un point de self control par tour"
+self_control_dot = 1
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

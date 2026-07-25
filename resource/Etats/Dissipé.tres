@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://crw6877u66mee"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_ybgf5"]
+
+[resource]
+script = ExtResource("1_ybgf5")
+name = "Dissipé"
+desc = "A chaque gain de savoir l'élève vous fait perdre du self control"
+self_control_thorn = 1
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

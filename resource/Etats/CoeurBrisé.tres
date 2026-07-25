@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://dg1d8hsgl0ory"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_jxr4f"]
+
+[resource]
+script = ExtResource("1_jxr4f")
+name = "Coeur Brisé"
+cleanable = -1
+desc = "Etat critique! Résiste fortement à l'enseignement"
+critical = true
+duration_min = -1
+duration_max = -1
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

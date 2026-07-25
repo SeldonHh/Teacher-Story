@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://c5o8128tbyswd"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_1t4y8"]
+
+[resource]
+script = ExtResource("1_1t4y8")
+name = "Accélération"
+desc = "l'élève agit plus souvent"
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

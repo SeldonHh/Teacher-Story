@@ -11,3 +11,4 @@ class_name StudentResource
 @export var sprite: Texture2D = preload("res://assets/students/guy1.png")
 @export var bag_sprite : Texture2D = Global.BAG_SPRITES[0]
 @export var standing_sprite :Texture2D = preload("uid://t3hq4lvdwpn6")
+@export var etats : Array[EtatsResource] = []

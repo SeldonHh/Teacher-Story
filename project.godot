@@ -35,17 +35,15 @@ gdscript/warnings/integer_division=0
 window/size/mode=2
 window/stretch/mode="canvas_items"
 
-[editor]
-
-run/main_run_args="debug"
-
 [file_customization]
 
 folder_colors={
 "res://assets/": "red",
 "res://resource/": "green",
 "res://resource/Caractere/": "purple",
+"res://resource/Etats/": "pink",
 "res://resource/Skills/": "blue",
+"res://resource/scripts/": "yellow",
 "res://scenes/": "yellow"
 }
 

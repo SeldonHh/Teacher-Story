@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://d1ucmavrxt8cw"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_w8dao"]
+
+[resource]
+script = ExtResource("1_w8dao")
+name = "Démotivant"
+desc = "A chaque tour cet élève rajoute un ennui à un de ses camarades."
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

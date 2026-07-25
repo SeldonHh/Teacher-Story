@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://bfl27qh8f38v5"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_os3xh"]
+
+[resource]
+script = ExtResource("1_os3xh")
+name = "Chantonne"
+desc = "Chantonne le dernier refrain à la mode. Vous perdez un point de self control par tour"
+duration_min = 2
+duration_max = 4
+self_control_dot = 1
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"

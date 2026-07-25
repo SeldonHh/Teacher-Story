@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EtatsResource" format=3 uid="uid://toncjp2sqyj2"]
+
+[ext_resource type="Script" uid="uid://dpfrp0tt4pygk" path="res://resource/scripts/EtatsBase.gd" id="1_mpbvc"]
+
+[resource]
+script = ExtResource("1_mpbvc")
+name = "Amoureux"
+cleanable = -1
+desc = "Etat critique! Si il est à côté de son amoureux, il est insensible à l'enseignement, sinon il s'ennuie..."
+critical = true
+duration_min = -1
+duration_max = -1
+metadata/_custom_type_script = "uid://dpfrp0tt4pygk"
