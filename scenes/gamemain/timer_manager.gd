@@ -23,6 +23,7 @@ func stop_class():
 	%StudentManager.reset_all_students()
 	%TeacherManager.reset_life()
 	remaining_time = max_time
+	Global.bottom_panel.reset_chouchou()
 	
 
 func _ready() -> void:

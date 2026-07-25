@@ -9,6 +9,7 @@ extends Control
 @onready var health_particle: CPUParticles2D = %HealthParticle
 @onready var time_particle: CPUParticles2D = %TimeParticle
 @onready var skill_container: HBoxContainer = $SkillContainer
+@onready var chouchou: Control = $Chouchou
 
 var max_time = 10
 var last_time := -1.0
@@ -63,7 +64,11 @@ func _update_health_bar(life:float) -> void:
 	tween.tween_property(health_bar, "value", life, 0.3)
 	tween.tween_callback(hacky_shit.bind(life))
 	health_particle.emitting = true
-	
+
+func reset_chouchou():
+	chouchou.resource = preload("res://resource/Skills/Chouchou.tres")
+	chouchou.update()
+
 func hacky_shit(life:float):
 	await get_tree().create_timer(.1).timeout
 	var tween = create_tween()
