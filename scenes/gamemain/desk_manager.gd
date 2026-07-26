@@ -26,3 +26,12 @@ func get_room_desk_list():
 func clear_student_from_desk():
 	for desk in desks:
 		desk.student = null
+
+func get_all_neighbor_desk(target_desk:Desk)-> Array[Desk]:
+	var room_desks = get_room_desk_list()
+	var neighbor_desks : Array[Desk] = []
+	for desk in room_desks:
+		if desk != target_desk:
+			if desk.column in [target_desk.column-1,target_desk.column,target_desk.column+1] and desk.row in [target_desk.row-1,target_desk.row,target_desk.row+1]:
+				neighbor_desks.append(desk)
+	return neighbor_desks

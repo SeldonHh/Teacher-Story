@@ -61,7 +61,7 @@ func select_student() -> Array :
 	students = ManagerList.student_manager.students
 	var selectable = len(students)
 	for student in students:
-		if student.untouchable == false:
+		if student.untargetable == false and student.beaten == false:
 			student.mouse_detector.custom_pressed.connect(student_pressed.emit.bind(student))
 			student.modulate = Color(1.0, 1.0, 0.0, 1.0)
 		else:
@@ -70,7 +70,7 @@ func select_student() -> Array :
 		return []
 	var selected_student = await student_pressed
 	for student in students:
-		if student.untouchable == false:
+		if student.untargetable == false and student.beaten == false:
 			student.mouse_detector.custom_pressed.disconnect(student_pressed.emit)
 			student.modulate = Color.WHITE
 	var array_selected_student = [selected_student]
@@ -81,7 +81,7 @@ func select_column() -> Array:
 	students = ManagerList.student_manager.students
 	var selectable = len(students)
 	for student in students:
-		if student.untouchable == false:
+		if student.untargetable == false and student.beaten == false:
 			student.mouse_detector.custom_pressed.connect(student_pressed.emit.bind(student))
 			student.modulate = Color(1.0, 1.0, 0.0, 1.0)
 		else:
@@ -90,7 +90,7 @@ func select_column() -> Array:
 		return []
 	var selected_student = await student_pressed
 	for student in students:
-		if student.untouchable == false:
+		if student.untargetable == false and student.beaten == false:
 			student.mouse_detector.custom_pressed.disconnect(student_pressed.emit)
 			student.modulate = Color.WHITE
 	

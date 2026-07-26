@@ -8,13 +8,13 @@ var caractere_info_labels : Array[RichTextLabel] = []
 var student_scene = preload("res://scenes/students/student.tscn")
 var gender = ["boy","girl"]
 var boy_names = [
-"Aylan","Alexandre","Alexis","Andress","Antoine","Arthur","Athanase","Aurélien",
+"Aylan","Alexandre","Alexis","Andress","Antoine","Arthur","Athanase","Aurélien","Adrien",
 "Barnabé","Benjamin","Caïn","Camille","Charles","Edouard","Clément","David","Diego",
-"Eliott","Enzo","Esteban","Félix","François","Gaetan","Henri","Hugo","Jean",
+"Eliott","Enzo","Esteban","Félix","François","Gaetan","Hadrien","Henri","Hugo","Jean",
 "Jean-Baptiste","Joachim","Jonathan","Joseph","Joshua","Judas","Justin","Kevin",
 "Imane","Lenny","Léon","Loïc","Louis","Lucas","Marius","Mathieu","Maxime","Mehdi",
 "Mohamed","Nathan","Nicolas","Oscar","Paul","Pierre","Raoul","Raphaël","Rémi",
-"Robin","Romeo","Paul","Samuel","Sébastien","Théo","Thomas","Tom","Valentin",
+"Robin","Romeo","Paul","Samuel","Sébastien","Théo","Thomas","Tom","Victor","Valentin",
 "Vincent","Yann","Yassine","Zlatan","Seldon","Demurgos","Patate","Nassimou"
 ]
 var girl_names = [
@@ -22,7 +22,7 @@ var girl_names = [
 "Apolline","Barbara","Béatrice","Céleste","Chaima","Charlotte","Chloe",
 "Claire","Clara","Constance","Domitille","Eglantine","Eleonore","Enora","Elise",
 "Elsa","Emilie","Emma","Fanchon","Fanny","Félicie","Georgette",
-"Inaya","Inès","Jeanne","Julie","Kenza","Kimberley","Lili","Lou","Louise",
+"Inaya","Inès","Jade","Jeanne","Julie","Kenza","Kimberley","Lili","Lou","Louise",
 "Louna","Maélys","Margot","Meredith","Marie","Marie-Lou","Marine","Mathilde","Maya",
 "Melinda","Mélissa","Mia","Myriam","Naomie","Pauline","Philippine","Rose",
 "Sofia","Stella","Suzette","Tess","Valentine","Victoria","Violette",
@@ -126,10 +126,6 @@ func clear_students():
 
 func clear_students_resources():
 	students_resources.clear()
-
-func immune_all_students():
-	for student in students:
-		student.untouchable = true
 
 func reset_all_students():
 	for student in students:

@@ -1,6 +1,6 @@
 extends Node
 
-var max_time : int = 10
+var max_time : int = 12
 var remaining_time : int = max_time
 signal updated_time
 var healing_time: Array[int] = []
