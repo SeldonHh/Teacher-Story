@@ -65,7 +65,7 @@ func _on_main_button_pressed() -> void:
 	ManagerList.teacher_manager.damage_teacher(-resource.heal_modifier)
 	match resource.name:
 		"Concentration":
-			if !concentration_no_effect:
+			if !concentration_no_effect and concentration_only_affected_student != null:
 				concentration_only_affected_student.resource.etats.append(ATTENTIF)
 		"Rappel à l'ordre": 
 			var stop := false

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://curxcgjelduip"]
+
+[ext_resource type="Texture2D" uid="uid://c7fuksru6dc66" path="res://assets/students/positive.png" id="1_q3l66"]
+
+[node name="EtatUi" type="TextureRect" unique_id=500774185]
+custom_minimum_size = Vector2(6, 5)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_q3l66")
+expand_mode = 1
+stretch_mode = 5

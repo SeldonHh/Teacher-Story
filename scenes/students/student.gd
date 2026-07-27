@@ -6,6 +6,9 @@ const SPRITE_HOVER_ENNUI = preload("res://assets/students/hover_ennui.png")
 const SPRITE_STUPIDITE = preload("uid://c5arag4jnaelj")
 const SPRITE_HOVER_STUPIDITE = preload("uid://b26vh50eoqmtb")
 const LIFE_SPRITE_SCENE = preload("uid://dtlcn2mtrw7ax")
+const NEGATIVE = preload("uid://bv8pp1gjig57k")
+const POSITIVE = preload("uid://c7fuksru6dc66")
+const ETAT_UI = preload("uid://curxcgjelduip")
 
 @export var resource : StudentResource 
 
@@ -36,6 +39,25 @@ func make_ui() -> void:
 	for child in $HpContainer.get_children():
 		child.queue_free()
 	
+	var positive_etat := false
+	var negative_etat := false
+	for etat in resource.etats:
+		if etat.negative:
+			negative_etat = true
+		else:
+			positive_etat = true
+	if positive_etat:
+		var new_etat = ETAT_UI.instantiate()
+		new_etat.texture = POSITIVE
+		$HpContainer.add_child(new_etat)
+	if negative_etat:
+		var new_etat = ETAT_UI.instantiate()
+		new_etat.texture = NEGATIVE
+		$HpContainer.add_child(new_etat)
+	if negative_etat or positive_etat:
+		var separator = TextureRect.new()
+		separator.custom_minimum_size = Vector2(2,3)
+		$HpContainer.add_child(separator)
 	for i in stupidite:
 		var new_child = LIFE_SPRITE_SCENE.instantiate()
 		new_child.texture = SPRITE_STUPIDITE 
@@ -46,10 +68,15 @@ func make_ui() -> void:
 		new_child.texture = SPRITE_ENNUI 
 		new_child.ennui = true
 		$HpContainer.add_child(new_child)
+	
+	
 
 func _ready() -> void:
 	%"Mouse detector".connect("custom_mouse_enter",_on_mouse_detector_mouse_entered)
 	%"Mouse detector".connect("custome_mouse_exit",_on_mouse_detector_mouse_exited)
+	for etat in resource.etats:
+		if etat.duration_min != -1:
+			resource.etats.erase(etat)
 	make_ui()
 
 func add_shield(amount):
@@ -127,6 +154,9 @@ func reset():
 	insensible = false
 	beaten = false
 	modulate = Color("ffffff")
+	for etat in resource.etats:
+		if etat.duration_min != -1:
+			resource.etats.erase(etat)
 	make_ui()
 
 
@@ -135,7 +165,7 @@ func _process(_delta: float) -> void:
 	if Global.IS_DEBUG:
 		if Input.is_action_just_pressed("debug") and resource.etats.has(preload("uid://bxeunpqmyn8ng")):
 			ManagerList.teacher_manager.damage_teacher(10)
-			resource.etats.append(preload("res://resource/Etats/TransfertVital.tres"))
+			resource.etats.append(preload("res://resource/Etats/Chantonne.tres"))
 		if Input.is_action_just_pressed("debug2"):
 			resource.etats.pop_front()
 
@@ -193,31 +223,33 @@ func _process(_delta: float) -> void:
 					"Illumination": double_recieved_damage = true
 					"Largué": opposite_damage = true
 		previous_etats = resource.etats.duplicate()
-
+		make_ui()
 
 
 func _on_mouse_detector_mouse_entered() -> void:
 	for child in $HpContainer.get_children():
-		if child.ennui == false:
-			child.texture = SPRITE_HOVER_STUPIDITE
-		elif child.ennui == true:
-			child.texture = SPRITE_HOVER_ENNUI
-		else:
-			print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
-	ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,resource.caractere)
-	showing_tooltip = true
+		if child is LifeSprite:
+			if child.ennui == false:
+				child.texture = SPRITE_HOVER_STUPIDITE
+			elif child.ennui == true:
+				child.texture = SPRITE_HOVER_ENNUI
+			else:
+				print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
+		ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,resource.caractere)
+		showing_tooltip = true
 
 
 func _on_mouse_detector_mouse_exited() -> void:
 	for child in $HpContainer.get_children():
-		if child.ennui == false:
-			child.texture = SPRITE_STUPIDITE
-		elif child.ennui == true:
-			child.texture = SPRITE_ENNUI
-		else:
-			print("The texture of the hp of a student was FUCKING WRONG SOMEHOW")
-	showing_tooltip = false
-	ManagerList.student_manager.student_tooltip.hide()
+		if child is LifeSprite:
+			if child.ennui == false:
+				child.texture = SPRITE_STUPIDITE
+			elif child.ennui == true:
+				child.texture = SPRITE_ENNUI
+			else:
+				print("The texture of the hp of a student was FUCKING WRONG SOMEHOW")
+		showing_tooltip = false
+		ManagerList.student_manager.student_tooltip.hide()
 
 func time_passed():
 	if cant_act or beaten:
