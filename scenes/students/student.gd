@@ -120,6 +120,7 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 
 
 func die():
+	showing_tooltip = false
 	untargetable = true
 	insensible = true
 	beaten = true
@@ -134,8 +135,9 @@ func die():
 		if etat.duration_min != -1:
 			resource.etats.erase(etat)
 	for child in $HpContainer.get_children():
-		if child is TextureRect:
-			child.queue_free()
+		child.queue_free()
+	$HpContainer.hide()
+
 
 func bomb(amount):
 	var target : Desk
@@ -163,14 +165,11 @@ func reset():
 var previous_etats := []
 func _process(_delta: float) -> void:
 	if Global.IS_DEBUG:
-		if Input.is_action_just_pressed("debug") and resource.etats.has(preload("uid://bxeunpqmyn8ng")):
-			ManagerList.teacher_manager.damage_teacher(10)
+		if Input.is_action_just_pressed("debug"): # and resource.etats.has(preload("uid://bxeunpqmyn8ng")):
+			ManagerList.teacher_manager.damage_teacher(0)
 			resource.etats.append(preload("res://resource/Etats/Chantonne.tres"))
 		if Input.is_action_just_pressed("debug2"):
 			resource.etats.pop_front()
-
-	if showing_tooltip:
-		ManagerList.student_manager.student_tooltip.show()
 	
 	if resource.etats == previous_etats:
 		return
@@ -224,6 +223,8 @@ func _process(_delta: float) -> void:
 					"Largué": opposite_damage = true
 		previous_etats = resource.etats.duplicate()
 		make_ui()
+		ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,resource.chouchou_skill,resource.etats)
+
 
 
 func _on_mouse_detector_mouse_entered() -> void:
@@ -235,7 +236,7 @@ func _on_mouse_detector_mouse_entered() -> void:
 				child.texture = SPRITE_HOVER_ENNUI
 			else:
 				print("The texture of the hp of a astudent was FUCKING WRONG SOMEHOW")
-		ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,resource.caractere)
+		ManagerList.student_manager.student_tooltip.change(resource.student_name,resource.standing_sprite,stupidite,ennui,resource.note,resource.chouchou_skill,resource.etats)
 		showing_tooltip = true
 
 

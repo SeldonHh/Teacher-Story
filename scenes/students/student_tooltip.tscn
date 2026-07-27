@@ -27,6 +27,7 @@ script = ExtResource("1_fuvat")
 
 [node name="Panel" type="Panel" parent="." unique_id=916249115]
 self_modulate = Color(1, 1, 1, 0.7529412)
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,6 +79,15 @@ anchor_bottom = 0.4
 grow_horizontal = 0
 theme_override_constants/separation = -1
 
+[node name="EtatContainer" type="HBoxContainer" parent="Panel" unique_id=288654380]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.22
+anchor_top = 0.5
+anchor_right = 0.8
+anchor_bottom = 0.7
+theme_override_constants/separation = -1
+
 [node name="Note" type="RichTextLabel" parent="Panel" unique_id=150466873]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 12)
@@ -107,11 +117,10 @@ custom_minimum_size = Vector2(0, 12)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.85
-anchor_top = 0.78
+anchor_top = 0.9
 anchor_right = 0.95
-anchor_bottom = 0.78
-offset_left = -15.5
-offset_top = -17.0
+anchor_bottom = 0.97
+offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/default_color = Color(0.89, 0.73632663, 0.23139998, 1)
@@ -128,27 +137,7 @@ autowrap_mode = 0
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="CaractereDesc" type="RichTextLabel" parent="Panel" unique_id=140877434]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 12)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.85
-anchor_top = 0.9
-anchor_right = 0.95
-anchor_bottom = 0.97
-offset_bottom = -7.0
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_colors/default_color = Color(0.99, 0.957825, 0.8613, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_offset_y = 0
-theme_override_font_sizes/normal_font_size = 8
-text = "Ennuyant
-"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-horizontal_alignment = 2
-vertical_alignment = 1
+[node name="Label" type="Label" parent="." unique_id=1211637404]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

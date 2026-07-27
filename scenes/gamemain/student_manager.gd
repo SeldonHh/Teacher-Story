@@ -143,6 +143,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Global.IS_DEBUG and Input.is_action_just_pressed("debug2"):
 		reset_class()
+	var tooltip := false
+	for student in students:
+		if student.showing_tooltip:
+			tooltip = true
+	if tooltip:
+		student_tooltip.show()
+	else:
+		student_tooltip.hide()
 		
 
 func exclude(student):
