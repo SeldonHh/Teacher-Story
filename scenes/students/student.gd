@@ -9,6 +9,7 @@ const LIFE_SPRITE_SCENE = preload("uid://dtlcn2mtrw7ax")
 @onready var positive_icon: TextureRect = $HpContainer/positive_icon
 @onready var negative_icon: TextureRect = $HpContainer/negative_icon
 @onready var hp_container: HBoxContainer = $HpContainer
+@onready var holder: Control = $Holder
 
 @export var resource : StudentResource 
 
@@ -38,6 +39,8 @@ var double_recieved_damage := false
 var opposite_damage := false
 
 func make_ui() -> void:
+	holder.position = hp_container.position
+	holder.size = hp_container.size
 	$TextureRect.texture = resource.sprite
 	hp_container_stupidite_limit = 3 + stupidite
 	var ui_state = [false,false,stupidite,ennui]
@@ -74,6 +77,7 @@ func make_ui() -> void:
 							if child is LifeSprite:
 								child.play_anim("leave")
 								hp_container.remove_child(child)
+								holder.add_child(child)
 							
 				3:
 					if ui_state[3] > previous_ui_state[3]:
@@ -88,6 +92,7 @@ func make_ui() -> void:
 							if child is LifeSprite and child.ennui:
 								child.play_anim("leave")
 								hp_container.remove_child(child)
+								holder.add_child(child)
 	previous_ui_state = ui_state.duplicate()
 
 func _ready() -> void:
@@ -153,9 +158,6 @@ func die():
 	for etat in resource.etats:
 		if etat.duration_min != -1:
 			resource.etats.erase(etat)
-	for child in hp_container.get_children():
-		if child is LifeSprite:
-			child.queue_free()
 	hp_container.hide()
 
 

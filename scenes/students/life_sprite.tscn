@@ -3,57 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://c5arag4jnaelj" path="res://assets/students/stupidité.png" id="1_btk28"]
 [ext_resource type="Script" uid="uid://bdyae2br42j78" path="res://scenes/students/life_sprite.gd" id="2_6ojg6"]
 
-[sub_resource type="Animation" id="Animation_tx85n"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_6ojg6"]
-resource_name = "leave"
-length = 0.19999999999999998
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"queue_free"
-}]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_tx85n"]
-_data = {
-&"RESET": SubResource("Animation_tx85n"),
-&"leave": SubResource("Animation_6ojg6")
-}
-
 [node name="life_sprite" type="TextureRect" unique_id=2042559942]
 z_index = 1
 custom_minimum_size = Vector2(6, 4)
@@ -66,6 +15,3 @@ texture = ExtResource("1_btk28")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_6ojg6")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2012404193]
-libraries/ = SubResource("AnimationLibrary_tx85n")

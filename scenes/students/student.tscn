@@ -52,3 +52,9 @@ script = ExtResource("3_fahmq")
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_ghgn5")
 debug_color = Color(0.56465054, 0.5492653, 0.2920015, 0.41960785)
+
+[node name="Holder" type="Control" parent="." unique_id=2057632704]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
