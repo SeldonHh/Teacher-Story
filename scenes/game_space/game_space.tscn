@@ -68,6 +68,7 @@
 [ext_resource type="Texture2D" uid="uid://3e1mywrf0jq2" path="res://assets/environnement/decorations and desks/casier-jaune - Copie.png" id="66_d0d5c"]
 [ext_resource type="Texture2D" uid="uid://dna7ktdoiwah5" path="res://assets/environnement/decorations and desks/deco_distributeur.png" id="67_dd515"]
 [ext_resource type="Texture2D" uid="uid://c0ih8qlpn8m7p" path="res://assets/environnement/decorations and desks/casier-jaune_reflect.png" id="68_dd515"]
+[ext_resource type="Texture2D" uid="uid://bi634l7d0a5g6" path="res://assets/environnement/vehicles/abri.png" id="69_yj205"]
 
 [node name="GameSpace" type="Node2D" unique_id=562061812]
 y_sort_enabled = true
@@ -1337,3 +1338,8 @@ texture = ExtResource("68_dd515")
 y_sort_enabled = true
 position = Vector2(-406, 245)
 texture = ExtResource("37_ie6kh")
+
+[node name="Abri" type="Sprite2D" parent="School" unique_id=1654499340]
+z_index = 3
+position = Vector2(-174, 380)
+texture = ExtResource("69_yj205")
