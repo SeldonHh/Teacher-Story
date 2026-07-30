@@ -67,6 +67,8 @@ func _update_health_bar(life:float) -> void:
 
 func reset_chouchou():
 	chouchou.resource = preload("res://resource/Skills/Chouchou.tres")
+	chouchou.disabled = false
+	chouchou.no_button = false
 	chouchou.update()
 
 func hacky_shit(life:float):

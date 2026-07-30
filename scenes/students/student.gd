@@ -6,9 +6,9 @@ const SPRITE_HOVER_ENNUI = preload("res://assets/students/hover_ennui.png")
 const SPRITE_STUPIDITE = preload("uid://c5arag4jnaelj")
 const SPRITE_HOVER_STUPIDITE = preload("uid://b26vh50eoqmtb")
 const LIFE_SPRITE_SCENE = preload("uid://dtlcn2mtrw7ax")
-const NEGATIVE = preload("uid://bv8pp1gjig57k")
-const POSITIVE = preload("uid://c7fuksru6dc66")
-const ETAT_UI = preload("uid://curxcgjelduip")
+@onready var positive_icon: TextureRect = $HpContainer/positive_icon
+@onready var negative_icon: TextureRect = $HpContainer/negative_icon
+@onready var hp_container: HBoxContainer = $HpContainer
 
 @export var resource : StudentResource 
 
@@ -20,6 +20,9 @@ var bonus_note_on_death: int = 0
 var showing_tooltip := false
 var beaten := false
 var cant_act := false
+##First is positive state, then negative state, then stupidité count then ennui count
+var previous_ui_state = [false,false,0,0]
+var hp_container_stupidite_limit := 3
 
 ##etats modifiers:
 var self_control_dot := 0
@@ -36,42 +39,56 @@ var opposite_damage := false
 
 func make_ui() -> void:
 	$TextureRect.texture = resource.sprite
-	for child in $HpContainer.get_children():
-		child.queue_free()
-	
-	var positive_etat := false
-	var negative_etat := false
+	hp_container_stupidite_limit = 3 + stupidite
+	var ui_state = [false,false,stupidite,ennui]
 	for etat in resource.etats:
 		if etat.negative:
-			negative_etat = true
-		else:
-			positive_etat = true
-	if positive_etat:
-		var new_etat = ETAT_UI.instantiate()
-		new_etat.texture = POSITIVE
-		$HpContainer.add_child(new_etat)
-		new_etat.play_anim("Enter")
-	if negative_etat:
-		var new_etat = ETAT_UI.instantiate()
-		new_etat.texture = NEGATIVE
-		$HpContainer.add_child(new_etat)
-		new_etat.play_anim("Enter")
-	if negative_etat or positive_etat:
-		var separator = TextureRect.new()
-		separator.custom_minimum_size = Vector2(2,3)
-		$HpContainer.add_child(separator)
-	for i in stupidite:
-		var new_child = LIFE_SPRITE_SCENE.instantiate()
-		new_child.texture = SPRITE_STUPIDITE 
-		$HpContainer.add_child(new_child)
-	
-	for i in ennui:
-		var new_child = LIFE_SPRITE_SCENE.instantiate()
-		new_child.texture = SPRITE_ENNUI 
-		new_child.ennui = true
-		$HpContainer.add_child(new_child)
-	
-	
+			ui_state[1] = true
+		else :
+			ui_state[0] = true
+	for i in range(len(ui_state)):
+		if ui_state[i] != previous_ui_state[i]:
+			match i:
+				0: 
+					if ui_state[0] == true:
+						positive_icon.show()
+						positive_icon.play_anim("Enter")
+					else:
+						positive_icon.hide()
+				1: 
+					if ui_state[1] == true:
+						negative_icon.show()
+						negative_icon.play_anim("Enter")
+					else:
+						negative_icon.hide()
+				2: 
+					if ui_state[2] > previous_ui_state[2]:
+						for j in range(ui_state[2] - previous_ui_state[2]):
+							var new_child = LIFE_SPRITE_SCENE.instantiate()
+							new_child.texture = SPRITE_STUPIDITE 
+							hp_container.add_child(new_child)
+							hp_container.move_child(new_child,3)
+					else: 
+						for j in range(previous_ui_state[2] - ui_state[2]):
+							var child = hp_container.get_child(3)
+							if child is LifeSprite:
+								child.play_anim("leave")
+								hp_container.remove_child(child)
+							
+				3:
+					if ui_state[3] > previous_ui_state[3]:
+						for j in range(ui_state[3] - previous_ui_state[3]):
+							var new_child = LIFE_SPRITE_SCENE.instantiate()
+							new_child.texture = SPRITE_ENNUI 
+							new_child.ennui = true
+							hp_container.add_child(new_child)
+					else: 
+						for j in range(previous_ui_state[3] - ui_state[3]):
+							var child = hp_container.get_child(-1)
+							if child is LifeSprite and child.ennui:
+								child.play_anim("leave")
+								hp_container.remove_child(child)
+	previous_ui_state = ui_state.duplicate()
 
 func _ready() -> void:
 	%"Mouse detector".connect("custom_mouse_enter",_on_mouse_detector_mouse_entered)
@@ -108,11 +125,11 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 			resource.etats.erase(preload("uid://d278gv8ybhpns"))
 		if ennui > 0 and !ennui_breaker:
 			var reste = amount - ennui
-			ennui -= amount
+			ennui = max(0,ennui-amount)
 			if reste > 0 and !ennui_only:
-				stupidite -= reste
+				stupidite = max(0,stupidite-amount)
 		elif !ennui_only:
-			stupidite -= amount
+			stupidite = max(0,stupidite-amount)
 		if stupidite <= 0:
 			if self_dot and bomb_damage > 0:
 				bomb(bomb_damage)
@@ -136,9 +153,10 @@ func die():
 	for etat in resource.etats:
 		if etat.duration_min != -1:
 			resource.etats.erase(etat)
-	for child in $HpContainer.get_children():
-		child.queue_free()
-	$HpContainer.hide()
+	for child in hp_container.get_children():
+		if child is LifeSprite:
+			child.queue_free()
+	hp_container.hide()
 
 
 func bomb(amount):
@@ -190,7 +208,8 @@ func _process(_delta: float) -> void:
 				if etat.insensible:
 					insensible = false
 				match etat.name:
-					"Chouchou": Global.bottom_panel.reset_chouchou()
+					"Chouchou": 
+						Global.bottom_panel.reset_chouchou()
 					"Bombe": bomb_damage -= 2
 					"Illumination":double_recieved_damage = false
 					"Largué":opposite_damage = false
@@ -230,7 +249,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_mouse_detector_mouse_entered() -> void:
-	for child in $HpContainer.get_children():
+	for child in hp_container.get_children():
 		if child is LifeSprite:
 			if child.ennui == false:
 				child.texture = SPRITE_HOVER_STUPIDITE
@@ -243,7 +262,7 @@ func _on_mouse_detector_mouse_entered() -> void:
 
 
 func _on_mouse_detector_mouse_exited() -> void:
-	for child in $HpContainer.get_children():
+	for child in hp_container.get_children():
 		if child is LifeSprite:
 			if child.ennui == false:
 				child.texture = SPRITE_STUPIDITE

@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c3n5gg4kaoeld" path="res://scenes/students/student.gd" id="1_4orpo"]
 [ext_resource type="Texture2D" uid="uid://bwi8bwxynmh7u" path="res://assets/students/guy1.png" id="2_txaf7"]
+[ext_resource type="PackedScene" uid="uid://curxcgjelduip" path="res://scenes/UI/etat_ui.tscn" id="3_75c70"]
 [ext_resource type="Script" uid="uid://cvhb8v11motlw" path="res://scenes/students/mouse_detector.gd" id="3_fahmq"]
+[ext_resource type="Texture2D" uid="uid://bv8pp1gjig57k" path="res://assets/students/negative.png" id="4_5t2pd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wmxaf"]
 radius = 3.0
@@ -25,6 +27,19 @@ grow_horizontal = 2
 scale = Vector2(0.8, 0.8)
 theme_override_constants/separation = 0
 alignment = 1
+
+[node name="positive_icon" parent="HpContainer" unique_id=500774185 instance=ExtResource("3_75c70")]
+visible = false
+layout_mode = 2
+
+[node name="negative_icon" parent="HpContainer" unique_id=148574510 instance=ExtResource("3_75c70")]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_5t2pd")
+
+[node name="separator" type="TextureRect" parent="HpContainer" unique_id=785536459]
+custom_minimum_size = Vector2(2, 3)
+layout_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=851338425]
 shape = SubResource("CapsuleShape2D_wmxaf")
