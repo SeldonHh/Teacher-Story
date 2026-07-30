@@ -1,6 +1,4 @@
 extends TextureRect
-class_name LifeSprite
-var ennui = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func play_anim(anim):

@@ -1,11 +1,54 @@
 [gd_scene format=3 uid="uid://curxcgjelduip"]
 
 [ext_resource type="Texture2D" uid="uid://c7fuksru6dc66" path="res://assets/students/positive.png" id="1_q3l66"]
+[ext_resource type="Script" uid="uid://il0xlipa3m10" path="res://scenes/UI/etat_ui.gd" id="2_gi1s0"]
+
+[sub_resource type="Animation" id="Animation_q3l66"]
+resource_name = "Enter"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.19999999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gi1s0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_01kfj"]
+_data = {
+&"Enter": SubResource("Animation_q3l66"),
+&"RESET": SubResource("Animation_gi1s0")
+}
 
 [node name="EtatUi" type="TextureRect" unique_id=500774185]
 custom_minimum_size = Vector2(6, 5)
 offset_right = 40.0
 offset_bottom = 40.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_q3l66")
 expand_mode = 1
 stretch_mode = 5
+script = ExtResource("2_gi1s0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=425314133]
+libraries/ = SubResource("AnimationLibrary_01kfj")

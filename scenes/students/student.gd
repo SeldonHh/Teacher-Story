@@ -50,10 +50,12 @@ func make_ui() -> void:
 		var new_etat = ETAT_UI.instantiate()
 		new_etat.texture = POSITIVE
 		$HpContainer.add_child(new_etat)
+		new_etat.play_anim("Enter")
 	if negative_etat:
 		var new_etat = ETAT_UI.instantiate()
 		new_etat.texture = NEGATIVE
 		$HpContainer.add_child(new_etat)
+		new_etat.play_anim("Enter")
 	if negative_etat or positive_etat:
 		var separator = TextureRect.new()
 		separator.custom_minimum_size = Vector2(2,3)
