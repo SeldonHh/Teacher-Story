@@ -5,13 +5,12 @@
 
 [node name="life_sprite" type="TextureRect" unique_id=2042559942]
 z_index = 1
-custom_minimum_size = Vector2(6, 4)
+custom_minimum_size = Vector2(6, 7)
 anchors_preset = -1
 offset_right = 6.0
 offset_bottom = 4.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource("1_btk28")
-expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_6ojg6")

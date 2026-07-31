@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id="Animation_q3l66"]
 resource_name = "Enter"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -42,11 +42,10 @@ _data = {
 
 [node name="EtatUi" type="TextureRect" unique_id=500774185]
 custom_minimum_size = Vector2(6, 5)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 9.0
+offset_bottom = 7.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("1_q3l66")
-expand_mode = 1
 stretch_mode = 5
 script = ExtResource("2_gi1s0")
 

@@ -132,14 +132,14 @@ func damage(amount: int, ennui_breaker: bool = false , ennui_only : bool = false
 			var reste = amount - ennui
 			ennui = max(0,ennui-amount)
 			if reste > 0 and !ennui_only:
-				stupidite = max(0,stupidite-amount)
+				stupidite = max(0,stupidite-reste)
 		elif !ennui_only:
 			stupidite = max(0,stupidite-amount)
 		if stupidite <= 0:
 			if self_dot and bomb_damage > 0:
 				bomb(bomb_damage)
 			die()
-			
+				
 		make_ui()
 
 
