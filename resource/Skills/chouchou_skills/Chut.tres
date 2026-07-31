@@ -12,4 +12,5 @@ damage_modifier = 0
 target = "Table"
 fast_skill = true
 shield_modifier = 1
+chouchou_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

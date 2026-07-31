@@ -12,4 +12,5 @@ damage_modifier = 0
 target = "All"
 cooldown = 3
 fast_skill = true
+chouchou_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

@@ -34,18 +34,18 @@ func _on_main_button_pressed() -> void:
 	match resource.target:
 		"Self": student_targets = []
 		"Column" : student_targets = await SkillTargetSelectHandler.select_column()
-		"Single": student_targets = await SkillTargetSelectHandler.select_student()
+		"Single": student_targets = await SkillTargetSelectHandler.select_student(resource.chouchou_skill)
 		"Table":
 			student_targets = await SkillTargetSelectHandler.select_groupdesk()
 		"All": student_targets = SkillTargetSelectHandler.students
 		"Two Students": 
-			student_targets = await SkillTargetSelectHandler.select_student()
-			student_targets.append( await SkillTargetSelectHandler.select_student())
+			student_targets = await SkillTargetSelectHandler.select_student(resource.chouchou_skill)
+			student_targets.append( await SkillTargetSelectHandler.select_student(resource.chouchou_skill))
 		"Student and Desk":
-			student_targets = await  SkillTargetSelectHandler.select_student()
+			student_targets = await  SkillTargetSelectHandler.select_student(resource.chouchou_skill)
 			if student_targets != []:
 				await get_tree().create_timer(.1).timeout
-				secondary_targets = await SkillTargetSelectHandler.select_desk()
+				secondary_targets = await SkillTargetSelectHandler.select_desk(student_targets[0])
 		"Single Desk":
 			student_targets = [await SkillTargetSelectHandler.select_desk()]
 	var concentration_no_effect := false

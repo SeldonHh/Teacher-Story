@@ -13,4 +13,5 @@ target = "Self"
 cooldown = 3
 fast_skill = true
 heal_modifier = 1
+chouchou_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

@@ -11,4 +11,5 @@ description = "L'élève ciblé perd 1 ennui."
 damage_modifier = 1
 ennui_only = true
 fast_skill = true
+chouchou_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

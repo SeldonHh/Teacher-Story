@@ -11,4 +11,5 @@ description = "L'élève ciblé prend un dégât."
 damage_modifier = 1
 cooldown = 4
 fast_skill = true
+chouchou_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

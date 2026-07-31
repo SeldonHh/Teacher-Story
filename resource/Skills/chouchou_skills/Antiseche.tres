@@ -10,6 +10,6 @@ sprite = ExtResource("2_d7can")
 description = "L'élève ciblé obtiendra +1 à sa note quand il sera battu."
 damage_modifier = 0
 cooldown = 5
-bonus_note = 1
 fast_skill = true
+chouchou_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

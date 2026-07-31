@@ -11,4 +11,5 @@ description = "L'élève ciblé reçoit l'état 'Mal au crâne'."
 damage_modifier = 0
 cooldown = 3
 fast_skill = true
+chouchou_skill = true
 metadata/_custom_type_script = "uid://cibimso3crkbb"

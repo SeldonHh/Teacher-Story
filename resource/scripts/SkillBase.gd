@@ -20,3 +20,5 @@ class_name SkillResource
 @export var shield_modifier := 0
 
 @export var current_cooldown := 0
+
+@export var chouchou_skill := false
