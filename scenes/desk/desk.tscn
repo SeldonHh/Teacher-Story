@@ -16,7 +16,7 @@ script = ExtResource("1_b7gie")
 [node name="chair" type="Sprite2D" parent="." unique_id=2060811455]
 z_index = -1
 texture = ExtResource("2_78764")
-offset = Vector2(4, -6)
+offset = Vector2(4.5, -6.5)
 flip_h = true
 
 [node name="bag" type="Sprite2D" parent="." unique_id=2035037241]
@@ -29,7 +29,7 @@ unique_name_in_owner = true
 script = ExtResource("5_wei13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse detector" unique_id=225613209]
-position = Vector2(0, -9)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_nst4e")
 debug_color = Color(0.56465054, 0.5492653, 0.2920015, 0.41960785)
 
