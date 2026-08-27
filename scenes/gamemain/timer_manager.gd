@@ -25,7 +25,9 @@ func stop_class():
 	ManagerList.student_manager.reset_class()
 	remaining_time = max_time
 	Global.bottom_panel.reset_chouchou()
-	%GameSpace.set_camera_to_teacher_room() #TODO: CHANGE THIS
+	if randf() <= .5: %GameSpace.set_camera_to_home()
+	else: %GameSpace.set_camera_to_teacher_room() #TODO: CHANGE THIS
+	%bottompanel.hide()
 
 func _ready() -> void:
 	ManagerList.timer_manager = self

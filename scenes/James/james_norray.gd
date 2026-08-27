@@ -9,11 +9,17 @@ var back := false
 
 func _ready() -> void:
 	if classroom_instance:
+		z_index +=1
 		ManagerList.teacher_manager.james_classroom_instance = self
 	elif teacher_room_instance:
+		body.play("cravate")
+		body.stop()
+		body.flip_h = true
 		ManagerList.teacher_manager.james_teacher_room_instance = self
 	elif home_instance:
 		ManagerList.teacher_manager.james_home_instance = self
+		body.play("cravate")
+		body.stop()
 	else:
 		print("JAMES HAS GONE ROGUE WTF")
 

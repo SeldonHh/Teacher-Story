@@ -33,4 +33,4 @@ func spawn_james(classroom : String):
 	match classroom:
 		"Histoire-Géo": james_classroom_instance.position = james_history_spawn
 		"Maths": james_classroom_instance.position = james_maths_spawn
-		"Science": james_classroom_instance.position = james_history_spawn
+		"Science": james_classroom_instance.position = james_science_spawn

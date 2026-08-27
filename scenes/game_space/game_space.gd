@@ -13,4 +13,7 @@ func _process(delta: float) -> void:
 		$Camera2D.offset += direction * delta * 80
 
 func set_camera_to_teacher_room():
-	set_camera_offset(Vector2(-3638,-1261))
+	set_camera_offset(Vector2(-3620,-1254))
+
+func set_camera_to_home():
+	set_camera_offset(Vector2(2472,-1515))
