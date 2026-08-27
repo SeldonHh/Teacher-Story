@@ -78,11 +78,12 @@ func _on_main_button_pressed() -> void:
 			if student_targets != []:
 				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[0],secondary_targets)
 		"Chouchou":
-			if Global.IS_DEBUG and Global.DEBUG_CHOUCHOU_SKILL != null:
-				self.resource = Global.DEBUG_CHOUCHOU_SKILL
-			else:
-				self.resource = student_targets[0].resource.chouchou_skill
-			student_targets[0].resource.etats.append(CHOUCHOU)
+			if not student_targets.is_empty():
+				if Global.IS_DEBUG and Global.DEBUG_CHOUCHOU_SKILL != null:
+					self.resource = Global.DEBUG_CHOUCHOU_SKILL
+				else:
+					self.resource = student_targets[0].resource.chouchou_skill
+				student_targets[0].resource.etats.append(CHOUCHOU)
 			no_cc_update  = true
 		"Alzheimer":
 			Global.bottom_panel.randomize_skills()

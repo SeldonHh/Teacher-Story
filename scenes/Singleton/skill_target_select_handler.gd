@@ -67,8 +67,11 @@ func select_student(chouchou_skill := false) -> Array :
 			if student.untargetable == false and student.beaten == false:
 				student.mouse_detector.custom_pressed.connect(student_pressed.emit.bind(student))
 				student.modulate = Color(1.0, 1.0, 0.0, 1.0)
+			else:
+				selectable -= 1
 		else:
 			selectable -= 1
+	print(selectable)
 	if selectable <= 0:
 		return []
 	var selected_student = await student_pressed

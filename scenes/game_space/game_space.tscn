@@ -1,24 +1,33 @@
 [gd_scene format=3 uid="uid://cqijj5mokpqyk"]
 
 [ext_resource type="Script" uid="uid://bxipcxmdy1usf" path="res://scenes/game_space/game_space.gd" id="1_1sg2t"]
+[ext_resource type="Texture2D" uid="uid://c12y7e6520p8y" path="res://assets/environnement/entire_room_apparently/salle-prof3.png" id="2_s4n6g"]
 [ext_resource type="PackedScene" uid="uid://hjb8qvrsxsr8" path="res://scenes/desk/desk.tscn" id="2_updkw"]
 [ext_resource type="Texture2D" uid="uid://dgtx6ch0d7mwr" path="res://assets/environnement/floor/bg_classroom1.png" id="2_yrjmh"]
+[ext_resource type="Texture2D" uid="uid://cprsqtlrvix67" path="res://assets/environnement/entire_room_apparently/salle-prof2.png" id="3_0i5tf"]
 [ext_resource type="Texture2D" uid="uid://4jn6egxsnlj4" path="res://assets/environnement/decorations and desks/table3.png" id="3_4l5mt"]
 [ext_resource type="Texture2D" uid="uid://c4pagtudtf0tl" path="res://assets/environnement/floor/estrade3.png" id="3_4n3v6"]
-[ext_resource type="Texture2D" uid="uid://hw8tx30hcybn" path="res://assets/environnement/decorations and desks/table1.png" id="3_771so"]
-[ext_resource type="Texture2D" uid="uid://q1knuvqp6ke2" path="res://assets/environnement/decorations and desks/table2.png" id="4_5wttn"]
+[ext_resource type="Texture2D" uid="uid://crn0a5e23xgm3" path="res://assets/environnement/decorations and desks/table-réu2.png" id="4_1ctjr"]
 [ext_resource type="Texture2D" uid="uid://jj7x3idisdx0" path="res://assets/environnement/walls/wall_bottom.png" id="4_clmgi"]
+[ext_resource type="Texture2D" uid="uid://hjvbwpfg1uqu" path="res://assets/environnement/decorations and desks/teachet_room_deco_casier.png" id="5_1sir1"]
 [ext_resource type="Texture2D" uid="uid://cyrr1wvff3kde" path="res://assets/environnement/walls/wall_door.png" id="5_gjsek"]
 [ext_resource type="Texture2D" uid="uid://iu56d7iyts36" path="res://assets/environnement/walls/mursolo.png" id="5_y2844"]
 [ext_resource type="Texture2D" uid="uid://7bbbwl22weqf" path="res://assets/environnement/walls/wall_front.png" id="6_nssuc"]
 [ext_resource type="Texture2D" uid="uid://kw2hf5qynvc" path="res://assets/environnement/walls/wall_street2.png" id="7_6yp7d"]
 [ext_resource type="Texture2D" uid="uid://bklejwy0ukdnv" path="res://assets/environnement/decorations and desks/deco_armoire2.png" id="8_hytyq"]
 [ext_resource type="Texture2D" uid="uid://bbklcd6r3wxx5" path="res://assets/environnement/decorations and desks/deco_planisphere.png" id="9_85lqo"]
+[ext_resource type="Texture2D" uid="uid://bgbl00pejdagk" path="res://assets/environnement/decorations and desks/machine-a-café.png" id="9_h5av5"]
+[ext_resource type="Texture2D" uid="uid://dkcy1hl6llgkw" path="res://assets/environnement/decorations and desks/distributeur.png" id="10_khl2x"]
 [ext_resource type="Texture2D" uid="uid://da3ka8j1ldd8o" path="res://assets/environnement/decorations and desks/deco_coucou.png" id="10_y2844"]
 [ext_resource type="Texture2D" uid="uid://cewx0tii7386r" path="res://assets/environnement/decorations and desks/deco_coffre-fort.png" id="11_anq3c"]
+[ext_resource type="Texture2D" uid="uid://c5ghw0s0ys7um" path="res://assets/environnement/decorations and desks/teacher_room_comfy_chair.png" id="11_tr2ji"]
 [ext_resource type="Texture2D" uid="uid://cy5qo61omqb11" path="res://assets/environnement/decorations and desks/deco_corbeille.png" id="12_0jolb"]
+[ext_resource type="Texture2D" uid="uid://cndt1t1xwe8lb" path="res://assets/environnement/walls/teacherroom_door_closed.png" id="12_gkrg3"]
 [ext_resource type="Texture2D" uid="uid://b3qso2taptyfc" path="res://assets/environnement/decorations and desks/deco_drawings.png" id="13_xq6fy"]
+[ext_resource type="Texture2D" uid="uid://b188hjxgssxsk" path="res://assets/other/eddy_wait_01.png" id="14_1ctjr"]
+[ext_resource type="Texture2D" uid="uid://vcu177hu6imw" path="res://assets/environnement/walls/mursolo_teacher_room.png" id="14_3ykdk"]
 [ext_resource type="Texture2D" uid="uid://ovbmp50paage" path="res://assets/environnement/decorations and desks/deco_armoire.png" id="14_y6d82"]
+[ext_resource type="Texture2D" uid="uid://nv8vb33ldxox" path="res://assets/other/peggy-dos-stand.png" id="15_1sir1"]
 [ext_resource type="Texture2D" uid="uid://bheka44bcyapo" path="res://assets/environnement/decorations and desks/deco_table-globe.png" id="15_b0oxp"]
 [ext_resource type="Texture2D" uid="uid://cdk80n70yu5hl" path="res://assets/environnement/decorations and desks/deco_globe.png" id="16_aqxiq"]
 [ext_resource type="Texture2D" uid="uid://dookgt8jsc6n3" path="res://assets/environnement/decorations and desks/deco_paper-sheet.png" id="17_3a18s"]
@@ -68,6 +77,7 @@
 [ext_resource type="Texture2D" uid="uid://3e1mywrf0jq2" path="res://assets/environnement/decorations and desks/casier-jaune - Copie.png" id="66_d0d5c"]
 [ext_resource type="Texture2D" uid="uid://dna7ktdoiwah5" path="res://assets/environnement/decorations and desks/deco_distributeur.png" id="67_dd515"]
 [ext_resource type="Texture2D" uid="uid://c0ih8qlpn8m7p" path="res://assets/environnement/decorations and desks/casier-jaune_reflect.png" id="68_dd515"]
+[ext_resource type="PackedScene" uid="uid://lk0edkyjsu2x" path="res://scenes/James/james_norray.tscn" id="68_yj205"]
 [ext_resource type="Texture2D" uid="uid://bi634l7d0a5g6" path="res://assets/environnement/vehicles/abri.png" id="69_yj205"]
 
 [node name="GameSpace" type="Node2D" unique_id=562061812]
@@ -76,28 +86,173 @@ script = ExtResource("1_1sg2t")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=354434027]
 y_sort_enabled = true
-offset = Vector2(-435, 227)
+offset = Vector2(-3638, -1261)
 anchor_mode = 0
 zoom = Vector2(2, 2)
 metadata/_edit_lock_ = true
+
+[node name="TeacherRoom" type="Node2D" parent="." unique_id=1802752209]
+y_sort_enabled = true
+
+[node name="SalleProf3" type="Sprite2D" parent="TeacherRoom" unique_id=811700100]
+z_index = -2
+y_sort_enabled = true
+position = Vector2(-3475, -1154)
+texture = ExtResource("2_s4n6g")
+
+[node name="SalleProf2" type="Sprite2D" parent="TeacherRoom" unique_id=1769527267]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-3476, -1167)
+texture = ExtResource("3_0i5tf")
+
+[node name="TableRéu2" type="Sprite2D" parent="TeacherRoom" unique_id=1102193783]
+y_sort_enabled = true
+position = Vector2(-3486, -1156)
+texture = ExtResource("4_1ctjr")
+
+[node name="TeachetRoomDecoCasier" type="Sprite2D" parent="TeacherRoom" unique_id=1047531350]
+y_sort_enabled = true
+position = Vector2(-3446, -1222)
+texture = ExtResource("5_1sir1")
+
+[node name="TeachetRoomDecoCasier2" type="Sprite2D" parent="TeacherRoom" unique_id=1332552261]
+y_sort_enabled = true
+position = Vector2(-3483, -1211)
+texture = ExtResource("5_1sir1")
+flip_h = true
+
+[node name="DecoBureauOrdi" type="Sprite2D" parent="TeacherRoom" unique_id=1922112471]
+y_sort_enabled = true
+position = Vector2(-3431, -1210.5)
+texture = ExtResource("18_ytl7y")
+
+[node name="Ordi" type="Sprite2D" parent="TeacherRoom" unique_id=1455421792]
+y_sort_enabled = true
+position = Vector2(-3434, -1216.5)
+texture = ExtResource("36_xf30r")
+
+[node name="Paper1" type="Sprite2D" parent="TeacherRoom" unique_id=404892282]
+y_sort_enabled = true
+position = Vector2(-3467, -1215)
+texture = ExtResource("43_ajbr3")
+
+[node name="MachineACafé" type="Sprite2D" parent="TeacherRoom" unique_id=513567664]
+y_sort_enabled = true
+position = Vector2(-3387, -1191)
+texture = ExtResource("9_h5av5")
+
+[node name="Distributeur" type="Sprite2D" parent="TeacherRoom" unique_id=1490103067]
+y_sort_enabled = true
+position = Vector2(-3372, -1185)
+texture = ExtResource("10_khl2x")
+
+[node name="TeacherRoomComfyChair" type="Sprite2D" parent="TeacherRoom" unique_id=96333486]
+y_sort_enabled = true
+position = Vector2(-3442, -1204)
+texture = ExtResource("11_tr2ji")
+
+[node name="TeacherroomDoorClosed" type="Sprite2D" parent="TeacherRoom" unique_id=581364157]
+y_sort_enabled = true
+position = Vector2(-3401, -1208)
+texture = ExtResource("12_gkrg3")
+flip_h = true
+
+[node name="James Norray" parent="TeacherRoom" unique_id=1797805725 instance=ExtResource("68_yj205")]
+position = Vector2(-3413, -1203)
+teacher_room_instance = true
+
+[node name="EddyWait01" type="Sprite2D" parent="TeacherRoom" unique_id=2056100642]
+y_sort_enabled = true
+position = Vector2(-3569, -1163)
+texture = ExtResource("14_1ctjr")
+
+[node name="PeggyDosStand" type="Sprite2D" parent="TeacherRoom" unique_id=380487943]
+y_sort_enabled = true
+position = Vector2(-3511, -1125)
+texture = ExtResource("15_1sir1")
+
+[node name="Walls" type="Node2D" parent="TeacherRoom" unique_id=133678866]
+
+[node name="MursoloTeacherRoom" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=394852514]
+position = Vector2(-3360, -1177)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom2" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=161234146]
+position = Vector2(-3376, -1169)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom3" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=2014937016]
+position = Vector2(-3394, -1160)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom4" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=723085063]
+position = Vector2(-3410, -1152)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom5" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=2079346372]
+position = Vector2(-3428, -1143)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom6" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=629545693]
+position = Vector2(-3444, -1135)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom9" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=1044319087]
+position = Vector2(-3496, -1109)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom10" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=1544860766]
+position = Vector2(-3514, -1108)
+texture = ExtResource("14_3ykdk")
+flip_h = true
+
+[node name="MursoloTeacherRoom11" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=1056538048]
+position = Vector2(-3532, -1117)
+texture = ExtResource("14_3ykdk")
+flip_h = true
+
+[node name="MursoloTeacherRoom12" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=910960688]
+position = Vector2(-3550, -1126)
+texture = ExtResource("14_3ykdk")
+flip_h = true
+
+[node name="MursoloTeacherRoom13" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=2090224568]
+position = Vector2(-3568, -1135)
+texture = ExtResource("14_3ykdk")
+flip_h = true
+
+[node name="MursoloTeacherRoom14" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=1481331842]
+position = Vector2(-3586, -1144)
+texture = ExtResource("14_3ykdk")
+flip_h = true
+
+[node name="MursoloTeacherRoom15" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=1913128456]
+position = Vector2(-3598, -1150)
+texture = ExtResource("14_3ykdk")
+flip_h = true
+
+[node name="MursoloTeacherRoom7" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=574041097]
+position = Vector2(-3462, -1126)
+texture = ExtResource("14_3ykdk")
+
+[node name="MursoloTeacherRoom8" type="Sprite2D" parent="TeacherRoom/Walls" unique_id=574820989]
+position = Vector2(-3478, -1118)
+texture = ExtResource("14_3ykdk")
 
 [node name="School" type="Node2D" parent="." unique_id=924341063]
 y_sort_enabled = true
 
 [node name="Desk" parent="School" unique_id=895890925 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-241, 293)
-texture = ExtResource("3_4l5mt")
 column = 1
 matiere = "Science"
 metadata/_edit_lock_ = true
 
 [node name="Desk2" parent="School" unique_id=1565916858 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-217, 307)
-texture = ExtResource("3_4l5mt")
 group = 1
 column = 2
 matiere = "Science"
@@ -105,9 +260,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk8" parent="School" unique_id=1555710403 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-277, 298)
-texture = ExtResource("3_4l5mt")
 group = 5
 row = 1
 matiere = "Science"
@@ -116,9 +269,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk9" parent="School" unique_id=393647404 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-260, 306)
-texture = ExtResource("3_4l5mt")
 group = 5
 row = 1
 column = 1
@@ -128,9 +279,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk3" parent="School" unique_id=408450251 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-216, 330)
-texture = ExtResource("3_4l5mt")
 group = 2
 row = 1
 column = 3
@@ -139,9 +288,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk4" parent="School" unique_id=931010676 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-302, 316)
-texture = ExtResource("3_4l5mt")
 group = 3
 row = 2
 matiere = "Science"
@@ -150,9 +297,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk5" parent="School" unique_id=381031753 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-285, 324)
-texture = ExtResource("3_4l5mt")
 group = 3
 row = 2
 column = 1
@@ -162,9 +307,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk6" parent="School" unique_id=1390787371 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-244, 349)
-texture = ExtResource("3_4l5mt")
 group = 4
 row = 2
 column = 3
@@ -173,18 +316,14 @@ metadata/_edit_lock_ = true
 
 [node name="Desk18" parent="School" unique_id=163456179 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(157, 77)
-texture = ExtResource("3_771so")
 group = 4
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Desk19" parent="School" unique_id=154833482 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(174, 85)
-texture = ExtResource("3_771so")
 group = 4
 column = 1
 metadata/_edit_group_ = true
@@ -192,9 +331,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk20" parent="School" unique_id=707401754 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(197, 100)
-texture = ExtResource("3_771so")
 group = 5
 column = 2
 metadata/_edit_group_ = true
@@ -202,9 +339,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk21" parent="School" unique_id=1155414224 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(214, 108)
-texture = ExtResource("3_771so")
 group = 5
 column = 3
 metadata/_edit_group_ = true
@@ -212,9 +347,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk16" parent="School" unique_id=1269289526 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(131, 90)
-texture = ExtResource("3_771so")
 group = 2
 row = 1
 metadata/_edit_group_ = true
@@ -222,9 +355,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk17" parent="School" unique_id=1323737364 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(148, 98)
-texture = ExtResource("3_771so")
 group = 2
 row = 1
 column = 1
@@ -233,9 +364,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk14" parent="School" unique_id=933792136 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(170, 114)
-texture = ExtResource("3_771so")
 group = 3
 row = 1
 column = 2
@@ -244,9 +373,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk15" parent="School" unique_id=1314203358 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(187, 122)
-texture = ExtResource("3_771so")
 group = 3
 row = 1
 column = 3
@@ -255,18 +382,14 @@ metadata/_edit_lock_ = true
 
 [node name="Desk10" parent="School" unique_id=805452951 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(102, 107)
-texture = ExtResource("3_771so")
 row = 2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Desk11" parent="School" unique_id=1433603558 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(119, 115)
-texture = ExtResource("3_771so")
 row = 2
 column = 1
 metadata/_edit_group_ = true
@@ -274,9 +397,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk12" parent="School" unique_id=1627369781 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(147, 132)
-texture = ExtResource("3_771so")
 group = 1
 row = 2
 column = 2
@@ -285,9 +406,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk13" parent="School" unique_id=480192330 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(164, 140)
-texture = ExtResource("3_771so")
 group = 1
 row = 2
 column = 3
@@ -296,18 +415,14 @@ metadata/_edit_lock_ = true
 
 [node name="Desk22" parent="School" unique_id=1296933705 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-82, 201)
-texture = ExtResource("4_5wttn")
 matiere = "Maths"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
 [node name="Desk23" parent="School" unique_id=214226599 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-65, 209)
-texture = ExtResource("4_5wttn")
 column = 1
 matiere = "Maths"
 metadata/_edit_group_ = true
@@ -315,9 +430,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk29" parent="School" unique_id=461063692 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-38, 225)
-texture = ExtResource("4_5wttn")
 group = 4
 column = 2
 matiere = "Maths"
@@ -326,9 +439,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk24" parent="School" unique_id=245238543 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-108, 216)
-texture = ExtResource("4_5wttn")
 group = 1
 row = 1
 matiere = "Maths"
@@ -337,9 +448,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk25" parent="School" unique_id=888967613 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-91, 224)
-texture = ExtResource("4_5wttn")
 group = 1
 row = 1
 column = 1
@@ -349,9 +458,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk26" parent="School" unique_id=562032645 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-132, 233)
-texture = ExtResource("4_5wttn")
 group = 2
 row = 2
 matiere = "Maths"
@@ -360,9 +467,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk27" parent="School" unique_id=625266477 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-115, 241)
-texture = ExtResource("4_5wttn")
 group = 2
 row = 2
 column = 1
@@ -372,9 +477,7 @@ metadata/_edit_lock_ = true
 
 [node name="Desk28" parent="School" unique_id=1102737647 instance=ExtResource("2_updkw")]
 z_index = 2
-y_sort_enabled = true
 position = Vector2(-91, 257)
-texture = ExtResource("4_5wttn")
 group = 3
 row = 2
 column = 2
@@ -1343,3 +1446,7 @@ texture = ExtResource("37_ie6kh")
 z_index = 3
 position = Vector2(-174, 380)
 texture = ExtResource("69_yj205")
+
+[node name="James Norray" parent="School" unique_id=154375328 instance=ExtResource("68_yj205")]
+position = Vector2(86, 127)
+classroom_instance = true

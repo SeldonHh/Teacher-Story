@@ -1,6 +1,6 @@
 extends Node
 
-var max_time : int = 12
+var max_time : int = 10
 var remaining_time : int = max_time
 signal updated_time
 var healing_time: Array[int] = []
@@ -25,7 +25,7 @@ func stop_class():
 	ManagerList.student_manager.reset_class()
 	remaining_time = max_time
 	Global.bottom_panel.reset_chouchou()
-	
+	%GameSpace.set_camera_to_teacher_room() #TODO: CHANGE THIS
 
 func _ready() -> void:
 	ManagerList.timer_manager = self
