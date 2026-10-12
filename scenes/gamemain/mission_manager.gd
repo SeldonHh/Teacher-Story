@@ -22,6 +22,7 @@ func update_mainscreen_ui():
 func generate_mission_selection():
 	%MainGameScreen.hide()
 	%MissionSelectionScreen.show()
+	current_mission_resource = null
 	var debug_child
 	for child in %MissionSelectionInstanceContainer.get_children():
 		if child is MissionSelectionInstance:
@@ -57,6 +58,34 @@ func start_class():
 	ManagerList.timer_manager.start_classtime()
 	Global.bottom_panel.reset()
 
+func return_next_timetable_location():
+	if check_if_current_mission_is_completed():
+		Global.DEBUG_SKIP_MISSION_SELECTION = false
+		generate_mission_selection()
+	else:
+		return "home" #TODO: add time table
+
+func check_if_current_mission_is_completed():
+	if current_mission_resource.goal_is_for_x_student == -1:
+		for student_resource in current_mission_resource.students:
+			if student_resource.note < current_mission_resource.goal:
+				return false
+	else:
+		var students = current_mission_resource.students.duplicate()
+		for i in range(current_mission_resource.goal_is_for_x_student):
+			var best_student = get_highest_note(students)
+			if best_student.note < current_mission_resource.goal:
+				return false
+			students.erase(best_student)
+	return true
+
+func get_highest_note(student_list):
+	var highest_student = StudentResource.new()
+	highest_student.note = 0
+	for student in student_list:
+		if student.note > highest_student.note:
+			highest_student = student
+	return highest_student
 
 func reparent_labels(labels,new_parent):
 	for label in labels:

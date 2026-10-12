@@ -25,6 +25,7 @@ func start_classtime():
 	remaining_time = max_time
 
 func stop_class():
+	ManagerList.mission_manager.current_class_count += 1
 	for skill_resource in Global.skill_resource_list + Global.chouchou_resource_list + Global.special_skill_list:
 		skill_resource.current_cooldown = 0
 	healing_time.clear()
@@ -32,9 +33,9 @@ func stop_class():
 	Global.bottom_panel.reset_chouchou()
 	Global.bottom_panel.set_skills_rest_mode()
 	remaining_time = 1
-	if randf() <= .5: %GameSpace.set_camera_to_home()
+	var next_space = ManagerList.mission_manager.return_next_timetable_location()
+	if next_space == "home": %GameSpace.set_camera_to_home()
 	else: %GameSpace.set_camera_to_teacher_room() #TODO: CHANGE THIS
-	ManagerList.mission_manager.current_class_count += 1
 
 func _ready() -> void:
 	ManagerList.timer_manager = self

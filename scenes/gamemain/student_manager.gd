@@ -20,7 +20,7 @@ var boy_names = [
 var girl_names = [
 "Adele","Agathe","Aïcha","Alice","Alizée","Amandine","Anaïs","Angélique","Anna",
 "Apolline","Barbara","Béatrice","Céleste","Chaima","Charlotte","Chloe",
-"Claire","Clara","Constance","Domitille","Eglantine","Eleonore","Enora","Elise",
+"Claire","Clara","Constance","Domitille","Eglantine","Eleonore","Elise",
 "Elsa","Emilie","Emma","Fanchon","Fanny","Félicie","Georgette",
 "Inaya","Inès","Jade","Jeanne","Julie","Kenza","Kimberley","Lili","Lou","Louise",
 "Louna","Maélys","Margot","Meredith","Marie","Marie-Lou","Marine","Mathilde","Maya",

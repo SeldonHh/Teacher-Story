@@ -50,7 +50,8 @@ func _on_main_button_pressed() -> void:
 	match resource.target:
 		"Self": student_targets = []
 		"Column" : student_targets = await SkillTargetSelectHandler.select_column()
-		"Single": student_targets = await SkillTargetSelectHandler.select_student(resource.chouchou_skill)
+		"Single":
+			student_targets = await SkillTargetSelectHandler.select_student(resource.chouchou_skill)
 		"Table":
 			student_targets = await SkillTargetSelectHandler.select_groupdesk()
 		"All": student_targets = SkillTargetSelectHandler.students
@@ -84,12 +85,13 @@ func _on_main_button_pressed() -> void:
 			if !concentration_no_effect and concentration_only_affected_student != null:
 				concentration_only_affected_student.resource.etats.append(ATTENTIF)
 		"Rappel à l'ordre": 
-			var stop := false
-			for etat in student_targets[0].resource.etats:
-				if etat.negative and !etat.critical and !stop:
-					stop = true
-					student_targets[0].resource.etats.erase(etat)
-					
+			if !student_targets.is_empty():
+				var stop := false
+				for etat in student_targets[0].resource.etats: #TODO: bug when 0 students
+					if etat.negative and !etat.critical and !stop:
+						stop = true
+						student_targets[0].resource.etats.erase(etat)
+
 		"Changement de place": 
 			if student_targets != []:
 				ManagerList.desk_manager.assign_student_to_another_desk(student_targets[0],secondary_targets)
