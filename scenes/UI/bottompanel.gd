@@ -11,6 +11,7 @@ extends Control
 @onready var skill_container: HBoxContainer = $SkillContainer
 @onready var chouchou: Control = $Chouchou
 
+var rest_skills : Array[SkillResource] = [preload("uid://bp3pmxqcucq6n"),preload("uid://bfi7rgtpqd0xp"),preload("uid://bx45a6o3ke07k"),preload("uid://m6x6k1fehxw4")]
 var max_time = 10
 var last_time := -1.0
 var last_life := -1.0
@@ -42,6 +43,18 @@ func randomize_skills():
 		var skill = possible_skills.pick_random()
 		child.resource = skill
 		possible_skills.erase(skill)
+
+func set_skills_rest_mode():
+	var skillbases : Array = skill_container.get_children()
+	for i in range(skillbases.size()):
+		skillbases[i].resource = rest_skills[i]
+		skillbases[i].override_no_button = true
+func reset():
+	for child in skill_container.get_children():
+		child.override_no_button = false
+	for skill in Global.skill_list:
+		skill.main_button.disabled = false
+	randomize_skills()
 
 func _process(_delta: float) -> void:
 	

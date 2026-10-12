@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://bx45a6o3ke07k"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_2l7g1"]
+[ext_resource type="Texture2D" uid="uid://cacgoip660km8" path="res://assets/skills/xp.png" id="2_2l7g1"]
+
+[resource]
+script = ExtResource("1_2l7g1")
+name = "Partager son expérience"
+sprite = ExtResource("2_2l7g1")
+description = "Gagner 4 xp."
+damage_modifier = 0
+target = "Self"
+cooldown = 0
+fast_skill = true
+rest_skills = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

@@ -11,6 +11,8 @@ var james_home_instance : CharacterBody2D
 
 func _ready() -> void:
 	ManagerList.teacher_manager = self
+	if Global.IS_DEBUG:
+		teacher_life = max_teacher_life/2
 
 
 func reset_life():

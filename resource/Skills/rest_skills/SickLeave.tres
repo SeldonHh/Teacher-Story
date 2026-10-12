@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://m6x6k1fehxw4"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_1eurr"]
+[ext_resource type="Texture2D" uid="uid://cs47suhthcgu5" path="res://assets/skills/sick.png" id="2_1eurr"]
+
+[resource]
+script = ExtResource("1_1eurr")
+name = "Se mettre en Arrêt maladie"
+sprite = ExtResource("2_1eurr")
+description = "“Récupérer jusqu'à deux tiers de son self-control en 15 heures de repos maximum. Remplace le prochain cours (DOES NOTHING FOR NOW)"
+damage_modifier = 0
+target = "Self"
+cooldown = 0
+fast_skill = true
+rest_skills = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

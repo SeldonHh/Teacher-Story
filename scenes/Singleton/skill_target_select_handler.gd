@@ -71,7 +71,6 @@ func select_student(chouchou_skill := false) -> Array :
 				selectable -= 1
 		else:
 			selectable -= 1
-	print(selectable)
 	if selectable <= 0:
 		return []
 	var selected_student = await student_pressed

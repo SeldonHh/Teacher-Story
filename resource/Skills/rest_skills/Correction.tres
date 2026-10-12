@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://bfi7rgtpqd0xp"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_bal6q"]
+[ext_resource type="Texture2D" uid="uid://damo7ouhgptqh" path="res://assets/skills/correct.png" id="2_bal6q"]
+
+[resource]
+script = ExtResource("1_bal6q")
+name = "Corriger des exercices"
+sprite = ExtResource("2_bal6q")
+description = "La note des élèves vaincus au cours précédent augmente de 0.5 point immédiatement."
+damage_modifier = 0
+target = "Self"
+cooldown = 0
+fast_skill = true
+rest_skills = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"

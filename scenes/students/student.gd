@@ -154,6 +154,7 @@ func die():
 	elif resource.note <0:
 		resource.note = 0
 	ManagerList.student_manager.update_info_labels()
+	ManagerList.student_manager.students_beaten_last_class.append(resource)
 	modulate = Color("5f5f5f")
 	for etat in resource.etats:
 		if etat.duration_min != -1:

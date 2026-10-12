@@ -22,3 +22,4 @@ class_name SkillResource
 @export var current_cooldown := 0
 
 @export var chouchou_skill := false
+@export var rest_skills := false

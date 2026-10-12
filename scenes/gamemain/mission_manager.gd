@@ -7,7 +7,7 @@ const DIFFICULTIES_WEIGHTS : Array[int] = [7,13,10,5]
 const POSSIBLE_GOALS : Array[int] = [8,9,10,11,12,13,14]
 const POSSIBLE_GOALS_FOR_X_ELEVES : Array[int] = [10,12,14,16]
 var goals_weights : Array[int] = [7,10,9,6,2,0]
-
+var current_class_count = 0
 
 func _ready() -> void:
 	ManagerList.mission_manager = self
@@ -34,6 +34,7 @@ func generate_mission_selection():
 
 
 func mission_selected(resource,name_labels,note_labels,caractere_labels):
+	current_class_count = 0
 	current_mission_resource = resource
 	var sm = ManagerList.student_manager
 	sm.students_resources = resource.students
@@ -41,15 +42,20 @@ func mission_selected(resource,name_labels,note_labels,caractere_labels):
 	sm.note_info_labels = note_labels
 	sm.caractere_info_labels = caractere_labels
 	reparent_labels(Global.interleave_arrays(name_labels,note_labels),%StudentInfoContainer)
-	sm.assign_students_to_random_desk()
+	start_class()
+
+func start_class():
+	ManagerList.student_manager.reset_class()
 	%MainGameScreen.show()
 	%MissionSelectionScreen.hide()
 	update_mainscreen_ui()
-	match resource.matiere:
+	match current_mission_resource.matiere:
 		"Histoire-Géo": %GameSpace.set_camera_offset(Global.HISTORY_CLASS_CAMERA_OFFSET)
 		"Maths": %GameSpace.set_camera_offset(Global.MATH_CLASS_CAMERA_OFFSET)
 		"Science":%GameSpace.set_camera_offset(Global.SCIENCE_CLASS_CAMERA_OFFSET)
-	ManagerList.teacher_manager.spawn_james(resource.matiere)
+	ManagerList.teacher_manager.spawn_james(current_mission_resource.matiere)
+	ManagerList.timer_manager.start_classtime()
+	Global.bottom_panel.reset()
 
 
 func reparent_labels(labels,new_parent):

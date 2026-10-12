@@ -28,6 +28,8 @@ var girl_names = [
 "Sofia","Stella","Suzette","Tess","Valentine","Victoria","Violette",
 "Yasmine","Zoé","Biosha","Tommy","Mawie"
 ]
+var students_beaten_last_class = []
+
 const POSSIBLE_NOTES : Array[int] = [2,3,4,5,6,7,8,9,10,11,12,13]
 var notes_weights : Array[int] = [5,5,12,12,20,30,20,8,2,2,1]
 var rng = RandomNumberGenerator.new()
@@ -66,7 +68,11 @@ func update_info_labels():
 	for i in range(len(name_info_labels)):
 		name_info_labels[i].text = "[color=326e7d]%s"%[students_resources[i].student_name]
 	for i in range(len(note_info_labels)):
-		note_info_labels[i].text = '[right][color=%s]%s/20'%[Global.get_color_for_note(students_resources[i].note),int(students_resources[i].note)]
+		var note_value = students_resources[i].note
+		if is_equal_approx(note_value, roundf(note_value)):
+			note_value = int(note_value)
+		note_info_labels[i].text = '[right][color=%s]%s/20'%[Global.get_color_for_note(students_resources[i].note),note_value]
+
 
 func make_labels(resource,container,include_caractere_labels = false):
 	var name_label = RichTextLabel.new()
@@ -84,12 +90,14 @@ func make_labels(resource,container,include_caractere_labels = false):
 		
 	var note_label = RichTextLabel.new()
 	set_label_settings(note_label)
-	note_label.text = '[right][color=%s]%s/20'%[Global.get_color_for_note(resource.note),int(resource.note)]
+	var note_value = resource.note
+	if is_equal_approx(note_value, roundf(note_value)):
+		note_value = int(note_value)
+	note_label.text = '[right][color=%s]%s/20'%[Global.get_color_for_note(resource.note),note_value]
 	container.add_child(note_label)
 	note_info_labels.append(note_label)
 
 
-		
 func set_label_settings(label_to_change):
 	label_to_change.bbcode_enabled = true
 	label_to_change.add_theme_font_size_override("normal_font_size",15)

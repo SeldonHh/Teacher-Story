@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillResource" format=3 uid="uid://bp3pmxqcucq6n"]
+
+[ext_resource type="Script" uid="uid://cibimso3crkbb" path="res://resource/scripts/SkillBase.gd" id="1_or4jk"]
+[ext_resource type="Texture2D" uid="uid://colm6gpo3v4k4" path="res://assets/skills/rest.png" id="2_or4jk"]
+
+[resource]
+script = ExtResource("1_or4jk")
+name = "Se détendre un peu"
+sprite = ExtResource("2_or4jk")
+description = "Récupérer 4 points de self-control."
+damage_modifier = 0
+target = "Self"
+cooldown = 0
+fast_skill = true
+heal_modifier = 4
+rest_skills = true
+metadata/_custom_type_script = "uid://cibimso3crkbb"
