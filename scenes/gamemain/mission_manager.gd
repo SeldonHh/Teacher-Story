@@ -171,6 +171,6 @@ func make_new_random_mission():
 	new_resource.reward = 10* int(new_resource.ideal_max_lesson +  floor( student_sum / new_resource.ideal_max_lesson))
 	if new_resource.reward <30:
 		new_resource.reward = 30
-	if randi_range(0,1000000) == 8 or Global.IS_DEBUG:
+	if randi_range(0,1000000) == 8 or (Global.IS_DEBUG and Global.DEBUG_EASY_MISSIONS):
 		new_resource.goal = 2 #Enjoy the free win, you earned it
 	return new_resource

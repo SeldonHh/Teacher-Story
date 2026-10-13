@@ -35,12 +35,11 @@ texture_normal = ExtResource("2_7cx4e")
 stretch_mode = 5
 
 [node name="Tooltip" parent="." unique_id=1432997240 instance=ExtResource("3_7cx4e")]
-visible = false
 layout_mode = 1
 anchor_left = 1.2
-anchor_top = -2.0
+anchor_top = -1.5
 anchor_right = 7.0
-anchor_bottom = 3.0
+anchor_bottom = 2.5
 mouse_filter = 2
 
 [connection signal="mouse_entered" from="MainButton" to="." method="_on_mouse_entered"]

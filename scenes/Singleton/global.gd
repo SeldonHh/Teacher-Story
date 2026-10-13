@@ -1,13 +1,18 @@
 extends Node
 
 @onready var IS_DEBUG = "debug" in OS.get_cmdline_args()
+const DEBUG_CHOUCHOU_SKILL: SkillResource = null
+var DEBUG_SKIP_MISSION_SELECTION = true
+const DEBUG_LOWER_TIME = false
+const DEBUG_EASY_MISSIONS = false
+const DEBUG_START_HALF_LIFE = true
+
 const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)
 const MATH_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-258,138)
 const SCIENCE_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-400,235)
-const DEBUG_CHOUCHOU_SKILL: SkillResource = null
 const BAG_SPRITES = [preload("uid://cxd8ggqp0omqk"),preload("uid://u78sx6xejio6"),preload("uid://cc75phnlu02nq"),preload("uid://88w24qm8hg25")]
 
-@export var DEBUG_SKIP_MISSION_SELECTION = true
+
 
 var bottom_panel : Control
 

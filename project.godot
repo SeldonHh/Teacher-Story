@@ -44,6 +44,7 @@ run/main_run_args="debug"
 [file_customization]
 
 folder_colors={
+"res://addons/": "blue",
 "res://assets/": "red",
 "res://resource/": "green",
 "res://resource/Caractere/": "purple",

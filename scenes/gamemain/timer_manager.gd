@@ -23,7 +23,7 @@ func update_time(amount):
 
 func start_classtime():
 	remaining_time = max_time
-	if Global.IS_DEBUG:
+	if Global.IS_DEBUG and Global.DEBUG_LOWER_TIME:
 		remaining_time = 1
 
 func stop_class():

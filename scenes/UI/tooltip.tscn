@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://comgbjh65362c"]
 
 [ext_resource type="Script" uid="uid://l8via0tfryjq" path="res://scenes/UI/tooltip.gd" id="1_rf1mp"]
+[ext_resource type="Script" uid="uid://leehmvr1x5lu" path="res://addons/AutoSizeText/ui/AutoSizeRichTextLabel.gd" id="2_m5ds0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuvat"]
 bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 250
-corner_radius_top_right = 250
-corner_radius_bottom_right = 250
-corner_radius_bottom_left = 250
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 corner_detail = 20
 shadow_size = 10
 
@@ -33,34 +34,47 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fuvat")
 [node name="PanelContainer" type="VBoxContainer" parent="Panel" unique_id=2101168822]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.07
-anchor_top = 0.1
-anchor_right = 0.93
-anchor_bottom = 0.9
+anchor_left = 0.042534847
+anchor_top = 0.057098765
+anchor_right = 0.9574651
+anchor_bottom = 0.94290125
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=1395382248]
+[node name="Title" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=383392072]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 12)
+custom_minimum_size = Vector2(0, 24)
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 8
+theme_override_font_sizes/normal_font_size = 17
+theme_override_font_sizes/bold_font_size = 17
+theme_override_font_sizes/bold_italics_font_size = 17
+theme_override_font_sizes/italics_font_size = 17
+theme_override_font_sizes/mono_font_size = 17
 text = "TITLE"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_m5ds0")
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
 
 [node name="HSeparator" type="HSeparator" parent="Panel/PanelContainer" unique_id=1198770795]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="Description" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=2096662569]
+[node name="Description" type="RichTextLabel" parent="Panel/PanelContainer" unique_id=2100107140]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 6
+theme_override_font_sizes/normal_font_size = 38
+theme_override_font_sizes/bold_font_size = 38
+theme_override_font_sizes/bold_italics_font_size = 38
+theme_override_font_sizes/italics_font_size = 38
+theme_override_font_sizes/mono_font_size = 38
 text = "DESC"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("2_m5ds0")
+metadata/_custom_type_script = "uid://leehmvr1x5lu"
