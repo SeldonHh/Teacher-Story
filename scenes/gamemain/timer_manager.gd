@@ -23,6 +23,8 @@ func update_time(amount):
 
 func start_classtime():
 	remaining_time = max_time
+	if Global.IS_DEBUG:
+		remaining_time = 1
 
 func stop_class():
 	ManagerList.mission_manager.current_class_count += 1
@@ -35,7 +37,7 @@ func stop_class():
 	remaining_time = 1
 	var next_space = ManagerList.mission_manager.return_next_timetable_location()
 	if next_space == "home": %GameSpace.set_camera_to_home()
-	else: %GameSpace.set_camera_to_teacher_room() #TODO: CHANGE THIS
+	else: %GameSpace.set_camera_to_teacher_room()
 
 func _ready() -> void:
 	ManagerList.timer_manager = self

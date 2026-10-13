@@ -87,7 +87,7 @@ func _on_main_button_pressed() -> void:
 		"Rappel à l'ordre": 
 			if !student_targets.is_empty():
 				var stop := false
-				for etat in student_targets[0].resource.etats: #TODO: bug when 0 students
+				for etat in student_targets[0].resource.etats:
 					if etat.negative and !etat.critical and !stop:
 						stop = true
 						student_targets[0].resource.etats.erase(etat)

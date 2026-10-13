@@ -8,7 +8,16 @@ var name_labels: Array[RichTextLabel] = []
 var note_labels: Array[RichTextLabel] = []
 var caractere_labels: Array[RichTextLabel] = []
 
+func reset_ui():
+	name_labels.clear()
+	note_labels.clear()
+	hidden_labels.clear()
+	caractere_labels.clear()
+	for child in %StudentInfoContainer.get_children():
+		child.queue_free()
+
 func update_ui(mission_resource):
+	reset_ui()
 	current_mission_resource = mission_resource
 	%Intitule.text = "La classe de [b]%s[/b] a besoin de vos connaissances en [b]%s[/b] !"%[mission_resource.classname,mission_resource.matiere]
 	%MissionInfoContainer.update_objective_label(Global.get_text_for_mission_objective(mission_resource))

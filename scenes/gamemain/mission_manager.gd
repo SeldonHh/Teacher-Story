@@ -20,6 +20,7 @@ func update_mainscreen_ui():
 
 
 func generate_mission_selection():
+	ManagerList.student_manager.reset_labels()
 	%MainGameScreen.hide()
 	%MissionSelectionScreen.show()
 	current_mission_resource = null
@@ -123,7 +124,6 @@ func make_new_random_mission():
 			else:
 				goals_weights = [0,0,8,3]
 			new_resource.students = ManagerList.student_manager.generate_x_random_student(8)
-	
 	if all_students:
 		new_resource.goal = POSSIBLE_GOALS[rng.rand_weighted(goals_weights)]
 	else:
@@ -171,6 +171,6 @@ func make_new_random_mission():
 	new_resource.reward = 10* int(new_resource.ideal_max_lesson +  floor( student_sum / new_resource.ideal_max_lesson))
 	if new_resource.reward <30:
 		new_resource.reward = 30
-	if randi_range(0,1000000) == 8:
+	if randi_range(0,1000000) == 8 or Global.IS_DEBUG:
 		new_resource.goal = 2 #Enjoy the free win, you earned it
 	return new_resource

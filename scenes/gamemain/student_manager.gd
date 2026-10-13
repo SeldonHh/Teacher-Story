@@ -73,6 +73,10 @@ func update_info_labels():
 			note_value = int(note_value)
 		note_info_labels[i].text = '[right][color=%s]%s/20'%[Global.get_color_for_note(students_resources[i].note),note_value]
 
+func reset_labels():
+	name_info_labels.clear()
+	note_info_labels.clear()
+	caractere_info_labels.clear()
 
 func make_labels(resource,container,include_caractere_labels = false):
 	var name_label = RichTextLabel.new()
