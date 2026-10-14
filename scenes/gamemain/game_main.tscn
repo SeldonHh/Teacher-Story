@@ -250,9 +250,11 @@ layout_mode = 2
 
 [node name="MissionSelectionInstance2" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=648258962 instance=ExtResource("18_quxqi")]
 layout_mode = 2
+id = -1
 
 [node name="MissionSelectionInstance3" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=1817666602 instance=ExtResource("18_quxqi")]
 layout_mode = 2
+id = -2
 
 [node name="ScrollCamera" type="Camera2D" parent="MissionSelectionScreen" unique_id=758466382]
 offset = Vector2(-115, 0)

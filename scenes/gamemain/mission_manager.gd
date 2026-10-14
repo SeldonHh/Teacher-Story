@@ -23,6 +23,10 @@ func generate_mission_selection():
 	ManagerList.student_manager.reset_labels()
 	%MainGameScreen.hide()
 	%MissionSelectionScreen.show()
+	for i in range(%StudentInfoContainer.get_children().size()-2):
+		i += 2
+		%StudentInfoContainer.get_child(i).queue_free()
+	
 	current_mission_resource = null
 	var debug_child
 	for child in %MissionSelectionInstanceContainer.get_children():
@@ -40,10 +44,10 @@ func mission_selected(resource,name_labels,note_labels,caractere_labels):
 	current_mission_resource = resource
 	var sm = ManagerList.student_manager
 	sm.students_resources = resource.students
-	sm.name_info_labels = name_labels
-	sm.note_info_labels = note_labels
-	sm.caractere_info_labels = caractere_labels
-	reparent_labels(Global.interleave_arrays(name_labels,note_labels),%StudentInfoContainer)
+	sm.name_info_labels = name_labels.duplicate()
+	sm.note_info_labels = note_labels.duplicate()
+	sm.caractere_info_labels = caractere_labels.duplicate()
+	reparent_labels(Global.interleave_arrays(name_labels.duplicate(),note_labels.duplicate()),%StudentInfoContainer)
 	start_class()
 
 func start_class():

@@ -10,10 +10,10 @@ var gender = ["boy","girl"]
 var boy_names = [
 "Aylan","Alexandre","Alexis","Andress","Antoine","Arthur","Athanase","Aurélien","Adrien",
 "Barnabé","Benjamin","Caïn","Camille","Charles","Edouard","Clément","David","Diego",
-"Eliott","Enzo","Esteban","Félix","François","Gaetan","Hadrien","Henri","Hugo","Jean",
+"Eliott","Enzo","Esteban","Félix","François","Gaetan","Hadrien","Henri","Hugo","Ihsan","Jean",
 "Jean-Baptiste","Joachim","Jonathan","Joseph","Joshua","Judas","Justin","Kevin",
-"Imane","Lenny","Léon","Loïc","Louis","Lucas","Marius","Mathieu","Maxime","Mehdi",
-"Mohamed","Nathan","Nicolas","Oscar","Paul","Pierre","Raoul","Raphaël","Rémi",
+"Imane","Lenny","Léon","Loïc","Louis","Lucas","Marius","Mathieu","Mathis","Maxime","Mehdi",
+"Mohamed","Nathan","Nicolas","Othman","Oscar","Paul","Pierre","Raoul","Raphaël","Rémi",
 "Robin","Romeo","Paul","Samuel","Sébastien","Théo","Thomas","Tom","Victor","Valentin",
 "Vincent","Yann","Yassine","Zlatan","Seldon","Demurgos","Patate","Nassimou"
 ]
@@ -77,6 +77,7 @@ func reset_labels():
 	name_info_labels.clear()
 	note_info_labels.clear()
 	caractere_info_labels.clear()
+
 
 func make_labels(resource,container,include_caractere_labels = false):
 	var name_label = RichTextLabel.new()

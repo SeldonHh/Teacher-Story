@@ -1,7 +1,5 @@
 extends Panel
 
-
-
 func update_objective_label(text:String):
 	%ObjectiveLabel.text =text
 	

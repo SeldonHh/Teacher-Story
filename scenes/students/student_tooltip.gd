@@ -39,7 +39,10 @@ func change(student_name,standing_sprite,life_amount,shield_amount,note,chouchou
 		else:
 			label.add_theme_color_override("font_color",Color(0.231, 0.961, 0.0, 1.0))
 		etat_container.add_child(label)
-	note_label.text = "%s/20"%int(note)
+	var note_value = note
+	if is_equal_approx(note_value, roundf(note_value)):
+		note_value = int(note_value)
+	note_label.text = "%s/20"%note_value
 	caractere_label.text = get_caractere_text(chouchou_skill.name)
 
 func get_caractere_text(text):

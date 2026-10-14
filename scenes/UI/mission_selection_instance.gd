@@ -7,29 +7,32 @@ var hidden_labels : Array = []
 var name_labels: Array[RichTextLabel] = []
 var note_labels: Array[RichTextLabel] = []
 var caractere_labels: Array[RichTextLabel] = []
+@onready var info_container: GridContainer = %InfoContainer
+@export var id = 0
 
 func reset_ui():
 	name_labels.clear()
 	note_labels.clear()
 	hidden_labels.clear()
 	caractere_labels.clear()
-	for child in %StudentInfoContainer.get_children():
-		child.queue_free()
+	for child in info_container.get_children():
+		child.free()
 
 func update_ui(mission_resource):
 	reset_ui()
+	ManagerList.student_manager.reset_labels()
 	current_mission_resource = mission_resource
 	%Intitule.text = "La classe de [b]%s[/b] a besoin de vos connaissances en [b]%s[/b] !"%[mission_resource.classname,mission_resource.matiere]
 	%MissionInfoContainer.update_objective_label(Global.get_text_for_mission_objective(mission_resource))
 	%MissionInfoContainer.update_reward_label("[color=f07c46][b]%s[/b][/color] [img]uid://dfcgw32nv5d56[/img][font_size=12] [i](reste %s cours) [/i] [/font_size]"%[mission_resource.reward,mission_resource.ideal_max_lesson])
 	%HeadsContainer.texture = Global.demon_heads[mission_resource.difficulty+1]
 	for student_resource in mission_resource.students:
-		ManagerList.student_manager.make_labels(student_resource,%StudentInfoContainer,true)
-	for label in %StudentInfoContainer.get_children():
+		ManagerList.student_manager.make_labels(student_resource,info_container,true)
+	for label in info_container.get_children():
 		if label in ManagerList.student_manager.name_info_labels:
 			label.text.left(-2)
 			name_labels.append(label)
-		if label in ManagerList.student_manager.note_info_labels:
+		elif label in ManagerList.student_manager.note_info_labels:
 			hidden_labels.append([label,label.text])
 			label.text= "[right][color=326e7d]??/20"
 			note_labels.append(label)
@@ -37,8 +40,6 @@ func update_ui(mission_resource):
 			hidden_labels.append([label,label.text])
 			label.text = "[center][color=326e7d]Inconnu"
 			caractere_labels.append(label)
-
-
 
 func unhide_label(target_label):
 	for label in hidden_labels:

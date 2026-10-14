@@ -1,5 +1,4 @@
 extends Resource
-
 class_name MissionBase
 
 @export var ideal_max_lesson = 4

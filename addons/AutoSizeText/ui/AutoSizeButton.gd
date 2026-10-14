@@ -84,8 +84,6 @@ var _saved_theme_colors: Dictionary[String, Color]
 
 
 func _ready() -> void:
-	# TODO: change defaults instead of hard-setting!
-
 	# smalles possible font to force the button smallest size
 	set(&"theme_override_font_sizes/font_size", 1)
 	_prepare_colors()
@@ -123,7 +121,6 @@ func _update_label() -> void:
 		return
 		
 	_label.text = button_text
-	# TODO: detect current button state to pass on the color
 	_sync_color("font_color")
 	_label.do_resize_text()
 	
@@ -145,7 +142,6 @@ func _prepare_colors():
 	]
 	
 	for color_name in colors_to_disable:
-		# TODO: get_theme_color always returns (0, 0, 0, 0), WHY?
 		_saved_theme_colors[color_name] = get_theme_color(color_name, "Button")
 		#print(_saved_theme_colors[color_name])
 		

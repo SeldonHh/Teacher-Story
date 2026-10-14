@@ -74,7 +74,6 @@ var _last_text: String = ""
 
 
 func _ready() -> void:
-	# TODO: change defaults instead of hard-setting!
 
 	if autowrap_mode == TextServer.AUTOWRAP_OFF:
 		autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -139,5 +138,4 @@ func get_iterator() -> Array:
 
 
 func needs_resize() -> bool:
-	# TODO: does this need a line-calculated get_line_offset?
 	return get_content_height() > get_rect().size.y

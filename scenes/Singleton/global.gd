@@ -2,9 +2,9 @@ extends Node
 
 @onready var IS_DEBUG = "debug" in OS.get_cmdline_args()
 const DEBUG_CHOUCHOU_SKILL: SkillResource = null
-var DEBUG_SKIP_MISSION_SELECTION = true
-const DEBUG_LOWER_TIME = false
-const DEBUG_EASY_MISSIONS = false
+var DEBUG_SKIP_MISSION_SELECTION  = false
+const DEBUG_LOWER_TIME = true
+const DEBUG_EASY_MISSIONS = true
 const DEBUG_START_HALF_LIFE = true
 
 const HISTORY_CLASS_CAMERA_OFFSET : Vector2i = Vector2i(-12,15)

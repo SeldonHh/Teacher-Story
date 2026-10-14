@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://dil4fb1onwfqg"]
+
+[ext_resource type="Script" uid="uid://527eevp76k6b" path="res://scenes/gamemain/student_manager.gd" id="1_b4cvc"]
+[ext_resource type="Script" uid="uid://8tejnxwtsvrs" path="res://scenes/gamemain/timer_manager.gd" id="2_km7ex"]
+[ext_resource type="Script" uid="uid://b2hk0iwa6w8sw" path="res://scenes/gamemain/desk_manager.gd" id="3_t6wvf"]
+[ext_resource type="Script" uid="uid://ykafhat80w64" path="res://scenes/gamemain/mission_manager.gd" id="4_nvwvu"]
+[ext_resource type="Script" uid="uid://bawcq6jcir684" path="res://scenes/gamemain/main_game_screen.gd" id="5_5l4wo"]
+[ext_resource type="Script" uid="uid://co05m2vnhv261" path="res://scenes/gamemain/teacher_manager.gd" id="5_q4ntq"]
+[ext_resource type="PackedScene" uid="uid://cqijj5mokpqyk" path="res://scenes/game_space/game_space.tscn" id="6_nvwvu"]
+[ext_resource type="PackedScene" uid="uid://b70jo7xp1ebb1" path="res://scenes/UI/bottompanel.tscn" id="8_q4ntq"]
+[ext_resource type="PackedScene" uid="uid://dk41c6biguoq4" path="res://scenes/students/student_tooltip.tscn" id="9_wpknp"]
+[ext_resource type="Texture2D" uid="uid://c4nloatrcadeq" path="res://assets/ui/outside_stuff/right_border.png" id="13_1scvx"]
+[ext_resource type="Texture2D" uid="uid://7wsbkr82yxed" path="res://assets/ui/outside_stuff/bottom_border.png" id="13_ebuvp"]
+[ext_resource type="Texture2D" uid="uid://df7t1i674uynl" path="res://assets/ui/outside_stuff/paper_texture.png" id="13_q0l7d"]
+[ext_resource type="Texture2D" uid="uid://bf3g7p7csxelp" path="res://assets/ui/outside_stuff/left_border.png" id="14_31s3c"]
+[ext_resource type="Texture2D" uid="uid://dme4ic7obj7pq" path="res://assets/ui/difficulty_icons/diff0.png" id="14_mnqld"]
+[ext_resource type="Script" uid="uid://blj6dnrlpgpvr" path="res://scenes/UI/class_info_container.gd" id="14_q4ntq"]
+[ext_resource type="PackedScene" uid="uid://c3hc4i0pi0eki" path="res://scenes/UI/mission_info_container.tscn" id="14_yprj1"]
+[ext_resource type="PackedScene" uid="uid://cy5da64ey6xrn" path="res://scenes/UI/student_info_container.tscn" id="17_quxqi"]
+[ext_resource type="PackedScene" uid="uid://cu7oujm5iv40o" path="res://scenes/UI/MissionSelectionInstance.tscn" id="18_quxqi"]
+[ext_resource type="Theme" uid="uid://bme2k0756p2" path="res://resource/themes/label.tres" id="18_wry3n"]
+[ext_resource type="Script" uid="uid://bjdnwvt86p2su" path="res://scenes/gamemain/mission_selection_screen.gd" id="19_1042o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r60v2"]
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 0.7607843, 0.16862746, 1)
+corner_detail = 10
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+shadow_color = Color(0.84705883, 0.77254903, 0.6431373, 1)
+shadow_size = 3
+
+[node name="main" type="Node" unique_id=993646125]
+
+[node name="TimerManager" type="Node" parent="." unique_id=1935789655]
+unique_name_in_owner = true
+script = ExtResource("2_km7ex")
+
+[node name="StudentManager" type="Node" parent="." unique_id=896814977]
+unique_name_in_owner = true
+script = ExtResource("1_b4cvc")
+
+[node name="DeskManager" type="Node" parent="." unique_id=97142044]
+unique_name_in_owner = true
+script = ExtResource("3_t6wvf")
+
+[node name="MissionManager" type="Node" parent="." unique_id=778562826]
+unique_name_in_owner = true
+script = ExtResource("4_nvwvu")
+
+[node name="TeacherManager" type="Node" parent="." unique_id=1149574052]
+unique_name_in_owner = true
+script = ExtResource("5_q4ntq")
+
+[node name="MainGameScreen" type="Control" parent="." unique_id=1800385284]
+unique_name_in_owner = true
+layout_mode = 3
+anchor_left = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.912
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("5_5l4wo")
+
+[node name="ClassRoom" type="Panel" parent="MainGameScreen" unique_id=896156397]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.95
+anchor_bottom = 0.85
+offset_bottom = 3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_r60v2")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MainGameScreen/ClassRoom" unique_id=632070189]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.039916992
+offset_bottom = -0.13446045
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="MainGameScreen/ClassRoom/SubViewportContainer" unique_id=1071974969]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+physics_object_picking = true
+size = Vector2i(599, 384)
+render_target_update_mode = 4
+
+[node name="GameSpace" parent="MainGameScreen/ClassRoom/SubViewportContainer/SubViewport" unique_id=562061812 instance=ExtResource("6_nvwvu")]
+unique_name_in_owner = true
+
+[node name="bottompanel" parent="MainGameScreen/ClassRoom/SubViewportContainer" unique_id=1742692976 instance=ExtResource("8_q4ntq")]
+unique_name_in_owner = true
+z_index = 13
+layout_mode = 2
+
+[node name="Student_Tooltip" parent="MainGameScreen/ClassRoom" unique_id=1432997240 instance=ExtResource("9_wpknp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 280.0
+offset_bottom = 85.0
+
+[node name="InfoPanel" type="Control" parent="MainGameScreen" unique_id=1504059880]
+z_index = 1
+layout_mode = 1
+anchor_left = 0.02
+anchor_top = 0.05
+anchor_right = 0.25
+anchor_bottom = 0.95
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MissionInfoContainer" parent="MainGameScreen/InfoPanel" unique_id=265468243 instance=ExtResource("14_yprj1")]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 0.18
+anchor_bottom = 0.33
+
+[node name="ClassInfoContainer" type="Control" parent="MainGameScreen/InfoPanel" unique_id=9508005]
+layout_mode = 1
+anchor_top = 0.44
+anchor_right = 1.0
+anchor_bottom = 0.52
+grow_vertical = 2
+script = ExtResource("14_q4ntq")
+
+[node name="ClassName" type="RichTextLabel" parent="MainGameScreen/InfoPanel/ClassInfoContainer" unique_id=199420183]
+custom_minimum_size = Vector2(16, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.9411765, 0.4862745, 0.27450982, 1)
+bbcode_enabled = true
+text = "[b]En Congés[/b]"
+scroll_active = false
+vertical_alignment = 1
+
+[node name="HeadsContainer" type="TextureRect" parent="MainGameScreen/InfoPanel/ClassInfoContainer" unique_id=331094214]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("14_mnqld")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="StudentInfoContainer" parent="MainGameScreen/InfoPanel" unique_id=336953363 instance=ExtResource("17_quxqi")]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 0.53
+theme_override_constants/v_separation = 6
+
+[node name="BottomBorder" type="TextureRect" parent="MainGameScreen" unique_id=681632833]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.91200006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.36
+offset_top = 52.029846
+offset_bottom = 52.00586
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_ebuvp")
+expand_mode = 2
+
+[node name="ScrollCamera" type="Camera2D" parent="MainGameScreen" unique_id=1638548417]
+offset = Vector2(-112, 0)
+anchor_mode = 0
+limit_left = 0
+limit_top = -130
+limit_right = 1150
+limit_bottom = 0
+
+[node name="MissionSelectionScreen" type="Control" parent="." unique_id=1989413597]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchor_left = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.912
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("19_1042o")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MissionSelectionScreen" unique_id=152305592]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 0.295
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("18_wry3n")
+theme_override_colors/default_color = Color(0.19607843, 0.43137255, 0.49019608, 1)
+bbcode_enabled = true
+text = "[font_size= 32][b]Nouvelle mission ![/b][/font_size]
+Choissisez une classe parmis celles qui ont besoin de vous.
+[b]Bonne chance, Mr Norray ![/b]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MissionSelectionInstanceContainer" type="VBoxContainer" parent="MissionSelectionScreen" unique_id=140476159]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.3
+anchor_right = 0.95
+anchor_bottom = 1.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="MissionSelectionInstance" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=673878213 instance=ExtResource("18_quxqi")]
+layout_mode = 2
+
+[node name="MissionSelectionInstance2" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=648258962 instance=ExtResource("18_quxqi")]
+layout_mode = 2
+
+[node name="MissionSelectionInstance3" parent="MissionSelectionScreen/MissionSelectionInstanceContainer" unique_id=1817666602 instance=ExtResource("18_quxqi")]
+layout_mode = 2
+
+[node name="ScrollCamera" type="Camera2D" parent="MissionSelectionScreen" unique_id=758466382]
+offset = Vector2(-115, 0)
+anchor_mode = 0
+limit_left = 0
+limit_top = -130
+limit_right = 1150
+limit_bottom = 650
+
+[node name="PaperBG" type="TextureRect" parent="." unique_id=1932020326]
+z_index = -1
+anchors_preset = -1
+anchor_top = -0.2
+anchor_right = 1.0
+anchor_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_q0l7d")
+stretch_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="RightBorder" type="TextureRect" parent="." unique_id=730892878]
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = -0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_1scvx")
+expand_mode = 4
+
+[node name="RightBorder2" type="TextureRect" parent="." unique_id=370532640]
+anchors_preset = -1
+anchor_left = 0.9
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("13_1scvx")
+expand_mode = 4
+
+[node name="LeftBorder" type="TextureRect" parent="." unique_id=1646461961]
+anchors_preset = -1
+anchor_top = -0.2
+anchor_right = 0.1
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_31s3c")
+expand_mode = 4
+
+[node name="LeftBorder2" type="TextureRect" parent="." unique_id=1996288016]
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 0.1
+anchor_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("14_31s3c")
+expand_mode = 4
+
+[node name="BottomBorder2" type="TextureRect" parent="." unique_id=1321089740]
+unique_name_in_owner = true
+z_index = -1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 1.912
+anchor_right = 0.90000004
+anchor_bottom = 2.0
+offset_left = -0.20000458
+offset_top = 0.024047852
+offset_right = 0.19995117
+offset_bottom = 0.00012207031
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("13_ebuvp")
+expand_mode = 2
+
+[connection signal="mouse_entered" from="MainGameScreen/ClassRoom" to="MainGameScreen" method="_on_class_room_mouse_entered"]

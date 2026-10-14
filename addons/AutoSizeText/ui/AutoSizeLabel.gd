@@ -70,7 +70,6 @@ var _last_text: String = ""
 
 
 func _ready() -> void:
-	# TODO: change defaults instead of hard-setting!
 	force_default_settings()
 
 	draw.connect(resize_text)

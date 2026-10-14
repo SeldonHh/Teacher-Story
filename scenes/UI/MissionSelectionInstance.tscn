@@ -71,7 +71,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_m2xek")
 
-[node name="StudentInfoContainer" type="GridContainer" parent="Container/VBoxContainer/StudentsInfoBG" unique_id=336953363]
+[node name="InfoContainer" type="GridContainer" parent="Container/VBoxContainer/StudentsInfoBG" unique_id=336953363]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
@@ -83,7 +83,7 @@ grow_vertical = 2
 theme_override_constants/v_separation = -2
 columns = 3
 
-[node name="Name" type="RichTextLabel" parent="Container/VBoxContainer/StudentsInfoBG/StudentInfoContainer" unique_id=675521366]
+[node name="Name" type="RichTextLabel" parent="Container/VBoxContainer/StudentsInfoBG/InfoContainer" unique_id=675521366]
 custom_minimum_size = Vector2(100, 24)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -98,7 +98,7 @@ text = "[b]Prénom[/b]"
 scroll_active = false
 horizontal_alignment = 3
 
-[node name="Caractères" type="RichTextLabel" parent="Container/VBoxContainer/StudentsInfoBG/StudentInfoContainer" unique_id=858427654]
+[node name="Caractères" type="RichTextLabel" parent="Container/VBoxContainer/StudentsInfoBG/InfoContainer" unique_id=858427654]
 custom_minimum_size = Vector2(8, 24)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -113,7 +113,7 @@ text = "[b]Caractères[/b]"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="Note" type="RichTextLabel" parent="Container/VBoxContainer/StudentsInfoBG/StudentInfoContainer" unique_id=1200256478]
+[node name="Note" type="RichTextLabel" parent="Container/VBoxContainer/StudentsInfoBG/InfoContainer" unique_id=1200256478]
 custom_minimum_size = Vector2(8, 24)
 layout_mode = 2
 size_flags_horizontal = 3
